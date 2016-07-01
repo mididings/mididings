@@ -330,6 +330,18 @@ void Engine::process_scene_switch(B & buffer)
             }
         }
 
+        // GVDK 2016: Moved these three from after the init patch processing
+        // to here, so when calling current_scene() from the init patch, it
+        // returns the correct current scene and not the previous one.
+
+        // store pointer to patch
+        _current_patch = &*scene->patch;
+
+        // store scene and subscene numbers
+        _current_scene = scene_num;
+        _current_subscene = subscene_num;
+
+
         // check if the scene has an init patch
         if (scene->init_patch) {
             typename B::Iterator it = buffer.insert(buffer.end(),
@@ -345,12 +357,6 @@ void Engine::process_scene_switch(B & buffer)
             _sanitize_patch->process(buffer, r);
         }
 
-        // store pointer to patch
-        _current_patch = &*scene->patch;
-
-        // store scene and subscene numbers
-        _current_scene = scene_num;
-        _current_subscene = subscene_num;
     }
 
     // mark as done
