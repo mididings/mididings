@@ -122,10 +122,7 @@ sources = [
 
 include_dirs.append('src')
 
-boost_python_suffixes = ['-py%d%d' % sys.version_info[:2]]
-if sys.version_info[0] == 3:
-    boost_python_suffixes.append('3')
-    boost_python_suffixes.append('%d%d' % sys.version_info[:2])
+boost_python_suffixes = ['%d%d' % sys.version_info[:2]]
 libraries.append(boost_lib_name('boost_python', boost_python_suffixes))
 libraries.append(boost_lib_name('boost_thread'))
 
