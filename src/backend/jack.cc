@@ -141,8 +141,13 @@ int JACKBackend::connect_matching_ports(
         PortNameVector const & external_ports,
         bool out)
 {
-    int count = 0, error;
+    int i, count = 0, error, no_aliases;
+    jack_port_t *jack_port;
     das::regex regex;
+    char *aliases[2];
+
+    aliases[0] = (char *)malloc(jack_port_name_size());
+    aliases[1] = (char *)malloc(jack_port_name_size());
 
     try {
         // compile pattern into regex object
@@ -156,10 +161,20 @@ int JACKBackend::connect_matching_ports(
 
     // for each external JACK MIDI port we might connect to...
     BOOST_FOREACH (std::string const & external_port, external_ports) {
-        // check if port name matches regex
-        if (!regex.match(external_port))
-            continue;
+        if (regex.match(external_port))
+            goto connect;
 
+        // check if one of the aliases match
+        jack_port = jack_port_by_name(_client, external_port.c_str());
+        no_aliases = jack_port_get_aliases(jack_port, aliases);
+        for (i = 0; i < no_aliases; i++)
+            if (regex.match(aliases[i]))
+                goto connect;
+
+        // No matches? continue.
+        continue;
+
+connect:
         // connect output to input port
         std::string const & output_port = out ? port_name : external_port;
         std::string const & input_port = out ? external_port : port_name;
@@ -172,6 +187,9 @@ int JACKBackend::connect_matching_ports(
 
         count++;
     }
+
+    free(aliases[0]);
+    free(aliases[1]);
 
     return count;
 }
