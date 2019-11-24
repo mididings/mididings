@@ -1,9 +1,13 @@
+arch/*.tar.xz
+arch/mididings-git/
+arch/pkg/
+arch/src/
 /build
 /dist
 /mididings.egg-info
 /src/.sconsign.dblite
 /src/_mididings.so
 /doc/build
-*.o
 /core
+*.o
 *.pyc
