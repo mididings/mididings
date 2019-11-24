@@ -141,38 +141,39 @@ int JACKBackend::connect_matching_ports(
         PortNameVector const & external_ports,
         bool out)
 {
+    int count = 0, error;
+    das::regex regex;
+
     try {
         // compile pattern into regex object
-        das::regex regex(pattern, true);
-        int count = 0;
-
-        // for each external JACK MIDI port we might connect to...
-        BOOST_FOREACH (std::string const & external_port, external_ports) {
-            // check if port name matches regex
-            if (!regex.match(external_port))
-                continue;
-
-            // connect output to input port
-	    std::string const & output_port = out ? port_name : external_port;
-	    std::string const & input_port = out ? external_port : port_name;
-
-            int error = jack_connect(_client, output_port.c_str(),
-                                              input_port.c_str());
-
-            if (error && error != EEXIST) {
-                std::cerr << "could not connect " << output_port
-                          << " to " << input_port << std::endl;
-            }
-
-            ++count;
-        }
-        return count;
+        regex = das::regex(pattern, true);
     }
     catch (das::regex::compile_error & ex) {
         throw std::runtime_error(das::make_string()
                 << "failed to parse regular expression '"
                 << pattern << "': " << ex.what());
     }
+
+    // for each external JACK MIDI port we might connect to...
+    BOOST_FOREACH (std::string const & external_port, external_ports) {
+        // check if port name matches regex
+        if (!regex.match(external_port))
+            continue;
+
+        // connect output to input port
+        std::string const & output_port = out ? port_name : external_port;
+        std::string const & input_port = out ? external_port : port_name;
+
+	error = jack_connect(_client, output_port.c_str(), input_port.c_str());
+        if (error && error != EEXIST) {
+            std::cerr << "could not connect " << output_port
+                      << " to " << input_port << std::endl;
+        }
+
+        count++;
+    }
+
+    return count;
 }
 
 
