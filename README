@@ -1,3 +1,9 @@
+
+- Adapted the scripts for Python 3.
+
+
+# Original Readme
+
 mididings - a MIDI router/processor based on Python
 
 Copyright (C) 2008-2014  Dominic Sacré  <dominic.sacre@gmx.de>
