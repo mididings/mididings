@@ -9,6 +9,11 @@ sudo apt --yes install python3-liblo python3-dbus python3-decorator python3-pyin
 # git clone  https://github.com/rralf/mididings.git # fork which works for python 3.7, scripts are python2 
 git clone  https://github.com/rodisch/mididings.git # fork scripts set to python3 
 
+# fix missing -lboost_python
+cd /usr/lib/x86_64-linux-gnu
+sudo ln -s libboost_python38.so libboost_python.so
+
 cd mididings
 sudo python3 setup.py build
 sudo python3 setup.py install
+
