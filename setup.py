@@ -18,7 +18,7 @@ else:
     from commands import getstatusoutput
 
 
-version = '2015'
+version = '2.0.0'
 
 status, output = getstatusoutput('git rev-parse --short HEAD')
 if not status:
@@ -27,8 +27,7 @@ if not status:
 config = {
     'alsa-seq':     (platform.system() == 'Linux'),
     'jack-midi':    True,
-    'c++11':        False,
-    'debug':        True,
+    'debug':        False,
 }
 
 include_dirs = []
@@ -39,36 +38,15 @@ extra_compile_args = []
 
 define_macros.append(('VERSION', '%s' % version))
 
-
-# parse and then remove additional custom command line options
-for opt in config.keys():
-    for arg in sys.argv:
-        if arg == '--enable-%s' % opt:
-            sys.argv.remove(arg)
-            config[opt] = True
-        elif arg == '--disable-%s' % opt:
-            sys.argv.remove(arg)
-            config[opt] = False
-
-
 # hack to modify the compiler flags from the distutils default
 distutils_customize_compiler = sysconfig.customize_compiler
 
 def my_customize_compiler(compiler):
     retval = distutils_customize_compiler(compiler)
-    # -Wstrict-prototypes is not valid for C++
-    try:
-        compiler.compiler_so.remove('-Wstrict-prototypes')
-    except ValueError:
-        pass
 
     if not config['debug']:
-        try:
-            # the -g flag might occur twice in python's compiler flags
-            compiler.compiler_so.remove('-g')
-            compiler.compiler_so.remove('-g')
-        except ValueError:
-            pass
+        # the -g flag might occur many times in python's compiler flags
+        compiler.compiler_so = [x for x in compiler.compiler_so if x != "-g"]
 
     # immediately stop on error
     compiler.compiler_so.append('-Wfatal-errors')
@@ -128,8 +106,9 @@ def boost_lib_name(name, add_suffixes=[]):
     Try to figure out the correct boost library name (with or without "-mt"
     suffix, or with any of the given additional suffixes).
     """
+    libdirs = lib_dirs()
     for suffix in add_suffixes + ['', '-mt']:
-        for libdir in lib_dirs():
+        for libdir in libdirs:
             for ext in ['so'] + ['dylib'] * (sys.platform == 'darwin'):
                 libname = 'lib%s%s.%s' % (name, suffix, ext)
                 if os.path.isfile(os.path.join(libdir, libname)):
@@ -151,6 +130,7 @@ include_dirs.append('src')
 boost_python_suffixes = ['-py%d%d' % sys.version_info[:2]]
 if sys.version_info[0] == 3:
     boost_python_suffixes.append('3')
+    boost_python_suffixes.append('%d%d' % sys.version_info[:2])
 libraries.append(boost_lib_name('boost_python', boost_python_suffixes))
 libraries.append(boost_lib_name('boost_thread'))
 
@@ -168,11 +148,6 @@ if config['jack-midi']:
                     'src/backend/jack_buffered.cc',
                     'src/backend/jack_realtime.cc'])
     pkgconfig('jack')
-
-if config['c++11']:
-    extra_compile_args.append('-std=c++0x')
-else:
-    pkgconfig('glib-2.0')
 
 
 setup(
@@ -204,5 +179,8 @@ setup(
         'scripts/mididings',
         'scripts/livedings',
         'scripts/send_midi',
+    ],
+    install_requires=[
+        'decorator',
     ],
 )

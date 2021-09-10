@@ -1,9 +1,3 @@
-
-- Adapted the scripts for Python 3.
-
-
-# Original Readme
-
 mididings - a MIDI router/processor based on Python
 
 Copyright (C) 2008-2014  Dominic Sacré  <dominic.sacre@gmx.de>
@@ -29,7 +23,6 @@ Requirements:
 * Glib [http://library.gnome.org/devel/glib/]
 * decorator [http://pypi.python.org/pypi/decorator]
 
-
 Optional:
 =========
 
@@ -47,12 +40,36 @@ Optional:
   (so mididings knows where to look for config files)
 
 
+For example on debian/ubuntu install following packages:
+
+sudo apt install -y\
+   libglib2.0-dev\
+   libjack-jackd2-dev\
+   libboost-python-dev\
+   libboost-thread-dev
+
+and optipnally python3 packages:
+
+sudo apt install -y\
+    python3-liblo\
+    python3-dbus\
+    python3-decorator\
+    python3-pyinotify\
+    python3-tk
+
+
+Build:
+=============
+
+By default both alsa and jack backends included in the build.
+Update config variable in the setup.py to cutomize.
+
+python3 -m build
+
 Installation:
 =============
 
-./setup.py build [--disable-jack-midi] [--disable-alsa-seq]
-./setup.py install
-
+sudo pip install dist/mididings-*.whl
 
 Documentation:
 ==============
