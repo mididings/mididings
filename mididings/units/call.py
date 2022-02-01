@@ -29,6 +29,7 @@ import subprocess as _subprocess
 import types as _types
 import copy as _copy
 import collections as _collections
+import collections.abc as _collections_abc
 import inspect as _inspect
 
 
@@ -105,7 +106,7 @@ def _call_partial(function, args, kwargs, require_event=False):
         return function
 
 
-@_unitrepr.accept(_collections.Callable, None, kwargs={ None: None })
+@_unitrepr.accept(_collections_abc.Callable, None, kwargs={ None: None })
 def Process(function, *args, **kwargs):
     """
     Process(function, *args, **kwargs)
@@ -170,17 +171,17 @@ def Process(function, *args, **kwargs):
         optional keyword arguments that will be passed to *function*.
     """
 )
-@_unitrepr.accept(_collections.Callable, None, kwargs={ None: None })
+@_unitrepr.accept(_collections_abc.Callable, None, kwargs={ None: None })
 def Call(function, *args, **kwargs):
     return _CallBase(_call_partial(function, args, kwargs), True, False)
 
 @_overload.mark
-@_unitrepr.accept(_collections.Callable, kwargs={ None: None })
+@_unitrepr.accept(_collections_abc.Callable, kwargs={ None: None })
 def Call(thread, **kwargs):
     return _CallThread(_call_partial(thread, (), kwargs))
 
 
-@_unitrepr.accept((str, _collections.Callable))
+@_unitrepr.accept((str, _collections_abc.Callable))
 def System(command):
     """
     Run an arbitrary shell command.

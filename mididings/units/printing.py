@@ -19,6 +19,7 @@ import mididings.misc as _misc
 
 import sys as _sys
 import collections as _collections
+import collections.abc as _collections_abc
 
 
 class _Print(_CallBase):
@@ -127,6 +128,6 @@ def Print(name=None, portnames=None):
     return _Print(name, portnames)
 
 @_overload.mark
-@_unitrepr.accept((str, _collections.Callable))
+@_unitrepr.accept((str, _collections_abc.Callable))
 def Print(string):
     return _PrintString(string)
