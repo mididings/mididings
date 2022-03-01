@@ -4,6 +4,12 @@ Copyright (C) 2008-2014  Dominic Sacré  <dominic.sacre@gmx.de>
 
 http://das.nasophon.de/mididings/
 
+Note:
+=====
+
+This is a fork which, as of 2022-03-01, will compile and run well
+in the current Python3 environment.  The original web site has also
+been mirrored into the 'www-docs' folder.
 
 License:
 ========
