@@ -8,8 +8,10 @@ Note:
 =====
 
 This is a fork which, as of 2022-03-01, will compile and run well
-in a most current Python3 environment.  The original web site has also
-been mirrored into the 'www-pages' folder.
+in a most current Python3 environment.  The original web site, including
+excellent practical documentation, has also been mirrored into the 
+'www-pages' folder, since the author has not been heard from in 
+quite some time.
 
 License:
 ========
@@ -54,7 +56,7 @@ sudo apt install -y\
    libboost-python-dev\
    libboost-thread-dev
 
-and optipnally python3 packages:
+and python3 packages:
 
 sudo apt install -y\
     python3-liblo\
