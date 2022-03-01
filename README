@@ -22,7 +22,7 @@ The example scripts in doc/examples are in the public domain.
 Requirements:
 =============
 
-* Python >= 2.6 (also works with 3.x) [http://www.python.org/]
+* Python 3 current [http://www.python.org/]
 * ALSA [http://www.alsa-project.org/]
 * JACK (>= 0.116.0) [http://jackaudio.org/]
 * Boost (Boost.Python, Boost.Thread) [http://www.boost.org/]
