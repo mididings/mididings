@@ -1,0 +1,42 @@
+2011-01-29: jack_oscrolloscope 0.7
+
+  * OpenGL is now used for drawing by default, but can still be disabled
+    using the -G command line option.
+  * Added command line options -C, -S and -Y to set color, waveform scaling
+    and height on a per-port basis.
+  * Worked around possible lock-up problems in cases where drawing can't
+    keep up with incoming audio samples.
+  * The duration specified with -d can now be a floating point number.
+  * Some code cleanup.
+
+2008-09-18: jack_oscrolloscope 0.6
+
+  * Added option to set JACK client name.
+
+2008-02-07: jack_oscrolloscope 0.5
+
+  * Use jack_client_open() instead of deprecated jack_client_new().
+  * Show JACK client name in window title.
+
+2007-10-20: jack_oscrolloscope 0.4
+
+  * jack_oscrolloscope is now a lot smarter when it comes to calculating
+    appropriate audio buffer sizes depending in samplerate, scrolling speed
+    etc.
+
+2007-01-02: jack_oscrolloscope 0.3
+
+  * Once again overhauled OpenGL drawing. It's still not perfect, but at
+    least it no longer requires any fancy GL extensions.
+  * Some other minor fixes.
+
+2006-11-27: jack_oscrolloscope 0.2
+
+  * Completely revised drawing code for improved performance, in particular
+    at large window sizes and with many tracks. For now, a display driver
+    supporting the GL_EXT_framebuffer_object extension is required to take
+    advantage of these changes.
+
+2006-11-19: jack_oscrolloscope 0.1
+
+  * Initial Release.

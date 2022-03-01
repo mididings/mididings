@@ -1,0 +1,102 @@
+2009-09-13: klick 0.12.2
+
+  * Fixed a segfault (introduced in 0.12.0) that sometimes occured when
+    terminating klick.
+
+2009-07-10: klick 0.12.1
+
+  * Fixed a build error on amd64.
+
+2009-07-09: klick 0.12.0
+
+  * Added click track export functionality.
+  * SConstruct now supports DESTDIR option to make packagers' lifes easier.
+
+2009-01-14: klick 0.11.0
+
+  * Many OSC related fixes and improvements.
+  * Optionally use Rubber Band for pitch shifting (build with
+    RUBBERBAND=True).
+
+2008-12-03: klick 0.10.0
+
+  * Several new OSC methods, most notably for managing JACK connections.
+  * Various minor fixes, some code cleanup.
+  * Included a proper user manual in the tarball.
+
+2008-10-23: klick 0.9.1
+
+  * Fixed a bug that restricted the tempo to tempo_limit even when
+    tempo_increment was disabled.
+
+2008-10-17: klick 0.9.0
+
+  * New OSC methods: set_tempo_increment, set_tempo_limit, set_pattern.
+  * Added optional return address parameter to all query methods.
+
+2008-08-11: klick 0.8.0
+
+  * Added basic OSC support.
+  * Added interactive mode (klick -i).
+
+2008-05-24: klick 0.7.0
+
+  * New default sound (square wave).
+  * Allow volume and pitch of emphasized and normal beats to be adjusted
+    individually.
+  * Provide samples as regular wave files, rather than compiling them into
+    the executable.
+  * Some source code restructuring.
+
+2008-04-08: klick 0.6.3
+
+  * Fixed a bug that caused klick to play at a slightly wrong tempo when
+    using silent beats (with the pattern feature).
+  * Made klick compile cleanly with -W -Wall.
+
+2008-03-19: klick 0.6.2
+
+  * Fixed a bug when using -E or -e and either -v or -w parameters at the
+    same time.
+  * Fixed (and actually documented) tempo-per-beat feature.
+  * Use jack_client_open() instead of deprecated jack_client_new(), default
+    client name is now simply "klick".
+
+2008-02-02: klick 0.6.1
+
+  * Fixed parsing of patterns on the command line.
+  * Don't choke on tempo map entries where tempo == tempo2.
+
+2008-01-27: klick 0.6
+
+  * Fixed a segfault when changing the position via JACK transport.
+  * Vastly more efficient seeking in the tempo map.
+  * Fixed erroneous behaviour of JACK transport BBT slave mode (-j), and
+    be a little more tolerant of faulty BBT information from the timebase
+    master.
+  * Try to send more sensible BBT information in timebase master mode.
+
+2007-12-02: klick 0.5
+
+  * Additional sound (bell/click).
+  * Added option to auto-connect to hardware output ports.
+  * Various minor fixes and enhancements, several changes under the hood.
+  * Improved documentation.
+
+2007-07-08: klick 0.4
+
+  * JACK transport master support.
+  * JACK transport slave support (running without tempomap).
+  * Added ability to change the pitch of the click sounds.
+  * Volume and tempo multipliers are now given as floats rather than
+    percentage.
+  * Hopefully more bugs fixed than newly introduced.
+
+2007-03-26: klick 0.2
+
+  * Some bugfixes.
+  * Improved documentation.
+
+2007-02-10: klick 0.1
+
+  * Initial release.

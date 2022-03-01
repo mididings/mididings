@@ -1,0 +1,404 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html lang="en">
+
+<head>
+  <title>klick - User Manual</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <style type="text/css">
+    body { max-width: 60em; font-size: 90%; font-family: sans-serif; }
+    h1 { font-size: 130%; color: #333; background: #eee; padding: 4px 0.7em; }
+    h2 { font-size: 110%; color: #fff; background: #667; padding: 4px 0.7em; margin-top: 2.2em; }
+    h3 { font-size: 100%; color: #333; background: #dddde5; padding: 4px 0.7em; margin-top: 2.2em; }
+    h4 { font-size: 100%; color: #333; padding-left: 0.5em; margin-bottom: 0.4em; }
+    p,table,pre { margin-left: 1.6em; margin-top: 0.4em; }
+    b { color: #333; }
+    pre, kbd { font-size: 110%; }
+    table { border: 1px solid #333; border-collapse: collapse; }
+    th, td { border: 1px solid #333; padding: 0.3em; }
+    th { color: #333; text-align: left; background: #eee; }
+    td { vertical-align: top; }
+    a { font-weight: bold; color: #237; }
+    li { margin-bottom: 0.4em; }
+  </style>
+</head>
+
+<body>
+
+<h1>klick - User Manual</h1>
+
+
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#basics">Basics</a></li>
+  <li><a href="#commandline">Command Line Options</a></li>
+  <li><a href="#interactive">Interactive Mode</a></li>
+  <li><a href="#tempomap">Tempo Map File Format</a>
+    <ul>
+      <li><a href="#tempomapexample">Example Tempo Map</a></li>
+    </ul>
+  </li>
+  <li><a href="#export">Click Track Export</a></li>
+  <li><a href="#osc">OSC Commands</a></li>
+</ul>
+
+<h2><a name="basics"></a>Basics</h2>
+
+
+<h4><kbd>klick [options] [bars] [meter] tempo[-tempo2/accel] [pattern]</kbd></h4>
+<p>
+  Plays a simple metronome with the given meter and tempo.
+  To play a 3/4 beat at 120 bpm:
+</p>
+  <pre>klick 3/4 120</pre>
+<p>
+  You can also specify a "target" tempo and acceleration rate, to use klick as a speed trainer.
+  To play a 4/4 beat starting at 80 bpm, gradually increasing the tempo by 1 bpm every 10 measures
+  until reaching 120 bpm:
+</p>
+  <pre>klick 80-120/10</pre>
+<p>
+  Once the final tempo is reached, klick will continue playing at a constant tempo.
+</p>
+
+
+<h4><kbd>klick [options] -f filename</kbd></h4>
+<p>
+  Loads a tempo map from a file. This allows for more complex setups including meter and tempo changes etc.<br>
+  See <a href="#tempomap">Tempo Map File Format</a>.
+</p>
+
+<h4><kbd>klick [options] -i</kbd></h4>
+<p>
+  Runs klick in interactive mode, allowing you to change tempo and meter while klick is running.<br>
+  The keyboard commands available in this mode are described in <a href="#interactive">Interactive Mode</a>.
+</p>
+
+<h4><kbd>klick [options] -j</kbd></h4>
+
+<p>
+  In this mode, klick gets all tempo information from JACK.
+  Just run a sequencer as JACK transport master, and klick will play a simple metronome
+  pattern in sync with JACK transport.
+</p>
+
+
+<h2><a name="commandline"></a>Command Line Options</h2>
+
+<pre>
+-f filename       load tempo map from file
+-j                no tempo map, just follow jack transport
+-n name           set jack client name
+-p port,..        jack port(s) to connect to
+-P                automatically connect to hardware ports
+-o port           OSC port to listen on
+-i                interactive mode
+-W filename       export click track to audio file
+-r samplerate     sample rate of export (default: 48000)
+-s number         use built-in sounds:
+                    0: square wave (default)
+                    1: sine wave
+                    2: noise
+                    3: acoustic bell/click
+-S file[,file]    load sounds from file(s)
+-e                no emphasized beats
+-E                emphasized beats only
+-v mult[,mult]    adjust playback volume (default: 1.0)
+-w mult[,mult]    adjust playback pitch (default: 1.0)
+-t                enable jack transport
+-T                become transport master (implies -t)
+-d seconds        delay before starting playback
+-c bars           pre-roll. use -c 0 for 2 beats
+-l label          start playback at the given label
+-x multiplier     multiply tempo by the given factor
+-h                show this help
+</pre>
+
+
+<h2><a name="interactive"></a>Interactive Mode</h2>
+
+<p>
+The following keyboard commands are available in interactive mode:
+</p>
+<table>
+  <tr><td><b>Arrow up/down</b></td><td>increase/reduce tempo by 10 bpm</td></tr>
+  <tr><td><b>Arrow right/left</b></td><td>increase/reduce tempo by 1 bpm</td></tr>
+  <tr><td><b>0-9</b></td><td>set beats per bar (0/1: all beats are even)</td></tr>
+  <tr><td><b>q/w/e/r</b></td><td>set beat type (whole, half, quarter, eighth note)</td></tr>
+  <tr><td><b>+/=, -</b></td><td>increase/reduce volume</td></tr>
+  <tr><td><b>Space</b></td><td>start/stop metronome</td></tr>
+  <tr><td><b>Escape</b></td><td>exit klick</td></tr>
+</table>
+
+
+<h2><a name="tempomap"></a>Tempo Map File Format</h2>
+
+<p>A tempo map is a plain text file, consisting of an arbitrary number of lines which will be played sequentially.
+Each line must have the following format:</p>
+<pre>
+[label:] bars [meter] tempo [pattern] [volume]
+</pre>
+<p>Everything in brackets is optional, and can be omitted to use the default.
+'<kbd>#</kbd>' indicates the start of a comment, empty lines are ignored.</p>
+
+<table>
+  <tr>
+    <td><kbd>label</kbd></td>
+    <td>An optional name that can be used to refer to this line, and start playback at this position.</td>
+  </tr>
+  <tr>
+    <td><kbd>bars</kbd></td>
+    <td>The number of bars for this tempo map entry.</td>
+  </tr>
+  <tr>
+    <td><kbd>meter</kbd></td>
+    <td>The meter, written as <kbd>beats/denominator</kbd>.
+    This is optional, the default is 4/4.</td>
+  </tr>
+  <tr>
+    <td><kbd>tempo</kbd></td>
+    <td>The tempo in beats per minute, with a "beat" always referring to quarter notes,
+    no matter what the meter actually is.
+    <table style="border: none">
+      <tr>
+        <td style="border: none"><kbd>tempo</kbd></td>
+        <td style="border: none">Sets the tempo for the duration of the whole tempo map entry.</td>
+      </tr>
+      <tr>
+        <td style="border: none"><kbd>tempo1-tempo2</kbd></td>
+        <td style="border: none">Specifies the tempo for the start and the end of this entry, with a gradual tempo change in between.</td>
+      </tr>
+      <tr>
+        <td style="border: none"><kbd>tempo1,tempo2,...</kbd></td>
+        <td style="border: none">Sets a different tempo for each beat. The number of tempo values must be the same as the total
+        number of beats for this entry (bars * beats).</td>
+      </tr>
+    </table>
+  </tr>
+  <tr>
+    <td><kbd>pattern</kbd></td>
+    <td>This can be used to alter the pattern of accented/normal beats. Use '<kbd>X</kbd>' (upper case) for accented beats,
+    '<kbd>x</kbd>' (lower case) for normal beats, and '<kbd>.</kbd>' for silence. So for example, given a 6/8 measure,
+    and you only want the 1st and 4th beat to be played, you could use the pattern '<kbd>X..x..</kbd>';
+    the default is '<kbd>Xxxxxx</kbd>'.</td>
+  </tr>
+  <tr>
+    <td><kbd>volume</kbd></td>
+    <td>Allows you to set a different volume for each part, default is 1.0.</td>
+  </tr>
+</table>
+
+<h3><a name="tempomapexample"></a>Example Tempo Map</h3>
+
+<pre>
+intro:    8 120           # play 8 measures at 120 bpm (4/4)
+verse1:   12 120 X.x.     # 12 measures at 120 bpm, playing only the 1st and 3rd beat
+          4 120-140 X.x.  # gradually increase tempo to 140 bpm
+chorus1:  16 140
+bridge:   8 3/4 140 0.5   # change to 3/4 time, reduce volume
+          8 3/4 140       # normal volume again
+verse2:   12 120          # back to 4/4 (implied)
+chorus2:  16 140          # jump to 140 bpm
+outro:    6 140
+          2 140-80        # ritardando over the last 2 bars
+</pre>
+
+
+<h2><a name="export"></a>Click Track Export</h2>
+
+<p>
+By default, klick connects to JACK for audio output. To export a click track to an audio file instead, use the
+<kbd>-W</kbd> parameter to specify an output filename.
+The file type is determined by extension, supported formats are WAV, AIFF, FLAC, Ogg Vorbis (with libsndfile &gt;= 1.0.18).<br>
+The <kbd>-r</kbd> parameter can be used to set the sample rate of the exported audio, default is 48000 Hz.
+</p>
+
+
+<h2><a name="osc"></a>OSC Commands</h2>
+
+<p>
+klick understands the following OSC messages:
+</p>
+
+<table>
+  <tr>
+    <th colspan="2">General</th>
+  </tr>
+  <tr>
+    <td>/klick/ping<br>
+    /klick/ping ,s &lt;return_address&gt;</td>
+    <td>responds: /klick/pong</td>
+  </tr>
+  <tr>
+    <td>/klick/register_client<br>
+    /klick/register_client ,s &lt;address&gt;</td>
+    <td>registers a client to receive notifications when any parameter changes</td>
+  </tr>
+  <tr>
+    <td>/klick/unregister_client<br>
+    /klick/unregister_client ,s &lt;address&gt;</td>
+    <td>unregisters a client</td>
+  </tr>
+  <tr>
+    <td>/klick/query<br>
+    /klick/query ,s &lt;return_address&gt;</td>
+    <td>reports current state (same as /klick/*/query)</td>
+  </tr>
+  <tr>
+    <td>/klick/quit</td>
+    <td>terminates klick</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Configuration</th>
+  </tr>
+  <tr>
+    <td>/klick/config/set_sound ,i &lt;number&gt;</td>
+    <td>sets the sound to one of the built-in ones</td>
+  </tr>
+  <tr>
+    <td>/klick/config/set_sound ,ss &lt;filename&gt; &lt;filename&gt;</td>
+    <td>loads the sound from two audio files</td>
+  </tr>
+  <tr>
+    <td>/klick/config/set_sound_volume ,ff &lt;emphasis&gt; &lt;normal&gt;</td>
+    <td>changes the volume individually for both samples</td>
+  </tr>
+  <tr>
+    <td>/klick/config/set_sound_pitch ,ff &lt;emphasis&gt; &lt;normal&gt;</td>
+    <td>changes the pitch individually for both samples</td>
+  </tr>
+  <tr>
+    <td>/klick/config/set_volume ,f &lt;volume&gt;</td>
+    <td>sets the overall output volume</td>
+  </tr>
+  <tr>
+    <td>/klick/config/autoconnect</td>
+    <td>connects klick's output port to the first two hardware ports</td>
+  </tr>
+  <tr>
+    <td>/klick/config/connect ,s... &lt;port&gt; ...</td>
+    <td>connects klick's output port to the specified JACK ports</td>
+  </tr>
+  <tr>
+    <td>/klick/config/disconnect_all</td>
+    <td>disconnects all connections from klick's output port</td>
+  </tr>
+  <tr>
+    <td>/klick/config/get_available_ports<br>
+    /klick/config/get_available_ports ,s &lt;return_address&gt;</td>
+    <td>returns a list of all JACK input ports:<br>
+    /klick/config/available_ports ,s... &lt;port&gt; ...</td>
+  </tr>
+  <tr>
+    <td>/klick/config/query<br>
+    /klick/config/query ,s &lt;return_address&gt;</td>
+    <td>reports current state:<br>
+    /klick/config/sound ,i<br>
+    /klick/config/sound ,ss<br>
+    /klick/config/sound_volume ,ff<br>
+    /klick/config/sound_pitch ,ff<br>
+    /klick/config/volume ,f</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Generic Metronome Functions</th>
+  </tr>
+  <tr>
+    <td>/klick/metro/set_type ,s &lt;type&gt;</td>
+    <td>sets the metronome type, one of 'simple', 'map', 'jack'</td>
+  </tr>
+  <tr>
+    <td>/klick/metro/start</td>
+    <td>starts the metronome</td>
+  </tr>
+  <tr>
+    <td>/klick/metro/stop</td>
+    <td>stops the metronome</td>
+  </tr>
+  <tr>
+    <td>/klick/metro/query<br>
+    /klick/metro/query ,s &lt;return_address&gt;</td>
+    <td>reports current state:<br>
+    /klick/metro/type ,s<br>
+    /klick/metro/active ,i</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Simple (Dynamic) Metronome</th>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_tempo ,f &lt;tempo&gt;</td>
+    <td>sets the metronome's tempo</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_tempo_increment ,f &lt;increment&gt;</td>
+    <td>sets the tempo increment per bar</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_tempo_start ,f &lt;start&gt;</td>
+    <td>sets the start tempo</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_tempo_limit ,f &lt;limit&gt;</td>
+    <td>sets the maximum tempo</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_meter ,ii &lt;beats&gt; &lt;denom&gt;</td>
+    <td>sets the metronome's meter</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/set_pattern ,s &lt;pattern&gt;</td>
+    <td>sets the beat pattern</td>
+  <tr>
+    <td>/klick/simple/tap</td>
+    <td>tap tempo</td>
+  </tr>
+  <tr>
+    <td>/klick/simple/query<br>
+    /klick/simple/query ,s &lt;return_address&gt;</td>
+    <td>reports current state:<br>
+    /klick/simple/tempo ,f<br>
+    /klick/simple/tempo_increment ,f<br>
+    /klick/simple/tempo_limit ,f<br>
+    /klick/simple/current_tempo ,f<br>
+    /klick/simple/meter ,ii<br>
+    /klick/simple/pattern ,s</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">Tempo Map Metronome</th>
+  </tr>
+  <tr>
+    <td>/klick/map/load_file ,s &lt;filename&gt;</td>
+    <td>loads a tempo map from a file</td>
+  </tr>
+  <tr>
+    <td>/klick/map/set_preroll ,i &lt;bars&gt;</td>
+    <td>sets the preroll before the start of the tempo map</td>
+  </tr>
+  <tr>
+    <td>/klick/map/set_tempo_multiplier ,f &lt;mult&gt;</td>
+    <td>sets the tempo multiplier</td>
+  </tr>
+  <tr>
+    <td>/klick/map/query<br>
+    /klick/map/query ,s &lt;return_address&gt;</td>
+    <td>reports current state:<br>
+    /klick/map/filename ,s<br>
+    /klick/map/preroll ,i<br>
+    /klick/map/tempo_multiplier ,f</td>
+  </tr>
+
+  <tr>
+    <th colspan="2">JACK Transport Metronome</th>
+  </tr>
+  <tr>
+    <td>/klick/jack/query<br>
+    /klick/jack/query ,s &lt;return_address&gt;</td>
+    <td>currently does nothing</td>
+  </tr>
+</table>
+
+
+</html>

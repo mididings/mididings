@@ -1,0 +1,8 @@
+2014-09-16: pysmf 0.1.1
+
+  * Fix incompatibilities with Python 3 and recent Cython versions.
+  * Use setuptools if available (thanks to Chris Arndt).
+
+2011-12-15: pysmf 0.1.0
+
+  * Initial release.

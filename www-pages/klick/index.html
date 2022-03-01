@@ -1,0 +1,136 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>klick - an advanced metronome for JACK</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto&popout=0';
+
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+</head>
+
+<body>
+
+<div id="header">
+    <h1>
+        / <a href="/">das</a>
+        / <a href="/klick/"> klick </a>    </h1>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+    <ul><li><a href="/">Projects</a><ul><li><a href="/mididings/">mididings</a></li><li><a href="/klick/" class="current">klick</a></li><li><a href="/gtklick/">gtklick</a></li><li><a href="/jack_oscrolloscope/">jack_oscrolloscope</a></li><li><a href="/ecaplugin/">ecaplugin</a></li><li><a href="/pyliblo/">pyliblo</a></li><li><a href="/pysmf/">pysmf</a></li></ul></li><li><a href="/download/">All Downloads</a></li><li><a href="https://github.com/dsacre">GitHub</a></li></ul></div>
+
+<div id="main">
+
+
+<h2>About</h2>
+
+<p>
+    <img class="floaticon" src="/gtklick/icon.png" alt=""/>
+    <b>klick</b> is an advanced command-line based metronome for
+    <a href="http://jackaudio.org/">JACK</a>.
+    It allows you to define complex tempo maps for entire songs or performances.
+</p>
+<h3>Features:</h3>
+<ul>
+    <li>Support for tempo maps, including arbitrary meters, tempo changes,
+        accelerando/ritardando and more.</li>
+    <li>Four built-in sounds (borrowed from Ardour, GTick and FreePats),
+        plus ability to load your own samples.</li>
+    <li>JACK transport sync support (master/slave).</li>
+    <li>Exporting click tracks to audio files.</li>
+    <li>Many features can be controlled via OSC.</li>
+    <li>No GUI ;)</li>
+</ul>
+<p>
+    <a href="/gtklick/">gtklick</a> is a simple GUI metronome based on klick.
+</p>
+
+
+<h2>Download</h2>
+
+<p>
+    <a href="/download/klick-0.12.2.tar.gz">klick-0.12.2.tar.gz</a> (2009-09-13)
+</p>
+<p>
+    <a href="NEWS">Changelog</a>
+</p>
+
+
+<h2>Dependencies</h2>
+<ul>
+    <li><a href="http://jackaudio.org/">JACK Audio Connection Kit</a></li>
+    <li><a href="http://www.boost.org/">Boost</a> (headers only)</li>
+    <li><a href="http://www.mega-nerd.com/SRC/">libsamplerate</a></li>
+    <li><a href="http://www.mega-nerd.com/libsndfile/">libsndfile</a></li>
+</ul>
+
+<h3>Optional:</h3>
+<ul>
+    <li><a href="http://liblo.sourceforge.net/">liblo</a></li>
+    <li><a href="http://www.breakfastquay.com/rubberband/">Rubber Band</a></li>
+</ul>
+
+<h2>Installation</h2>
+
+<p>
+    In the klick source directory, run: <kbd>scons</kbd>,<br/>
+    and then, as root: <kbd>scons install</kbd>.
+</p>
+
+
+<h2>Documentation</h2>
+
+<p>
+    Run <kbd>klick -h</kbd> for a brief list of command line options.<br/>
+    For more detailed information, see the <a href="manual.html">Manual</a>.
+</p>
+
+
+<h2>Miscellaneous</h2>
+
+<p>
+    <a href="/download/klick2ardour.py">klick2ardour.py</a> is a Python script that reads
+    klick tempo maps and writes them to <a href="http://www.ardour.org/">Ardour</a> session files.
+    It does not create new Ardour sessions, but replaces all tempo/meter changes and position
+    markers in existing sessions.
+</p>
+<p>
+    Usage:<br/>
+    <kbd>python klick2ardour.py &lt;tempomap-file&gt; &lt;ardour-session-file&gt;</kbd>
+</p>
+<p>
+    The session should not be open in Ardour while running this script.
+    And don't try this on any valuable Ardour session without making a backup copy beforehand :)
+</p>
+
+
+</div>
+
+</div>
+
+<div id="footer">
+    Dominic Sacr&eacute;&nbsp;
+    &lt;<a href="mailto:dominic dot sacre at gmx dot de">dominic dot sacre at gmx dot de</a>&gt;
+</div>
+
+</body>
+
+</html>

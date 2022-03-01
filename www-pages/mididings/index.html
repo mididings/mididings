@@ -1,0 +1,201 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title>mididings - a MIDI router/processor based on Python</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <link rel="stylesheet" type="text/css" href="/style.css"/>
+
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto&popout=0';
+
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
+</head>
+
+<body>
+
+<div id="header">
+    <h1>
+        / <a href="/">das</a>
+        / <a href="/mididings/"> mididings </a>    </h1>
+</div>
+
+<div id="wrap">
+
+<div id="nav">
+    <ul><li><a href="/">Projects</a><ul><li><a href="/mididings/" class="current">mididings</a></li><li><a href="/klick/">klick</a></li><li><a href="/gtklick/">gtklick</a></li><li><a href="/jack_oscrolloscope/">jack_oscrolloscope</a></li><li><a href="/ecaplugin/">ecaplugin</a></li><li><a href="/pyliblo/">pyliblo</a></li><li><a href="/pysmf/">pysmf</a></li></ul></li><li><a href="/download/">All Downloads</a></li><li><a href="https://github.com/dsacre">GitHub</a></li></ul></div>
+
+<div id="main">
+
+
+<h2>About</h2>
+
+<p>
+    <img class="floaticon" src="icon.png" alt=""/>
+    <b>mididings</b> is a MIDI router and processor based on <a href="http://www.python.org/">Python</a>,
+    supporting <a href="http://www.alsa-project.org/">ALSA</a> and <a href="http://jackaudio.org/">JACK</a> MIDI.
+    It is available under the GNU GPL and currently runs on Linux.
+</p>
+
+<h3>Features:</h3>
+<ul>
+    <li>
+        <b>MIDI routing and filtering</b>
+        <p>
+            Filter events depending on their event type, channel, note number, velocity, etc.,
+            and freely route them between an arbitrary number of input and output ports.
+        </p>
+    </li>
+    <li>
+        <b>Modifying and converting MIDI events</b>
+        <p>
+            Transpose notes, apply velocity curves, change controller values and ranges, or convert events
+            to any other MIDI event type.
+            mididings also includes more complex functions like a diatonic harmonizer, floating split points,
+            latched notes, and more.
+        </p>
+    </li>
+    <li>
+        <b>Seamless switching between patches</b>
+        <p>
+            Set up different "scenes", each with its own MIDI routing and processing, and switch between them
+            at any time, even while playing. Switching scenes does not affect notes already held, and does not
+            result in dropouts or stuck notes!
+        </p>
+    </li>
+    <li>
+        <b>MIDI event monitoring, running external commands</b>
+        <p>
+            Print MIDI event data to the console to help debugging your patches and configuring your MIDI
+            controllers.
+            In addition to its MIDI output, mididings can also execute shell commands and send OSC or DBUS
+            messages.
+        </p>
+    </li>
+</ul>
+
+
+<h2>Screenshots</h2>
+
+<div class="screenshot_desc">
+    <a href="screenshot_mididings.png"><img src="screenshot_mididings_thumb.png" alt="screenshot_mididings.png"/></a>
+    <p>A mididings script running in a terminal, while being edited in vim.
+    Also shown is QjackCtl's patchbay, used to automatically connect MIDI ports when mididings is started.</p>
+</div>
+
+<div class="screenshot_desc">
+    <a href="screenshot_livedings.png"><img src="screenshot_livedings_thumb.png" alt="screenshot_livedings.png"/></a>
+    <p>The livedings GUI, a simple frontend for mididings to monitor and trigger scene changes.</p>
+</div>
+
+
+<h2>Download</h2>
+
+<h3>Development Version:</h3>
+<p>
+    mididings is now available in a
+    <a href="https://github.com/dsacre/mididings">repository at GitHub</a>.
+</p>
+
+<h3>Stable Release:</h3>
+<p>
+    <a class="download" href="/download/mididings-20120419.tar.gz">mididings-20120419.tar.gz</a>
+</p>
+<p>
+    <a href="NEWS">Changelog</a>
+</p>
+
+
+<h2>Documentation</h2>
+
+<p>
+    <a href="http://dsacre.github.io/mididings/doc/">mididings Manual</a> (development version, work in progress)
+</p>
+<p>
+    <a href="doc/index.html">mididings Manual</a> (old, stable version)
+</p>
+<p>
+Some links that might also be of interest:
+</p>
+<ul>
+    <li><a href="http://www.rncbc.org/drupal/node/76">QjackCtl and the Patchbay</a></li>
+    <li><a href="http://docs.python.org/tutorial/">The Python Tutorial</a></li>
+    <li><a href="http://www.somascape.org/midi/tech/spec.html">MIDI Specification</a></li>
+</ul>
+
+
+<h2>Support</h2>
+
+<p>
+    There is a <a href="http://groups.google.com/group/mididings">mailing list</a> at Google Groups
+    for any discussion concerning mididings, including help requests and bug reports.
+</p>
+<p>
+    To post to the list, send mail to <a href="mailto:mididings@googlegroups.com">mididings@googlegroups.com</a>.
+    You can subscribe by entering your email address here:
+</p>
+
+<form action="http://groups.google.com/group/mididings/boxsubscribe">
+<p>
+    <input type="text" name="email" size="32"/>
+    <input type="submit" name="sub" value="Subscribe"/>
+</p>
+</form>
+
+
+<h2>Dependencies</h2>
+<ul>
+    <li><a href="http://www.python.org/">Python</a> &ge; 2.5 (also works with 3.x)</li>
+    <li><a href="http://www.alsa-project.org/">ALSA</a></li>
+    <li><a href="http://jackaudio.org/">JACK</a> &ge; 0.116.0</li>
+    <li><a href="http://www.boost.org/">Boost</a> &ge; 1.34.1
+        (<a href="http://www.boost.org/libs/python/doc/">Boost.Python</a>,
+        <a href="http://www.boost.org/doc/html/thread.html">Boost.Thread</a>)</li>
+    <li><a href="http://library.gnome.org/devel/glib/">Glib</a></li>
+    <li><a href="http://pypi.python.org/pypi/decorator">decorator</a></li>
+</ul>
+
+<h3>Optional:</h3>
+<ul>
+    <li><a href="http://das.nasophon.de/pyliblo/">pyliblo</a>
+        (to send or receive OSC messages)</li>
+    <li><a href="http://dbus.freedesktop.org/releases/dbus-python/">dbus-python</a>
+        (to send DBUS messages)</li>
+    <li><a href="http://trac.dbzteam.org/pyinotify">pyinotify</a> &ge; 0.8
+        (to automatically restart when a script changes)</li>
+    <li>Tkinter (for the livedings GUI)</li>
+    <li><a href="http://sourceforge.net/projects/libsmf/">libsmf</a>
+        (to read/write standard MIDI files using the process_file() function)</li>
+</ul>
+
+<h2>Installation</h2>
+<p>
+    <kbd>./setup.py build [--disable-jack-midi] [--disable-alsa-seq] [--enable-smf]<br/>
+    ./setup.py install</kbd>
+</p>
+
+
+</div>
+
+</div>
+
+<div id="footer">
+    Dominic Sacr&eacute;&nbsp;
+    &lt;<a href="mailto:dominic dot sacre at gmx dot de">dominic dot sacre at gmx dot de</a>&gt;
+</div>
+
+</body>
+
+</html>
