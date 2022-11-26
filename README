@@ -13,6 +13,10 @@ excellent practical documentation, has also been mirrored into the
 'www-pages' folder, since the author has not been heard from in 
 quite some time.
 
+2022-11-26: The fork of ponderworthy was remerged into this repository.
+The folder 'www-pages' is replaced by 'html-doc', which contains only the 
+specific documentation for mididings.
+
 License:
 ========
 
