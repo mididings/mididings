@@ -29,7 +29,8 @@ autodoc_default_flags = ['members', 'undoc-members']
 
 from sphinx.ext.autodoc import py_ext_sig_re
 from sphinx.util.docstrings import prepare_docstring
-from sphinx.domains.python import PyModulelevel
+#from sphinx.domains.python import PyModulelevel
+from sphinx.domains.python import PyFunction
 from sphinx import addnodes
 import re
 
@@ -63,7 +64,7 @@ def process_signature(app, what, name, obj,
     return (signature, return_annotation)
 
 
-class DingsFunction(PyModulelevel):
+class DingsFunction(PyFunction):
     """
     Stripped-down version of the 'function::' directive that accepts an
     additional argument in angle brackets, used to specify the node's
@@ -85,7 +86,7 @@ class DingsFunction(PyModulelevel):
 
             return name, None
         else:
-            return super(PyModulelevel, self).handle_signature(sig, signode)
+            return super(PyFunction, self).handle_signature(sig, signode)
 
 
 def setup(app):

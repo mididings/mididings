@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Module mididings.event &#8212; mididings  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nasophon.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module mididings.engine" href="engine.html" />
+    <link rel="prev" title="Module mididings.extra" href="extra.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="engine.html" title="Module mididings.engine"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="extra.html" title="Module mididings.extra"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-mididings.event"></span><section id="module-mididings-event">
+<span id="event"></span><h1>Module <a class="reference internal" href="#module-mididings.event" title="mididings.event"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a><a class="headerlink" href="#module-mididings-event" title="Permalink to this heading">¶</a></h1>
+<p>This module defines classes and functions for dealing with MIDI events in
+Python code, e.g. when using <code class="xref py py-func docutils literal notranslate"><span class="pre">Process()</span></code> or <code class="xref py py-func docutils literal notranslate"><span class="pre">Call()</span></code>.</p>
+<p>Several utility functions are defined to simplify the creation of
+event objects. Each of these functions returns a newly created object of
+type <code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code>:</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="start.html">Getting Started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="start.html#anatomy-of-a-mididings-script">Anatomy of a mididings Script</a></li>
+<li class="toctree-l2"><a class="reference internal" href="start.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="connect.html">Connections</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Chain"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Fork"><code class="docutils literal notranslate"><span class="pre">Fork</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Unit.add"><code class="docutils literal notranslate"><span class="pre">Unit.add</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.invert"><code class="docutils literal notranslate"><span class="pre">Filter.invert</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.negate"><code class="docutils literal notranslate"><span class="pre">Filter.negate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Split"><code class="docutils literal notranslate"><span class="pre">Split</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Selector.apply"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#id0"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.AndSelector"><code class="docutils literal notranslate"><span class="pre">AndSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.And"><code class="docutils literal notranslate"><span class="pre">And</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.OrSelector"><code class="docutils literal notranslate"><span class="pre">OrSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Or"><code class="docutils literal notranslate"><span class="pre">Or</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#event-types">Event Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#event-attributes">Event Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#note-names-and-ranges">Note Names and Ranges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#port-names">Port Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#mididings-and-python">mididings and Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#global-configuration">Global Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#filters">Filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#splits">Splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#modifiers">Modifiers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#generators">Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#function-calls">Function Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#scene-switching">Scene Switching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#miscellaneous">Miscellaneous</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra-units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#voicing">Voicing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#splits">Splits</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#utilities">Utilities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#messaging">Messaging</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extra.html#hooks">Hooks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="extra.html#general-midi">General MIDI</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.engine</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.util</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools and GUI</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#mididings"><strong class="command">mididings</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#livedings"><strong class="command">livedings</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#send-midi"><strong class="command">send_midi</strong></a></li>
+</ul>
+</li>
+</ul>
+
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="extra.html"
+                          title="previous chapter">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="engine.html"
+                          title="next chapter">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.engine</span></code></a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="engine.html" title="Module mididings.engine"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="extra.html" title="Module mididings.extra"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2014, Dominic Sacré.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>
