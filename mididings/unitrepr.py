@@ -14,7 +14,6 @@ from mididings import overload
 from mididings import arguments
 from mididings import misc
 
-import inspect
 import sys
 
 import decorator
@@ -59,8 +58,8 @@ def unit_to_string(unit):
         for a in unit._args
     ]
 
-    # (ab)use inspect module to format the arguments used
-    formatted = inspect.formatargspec(args=argnames, defaults=args)
+    # (ab)use misc.formatargspec module to format the arguments used
+    formatted = misc.formatargspec(args=argnames, defaults=args)
     return unit._name + formatted
 
 
@@ -72,7 +71,7 @@ def fork_to_string(fork):
     if fork.remove_duplicates is not None:
         args = ('units', 'remove_duplicates')
         defaults = (list(fork), fork.remove_duplicates)
-        formatted = inspect.formatargspec(args, defaults=defaults)
+        formatted = misc.formatargspec(args, defaults=defaults)
         return 'Fork' + formatted
     else:
         return list.__repr__(fork)

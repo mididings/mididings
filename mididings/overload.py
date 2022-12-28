@@ -48,7 +48,7 @@ def call(args, kwargs, funcs, name=None):
         name = inspect.stack()[1][3]
 
     # format arg spec for each candidate
-    formatargspec = lambda f: inspect.formatargspec(*misc.getargspec(f))
+    formatargspec = lambda f: misc.formatargspec(*misc.getargspec(f))
     candidates = ('    %s%s' % (name, formatargspec(f)) for f in funcs)
 
     # formatargspec() doesn't seem to care that the first argument mixes
@@ -56,7 +56,7 @@ def call(args, kwargs, funcs, name=None):
     argx = ['*'] * len(args)
     kwargx = ['*'] * len(kwargs)
     formatvalue = lambda v: '=%s' % v
-    args_used = inspect.formatargspec(argx + list(kwargs.keys()),
+    args_used = misc.formatargspec(argx + list(kwargs.keys()),
                                       defaults=kwargx, formatvalue=formatvalue)
 
     message = ("no suitable overload found for %s%s, candidates are:\n%s" %

@@ -71,7 +71,7 @@ class accept(object):
             evaldict['_call_'] = self.wrapper
             evaldict['_func_'] = f
             return decorator.FunctionMaker.create(
-                '%s%s' % (f.__name__, inspect.formatargspec(*signature)),
+                '%s%s' % (f.__name__, misc.formatargspec(*signature)),
                 'return _call_(_func_, %(shortsignature)s)',
                 evaldict, undecorated=f, __wrapped__=f, doc=f.__doc__)
         else:
