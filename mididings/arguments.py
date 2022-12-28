@@ -64,7 +64,7 @@ class accept(object):
         if self.add_varargs:
             # add varargs to the signature and use decorator.FunctionMaker
             # directly to create the decorated function
-            orig_signature = inspect.getargspec(f)
+            orig_signature = inspect.getfullargspec(f)
             assert orig_signature.varargs is None
             signature = orig_signature._replace(varargs='args')
             evaldict = self.wrapper.__globals__.copy()

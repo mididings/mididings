@@ -84,11 +84,11 @@ def _call_partial(function, args, kwargs, require_event=False):
     is False.
     """
     try:
-        argspec = _inspect.getargspec(function)
+        argspec = _inspect.getfullargspec(function)
         ismethod = _inspect.ismethod(function)
     except TypeError:
         # support callable objects
-        argspec = _inspect.getargspec(function.__call__)
+        argspec = _inspect.getfullargspec(function.__call__)
         ismethod = _inspect.ismethod(function.__call__)
 
     if (not require_event and argspec[1] == None
