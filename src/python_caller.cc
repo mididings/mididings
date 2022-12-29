@@ -14,7 +14,7 @@
 #include "patch.hh"
 
 #include <boost/version.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include <boost/thread/mutex.hpp>
 
@@ -26,6 +26,8 @@
 
 #include "util/python.hh"
 #include "util/debug.hh"
+
+using namespace boost::placeholders;
 
 namespace bp = boost::python;
 

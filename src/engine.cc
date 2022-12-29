@@ -17,7 +17,7 @@
 #include "units/engine.hh"
 
 #include <boost/thread/thread.hpp>
-#include <boost/bind.hpp>
+#include <boost/bind/bind.hpp>
 
 #include <iostream>
 #include <algorithm>
@@ -27,6 +27,7 @@
 
 #include "util/debug.hh"
 
+using namespace boost::placeholders;
 
 namespace mididings {
 
