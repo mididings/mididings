@@ -160,7 +160,11 @@ BOOST_PYTHON_MODULE(_mididings)
     using boost::noncopyable;
     using namespace units;
 
+#if PY_MAJOR_VERSION == 3 && PY_MINOR_VERSION >= 7
+    Py_Initialize();
+#else
     PyEval_InitThreads();
+#endif
 
 #ifdef VERSION
     bp::scope().attr("__version__") = STRINGIFY(VERSION);
