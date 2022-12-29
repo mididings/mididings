@@ -392,10 +392,6 @@ bool Engine::sanitize_event(MidiEvent & ev) const
                 return false;
             }
             ev.note.velocity = std::max(0, std::min(127, ev.note.velocity));
-
-            if (ev.type == MIDI_EVENT_NOTEON && ev.note.velocity < 1) {
-                return false;
-            }
             return true;
         case MIDI_EVENT_CTRL:
             if (ev.ctrl.param < 0 || ev.ctrl.param > 127) {
