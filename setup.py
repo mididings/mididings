@@ -13,11 +13,7 @@ try:
 except ImportError:
     from distutils.core import setup, Extension
 
-version = '2.0.0'
-
-status, output = getstatusoutput('git rev-parse --short HEAD')
-if not status:
-    version = '%s+r%s' % (version, output)
+version = '20221230'
 
 config = {
     'alsa-seq':     (platform.system() == 'Linux'),
@@ -147,8 +143,10 @@ setup(
     version = version,
     author = 'Dominic Sacre',
     author_email = 'dominic.sacre@gmx.de',
-    url = 'http://das.nasophon.de/mididings/',
-    description = 'a MIDI router/processor',
+    maintainer = 'George Rawlinson',
+    maintainer_email = 'george@rawlinson.net.nz',
+    url = 'https://github.com/mididings/mididings',
+    description = 'A MIDI router/processor',
     license = 'GPL',
     ext_modules = [
         Extension(
