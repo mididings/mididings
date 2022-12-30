@@ -4,8 +4,8 @@
 import os
 import platform
 import sys
+import sysconfig
 
-from distutils import sysconfig
 from subprocess import getstatusoutput
 
 try:
@@ -25,29 +25,8 @@ include_dirs = []
 libraries = []
 library_dirs = []
 define_macros = []
-extra_compile_args = []
 
 define_macros.append(('VERSION', '%s' % version))
-
-# hack to modify the compiler flags from the distutils default
-distutils_customize_compiler = sysconfig.customize_compiler
-
-def my_customize_compiler(compiler):
-    retval = distutils_customize_compiler(compiler)
-
-    if not config['debug']:
-        # the -g flag might occur many times in python's compiler flags
-        compiler.compiler_so = [x for x in compiler.compiler_so if x != "-g"]
-
-    # immediately stop on error
-    compiler.compiler_so.append('-Wfatal-errors')
-    # some options to reduce the size of the binary
-    compiler.compiler_so.append('-fvisibility=hidden')
-    compiler.compiler_so.append('-fvisibility-inlines-hidden')
-    return retval
-
-sysconfig.customize_compiler = my_customize_compiler
-
 
 def pkgconfig(name):
     """
@@ -156,7 +135,6 @@ setup(
             library_dirs = library_dirs,
             libraries = libraries,
             define_macros = define_macros,
-            extra_compile_args = extra_compile_args,
         ),
     ],
     packages = [
