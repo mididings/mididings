@@ -21,10 +21,7 @@ import mididings.misc as _misc
 from mididings.setup import get_config as _get_config
 
 import sys as _sys
-if _sys.version_info >= (3,):
-    import _thread
-else:
-    import thread as _thread
+import _thread
 import subprocess as _subprocess
 import types as _types
 import copy as _copy

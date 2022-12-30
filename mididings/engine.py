@@ -31,10 +31,6 @@ import atexit as _atexit
 import os as _os
 import sys as _sys
 
-if _sys.version_info >= (3,):
-    raw_input = input
-
-
 _TheBackend = None
 _TheEngine = None
 
@@ -138,7 +134,7 @@ class Engine(_mididings.Engine):
             if delay > 0:
                 _time.sleep(delay)
             else:
-                raw_input("press enter to start midi processing...")
+                input("press enter to start midi processing...")
 
     def _parse_scene_number(self, number):
         if number in self._scenes:

@@ -11,14 +11,10 @@
 #
 
 import sys
-
-if sys.version_info < (3,):
-    import Tkinter
-else:
-    import tkinter as Tkinter
+import tkinter
 
 
-class AutoScrollbar(Tkinter.Scrollbar):
+class AutoScrollbar(tkinter.Scrollbar):
     def set_show_hide(self, show, hide):
         self._show = show
         self._hide = hide
@@ -28,7 +24,7 @@ class AutoScrollbar(Tkinter.Scrollbar):
             self._hide()
         else:
             self._show()
-        Tkinter.Scrollbar.set(self, lo, hi)
+        tkinter.Scrollbar.set(self, lo, hi)
 
 
 class LiveThemedFactory(object):
@@ -38,13 +34,13 @@ class LiveThemedFactory(object):
         self.color_background = color_background
 
     def Tk(self, **options):
-        w = Tkinter.Tk()
+        w = tkinter.Tk()
         w.config(background=self.color_background)
         w.config(**options)
         return w
 
     def Frame(self, master, **options):
-        w = Tkinter.Frame(master)
+        w = tkinter.Frame(master)
         w.config(background=self.color)
         w.config(**options)
         return w
@@ -63,7 +59,7 @@ class LiveThemedFactory(object):
         return w
 
     def Listbox(self, master, **options):
-        w = Tkinter.Listbox(master)
+        w = tkinter.Listbox(master)
         w.config(
             background=self.color_background,
             foreground=self.color,
@@ -76,7 +72,7 @@ class LiveThemedFactory(object):
         return w
 
     def Button(self, master, **options):
-        w = Tkinter.Button(master)
+        w = tkinter.Button(master)
         w.config(
             background=self.color_background,
             foreground=self.color,
@@ -90,28 +86,28 @@ class LiveThemedFactory(object):
         return w
 
     def Canvas(self, master, **options):
-        w = Tkinter.Canvas(master)
+        w = tkinter.Canvas(master)
         w.config(background=self.color_background)
         w.config(**options)
         return w
 
 class UnthemedFactory(object):
     def Tk(self, **options):
-        w = Tkinter.Tk()
+        w = tkinter.Tk()
         w.config(**options)
         return w
 
     def Frame(self, master, **options):
-        return Tkinter.Frame(master, **options)
+        return tkinter.Frame(master, **options)
 
     def AutoScrollbar(self, master, **options):
         return AutoScrollbar(master, **options)
 
     def Listbox(self, master, **options):
-        return Tkinter.Listbox(master, **options)
+        return tkinter.Listbox(master, **options)
 
     def Button(self, master, **options):
-        return Tkinter.Button(master, **options)
+        return tkinter.Button(master, **options)
 
     def Canvas(self, master, **options):
-        return Tkinter.Canvas(master, **options)
+        return tkinter.Canvas(master, **options)

@@ -6,17 +6,12 @@ import platform
 import sys
 
 from distutils import sysconfig
+from subprocess import getstatusoutput
 
 try:
     from setuptools import setup, Extension
 except ImportError:
     from distutils.core import setup, Extension
-
-if sys.version_info >= (3,):
-    from subprocess import getstatusoutput
-else:
-    from commands import getstatusoutput
-
 
 version = '2.0.0'
 

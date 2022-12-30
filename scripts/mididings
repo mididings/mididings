@@ -91,11 +91,8 @@ class Dings(object):
         return [(None, c) for c in connections]
 
     def exec_dings(self, filename):
-        if sys.version_info >= (3,):
-            exec(compile(open(filename).read(), filename, 'exec'),
+        exec(compile(open(filename).read(), filename, 'exec'),
                  self.dings_dict)
-        else:
-            execfile(filename, self.dings_dict)
 
     def run_file(self, filename):
         # add filename's directory to sys.path to allow import from the same
