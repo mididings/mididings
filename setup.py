@@ -7,11 +7,7 @@ import sys
 import sysconfig
 
 from subprocess import getstatusoutput
-
-try:
-    from setuptools import setup, Extension
-except ImportError:
-    from distutils.core import setup, Extension
+from setuptools import setup, Extension
 
 version = '20221230'
 
