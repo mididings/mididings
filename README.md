@@ -1,6 +1,35 @@
 # mididings
 
-A MIDI router/processor based on Python.
+A MIDI router/processor based on Python, supporting ALSA and JACK MIDI.
+It is available under the GNU GPL and currently runs on Linux.
+
+## Features
+
+* MIDI routing and filtering
+
+Filter events depending on their event type, channel, note number, velocity,
+etc., and freely route them between an arbitrary number of input and output
+ports.
+
+* Modifying and converting MIDI events
+
+Transpose notes, apply velocity curves, change controller values and ranges,
+or convert events to any other MIDI event type. mididings also includes more
+complex functions like a diatonic harmonizer, floating split points, latched
+notes, and more.
+
+* Seamless switching between patches
+
+Set up different "scenes", each with its own MIDI routing and processing,
+and switch between them at any time, even while playing. Switching scenes
+does not affect notes already held, and does not result in dropouts or stuck
+notes!
+
+* MIDI event monitoring, running external commands
+
+Print MIDI event data to the console to help debugging your patches and
+configuring your MIDI controllers. In addition to its MIDI output, mididings
+can also execute shell commands and send OSC or DBUS messages.
 
 ## Installation
 
