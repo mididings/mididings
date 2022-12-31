@@ -12,7 +12,7 @@
 #
 
 import sys
-import optparse
+import argparse
 import _mididings
 
 
@@ -62,34 +62,63 @@ def parse_event(string, data_offset):
 
 
 if __name__ == '__main__':
-    usage       = "Usage: send_midi [options] dest_port event [...]"
+    usage = "send_midi [options] dest_port event [...]"
     description = "Send one or more MIDI events via ALSA or JACK."
-    version     = "mididings %s" % _mididings.__version__
+    version = f"mididings {_mididings.__version__}"
 
-    parser = optparse.OptionParser(
-                    usage=usage, description=description, version=version)
+    parser = argparse.ArgumentParser(
+        description=description,
+        usage=usage,
+    )
 
-    parser.add_option('-A', '--alsa', dest='backend',
-                      action='store_const', const='alsa', default='alsa',
-                      help="use ALSA (default)")
-    parser.add_option('-J', '--jack', dest='backend',
-                      action='store_const', const='jack-rt',
-                      help="use JACK")
-    parser.add_option('-0', '--zero-based', dest='data_offset',
-                      action='store_const', const=0, default=1,
-                      help="channel and program numbers are zero-based")
+    group = parser.add_mutually_exclusive_group()
 
-    options, args = parser.parse_args()
+    group.add_argument(
+        '-A', '--alsa',
+        dest='backend',
+        action='store_const',
+        const='alsa',
+        default='alsa',
+        help='use ALSA (default)',
+    )
 
-    if len(args) < 2:
-        parser.print_usage()
-        sys.exit(1)
+    group.add_argument(
+        '-J', '--jack',
+        dest='backend',
+        action='store_const',
+        const='jack-rt',
+        help='use JACK',
+    )
+
+    parser.add_argument(
+        '-0', '--zero-based',
+        dest='data_offset',
+        action='store_const',
+        const=0,
+        default=1,
+        help='channel and program numbers are zero-based',
+    )
+
+    parser.add_argument(
+        'dest_port',
+        help='port to send events to',
+    )
+
+    parser.add_argument(
+        'events',
+        nargs=argparse.REMAINDER,
+        help='events to send to destination port',
+    )
+
+    parser.add_argument('--version', action='version', version=version)
+
+
+    args = parser.parse_args()
 
     try:
-        dest_port = args[0]
         # parse all events
-        events = [parse_event(arg, options.data_offset) for arg in args[1:]]
+        events = [parse_event(arg, args.data_offset) for arg in args.events]
         # send all events to the given destination port
-        _mididings.send_midi(options.backend, dest_port, events)
+        _mididings.send_midi(args.backend, args.dest_port, events)
     except Exception as ex:
-        sys.exit("send_midi: error: %s" % ex)
+        sys.exit(f"send_midi: error: {ex}")
