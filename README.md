@@ -49,6 +49,13 @@ pacman -Syu mididings
 Documentation is currently being worked on, the original
 [homepage][original-home] & [documentation][original-docs] are valuable resources.
 
+## Support
+
+There is a [mailing list][mailing-list] at Google Groups for any discussion
+concerning mididings, including help requests and bug reports.
+
+To post to the list, send mail to <mididings@googlegroups.com>.
+
 ## License
 
 mididings is available under the terms of the
@@ -73,5 +80,6 @@ The example scripts in `doc/examples` are available under the terms of the
 [pyinotify]: https://github.com/seb-m/pyinotify
 [tkinter]: https://docs.python.org/3/library/tkinter.html
 [pyxdg]: https://freedesktop.org/wiki/Software/pyxdg/
+[mailing-list]: https://groups.google.com/g/mididings
 [spdx-gpl2]: https://spdx.org/licenses/GPL-2.0-or-later.html
 [spdx-gfdl]: https://spdx.org/licenses/GFDL-1.3-or-later.html
