@@ -22,16 +22,16 @@ libraries = []
 library_dirs = []
 define_macros = []
 
-define_macros.append(('VERSION', '%s' % version))
+define_macros.append(('VERSION', f"{version}"))
 
 def pkgconfig(name):
     """
     Run pkg-config for the given package, and add the required flags to our
     list of build arguments.
     """
-    status, output = getstatusoutput('pkg-config --libs --cflags %s' % name)
+    status, output = getstatusoutput(f"pkg-config --libs --cflags {name}")
     if status:
-        sys.exit("couldn't find package '%s'" % name)
+        sys.exit(f"couldn't find package '{name}'")
     for token in output.split():
         opt, val = token[:2], token[2:]
         if opt == '-I':
@@ -76,7 +76,7 @@ def boost_lib_name(name, add_suffixes=[]):
     for suffix in add_suffixes + ['', '-mt']:
         for libdir in libdirs:
             for ext in ['so'] + ['dylib'] * (sys.platform == 'darwin'):
-                libname = 'lib%s%s.%s' % (name, suffix, ext)
+                libname = f"lib{name}{suffix}.{ext}" 
                 if os.path.isfile(os.path.join(libdir, libname)):
                     return name + suffix
     return name
@@ -93,8 +93,7 @@ sources = [
 
 include_dirs.append('src')
 
-boost_python_suffixes = ['%d%d' % sys.version_info[:2]]
-libraries.append(boost_lib_name('boost_python', boost_python_suffixes))
+libraries.append(boost_lib_name('boost_python', [f"{sys.version_info[0]}{sys.version_info[1]}"]))
 libraries.append(boost_lib_name('boost_thread'))
 
 library_dirs.extend(library_path_dirs())
