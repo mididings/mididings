@@ -60,6 +60,7 @@ The example scripts in `doc/examples` are available under the terms of the
 [pkg-pypi]: https://pypi.org/project/mididings/
 [pkg-arch]: https://archlinux.org/packages/community/x86_64/mididings/
 [original-home]: https://das.nasophon.de/mididings/
+[original-docs]: https://dsacre.github.io/mididings/doc/
 [python]: https://www.python.org
 [alsa]: https://www.alsa-project.org/wiki/Main_Page
 [jack]: https://jackaudio.org
