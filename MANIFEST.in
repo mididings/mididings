@@ -1,23 +1,23 @@
-include setup.py
-include README
+# build
+include pyproject.toml setup.py MANIFEST.in
+
+# documentation
+include README.md COPYING NEWS
 include COPYING
 include NEWS
-include mididings/*.py
-include mididings/units/*.py
-include mididings/extra/*.py
-include mididings/live/*.py
-include src/SConstruct
-include src/*.hh
-include src/*.cc
-include src/units/*.hh
-include src/backend/*.hh
-include src/backend/*.cc
-include src/util/*.hh
-include tests/*.py
-include tests/units/*.py
-include scripts/mididings
-include scripts/livedings
-include doc/*.html
-include doc/*.png
-include doc/style.css
-include doc/examples/*.py
+graft doc
+
+# source
+recursive-include mididings *.py
+
+# extension source
+recursive-include src SConstruct *.hh *.cc
+
+# tests
+recursive-include tests *.py
+
+# CLI scripts
+graft scripts
+
+# exclude all VCS/CI files/directories
+exclude .gitignore
