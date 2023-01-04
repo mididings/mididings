@@ -2,10 +2,13 @@
 include pyproject.toml setup.py MANIFEST.in
 
 # documentation
-include README.md COPYING NEWS
-include COPYING
-include NEWS
+include README.md NEWS
 graft doc
+
+# licenses / reuse
+include LICENSE.md
+recursive-include LICENSES *.txt
+include .reuse/dep5
 
 # source
 recursive-include mididings *.py
