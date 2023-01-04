@@ -44,6 +44,13 @@ mididings is available as [`mididings`][pkg-pypi] on PyPi:
 pip install mididings
 ```
 
+Optional dependencies can be installed, see next section
+(Dependencies/Optional)for a list of optional dependencies.
+
+```sh
+pip install mididings[osc,smf,dbus,autorestart,xdg]
+```
+
 ### Arch Linux
 
 For Arch Linux users, mididings is available as [`mididings`][pkg-arch] on the
