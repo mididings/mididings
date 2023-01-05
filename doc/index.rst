@@ -4,10 +4,10 @@ mididings Manual
 
 mididings is a MIDI router and processor, supporting ALSA and JACK MIDI.
 
-Homepage: http://das.nasophon.de/mididings/
+Homepage: https://github.com/mididings/mididings
 
 The latest version of this manual can be found at
-http://dsacre.github.io/mididings/doc/.
+https://mididings.github.io/mididings/.
 
 
 Contents:

@@ -31,4 +31,4 @@ test = ["pytest",]
 
 [project.urls]
 homepage = "https://github.com/mididings/mididings"
-documentation = "https://dsacre.github.io/mididings/doc/index.html"
+documentation = "https://mididings.github.io/mididings/"
