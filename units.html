@@ -1,34 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>mididings Units &#8212; mididings  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nasophon.css" />
     
-    <title>mididings Units &mdash; mididings  documentation</title>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     
-    <link rel="stylesheet" href="_static/nasophon.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="mididings  documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="mididings.extra Units" href="extra-units.html" />
     <link rel="prev" title="Module mididings" href="main.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,137 +34,160 @@
         <li class="right" >
           <a href="main.html" title="Module mididings"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="mididings-units">
-<span id="units"></span><h1><a class="reference internal" href="main.html#module-mididings" title="mididings"><tt class="xref py py-mod docutils literal"><span class="pre">mididings</span></tt></a> Units<a class="headerlink" href="#mididings-units" title="Permalink to this headline">¶</a></h1>
+  <section id="mididings-units">
+<span id="units"></span><h1><a class="reference internal" href="main.html#module-mididings" title="mididings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a> Units<a class="headerlink" href="#mididings-units" title="Permalink to this heading">¶</a></h1>
 <p>Units are the basic building blocks from which you can build your mididings
 patches.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">This document doesn&#8217;t describe what the documented functions do,
+<p class="admonition-title">Note</p>
+<p>This document doesn’t describe what the documented functions do,
 but rather what the objects they return do.
-For example, the <tt class="docutils literal"><span class="pre">Transpose()</span></tt> function does not actually
+For example, the <code class="docutils literal notranslate"><span class="pre">Transpose()</span></code> function does not actually
 transpose anything.
 It merely returns an object that, when inserted into a
 patch, will transpose incoming events.</p>
 </div>
-<div class="section" id="filters">
-<span id="units-filters"></span><h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt>
-<tt class="descname">Filter</tt><big>(</big><em>types</em>, <em>...</em><big>)</big></dt>
-<dd><p>Filter events by type, see <a class="reference internal" href="connect.html#mididings.Filter" title="mididings.Filter"><tt class="xref py py-func docutils literal"><span class="pre">here</span></tt></a>.</p>
+<section id="filters">
+<span id="units-filters"></span><h2>Filters<a class="headerlink" href="#filters" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Filter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">types</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Filter events by type, see <a class="reference internal" href="connect.html#mididings.Filter" title="mididings.Filter"><code class="xref py py-func docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.PortFilter">
-<tt class="descname">PortFilter</tt><big>(</big><em>ports</em>, <em>...</em><big>)</big><a class="headerlink" href="#mididings.PortFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.PortFilter">
+<span class="sig-name descname"><span class="pre">PortFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ports</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PortFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter events by port name or number. The <em>ports</em> argument can be a single
 port or a list of multiple ports.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.ChannelFilter">
-<tt class="descname">ChannelFilter</tt><big>(</big><em>channels</em>, <em>...</em><big>)</big><a class="headerlink" href="#mididings.ChannelFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.ChannelFilter">
+<span class="sig-name descname"><span class="pre">ChannelFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.ChannelFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter events by channel number. The <em>channels</em> argument can be a single
 channel number or a list of multiple channel numbers.
-System events (which don&#8217;t carry channel information) are discarded.</p>
+System events (which don’t carry channel information) are discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.KeyFilter">
-<tt class="descname">KeyFilter</tt><big>(</big><em>note_range</em><big>)</big><a class="headerlink" href="#mididings.KeyFilter" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">KeyFilter</tt><big>(</big><em>lower</em>, <em>upper</em><big>)</big></dt>
-<dt>
-<tt class="descname">KeyFilter</tt><big>(</big><em>lower=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">KeyFilter</tt><big>(</big><em>upper=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">KeyFilter</tt><big>(</big><em>notes=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.KeyFilter">
+<span class="sig-name descname"><span class="pre">KeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note_range</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.KeyFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.KeyFilterKeyFilter">
+<span class="sig-name descname"><span class="pre">KeyFilterKeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.KeyFilterKeyFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilterKeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilterKeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilterKeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeyFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Filter note events by key (note number or note range). All other events
 are let through.
 The last form expects its argument to be a list of individual note names
 or numbers.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># match a note range</span>
-<span class="n">KeyFilter</span><span class="p">(</span><span class="s">&#39;c1:a3&#39;</span><span class="p">)</span>
-<span class="c"># match anything above middle C (note number 60)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># match a note range</span>
+<span class="n">KeyFilter</span><span class="p">(</span><span class="s1">&#39;c1:a3&#39;</span><span class="p">)</span>
+<span class="c1"># match anything above middle C (note number 60)</span>
 <span class="n">KeyFilter</span><span class="p">(</span><span class="n">lower</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
-<span class="c"># match individual notes</span>
-<span class="n">KeyFilter</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="s">&#39;c5&#39;</span><span class="p">])</span>
+<span class="c1"># match individual notes</span>
+<span class="n">KeyFilter</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="p">[</span><span class="mi">60</span><span class="p">,</span> <span class="mi">61</span><span class="p">,</span> <span class="s1">&#39;c5&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.VelocityFilter">
-<tt class="descname">VelocityFilter</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#mididings.VelocityFilter" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">VelocityFilter</tt><big>(</big><em>lower=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocityFilter</tt><big>(</big><em>upper=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocityFilter</tt><big>(</big><em>lower</em>, <em>upper</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.VelocityFilter">
+<span class="sig-name descname"><span class="pre">VelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocityFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.VelocityFilterVelocityFilter">
+<span class="sig-name descname"><span class="pre">VelocityFilterVelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocityFilterVelocityFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityFilterVelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityFilterVelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Filter note-on events by velocity. All other events are let through.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlFilter">
-<tt class="descname">CtrlFilter</tt><big>(</big><em>ctrls</em>, <em>...</em><big>)</big><a class="headerlink" href="#mididings.CtrlFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlFilter">
+<span class="sig-name descname"><span class="pre">CtrlFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter control change events by controller number. The <em>ctrls</em> argument
 can be a single controller or a list of multiple controller numbers.
 All other events are discarded.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># remove all sustain pedal messages</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove all sustain pedal messages</span>
 <span class="o">~</span><span class="n">CtrlFilter</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlValueFilter">
-<tt class="descname">CtrlValueFilter</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#mididings.CtrlValueFilter" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">CtrlValueFilter</tt><big>(</big><em>lower=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">CtrlValueFilter</tt><big>(</big><em>upper=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">CtrlValueFilter</tt><big>(</big><em>lower</em>, <em>upper</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlValueFilter">
+<span class="sig-name descname"><span class="pre">CtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlValueFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.CtrlValueFilterCtrlValueFilter">
+<span class="sig-name descname"><span class="pre">CtrlValueFilterCtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlValueFilterCtrlValueFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueFilterCtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueFilterCtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">upper</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Filter control change events by controller value. All other events are
 discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.ProgramFilter">
-<tt class="descname">ProgramFilter</tt><big>(</big><em>programs</em>, <em>...</em><big>)</big><a class="headerlink" href="#mididings.ProgramFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.ProgramFilter">
+<span class="sig-name descname"><span class="pre">ProgramFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">programs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.ProgramFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter program change events by program number. The <em>programs</em> argument
 can be a single program number or a list of program numbers.
 All other events are discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.SysExFilter">
-<tt class="descname">SysExFilter</tt><big>(</big><em>sysex</em><big>)</big><a class="headerlink" href="#mididings.SysExFilter" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">SysExFilter</tt><big>(</big><em>manufacturer=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.SysExFilter">
+<span class="sig-name descname"><span class="pre">SysExFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sysex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysExFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.SysExFilterSysExFilter">
+<span class="sig-name descname"><span class="pre">SysExFilterSysExFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manufacturer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysExFilterSysExFilter" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SysExFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manufacturer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Filter system exclusive events by the data they contain, specified as a
 string or as a sequence of integers.
-If <em>sysex</em> does not end with <tt class="docutils literal"><span class="pre">F7</span></tt>, partial matches that start with the
+If <em>sysex</em> does not end with <code class="docutils literal notranslate"><span class="pre">F7</span></code>, partial matches that start with the
 given data bytes are accepted.</p>
 <p>Alternatively, a sysex manufacturer id can be specified, which may be
 either a string or a sequence of integers, with a length of one or three
 bytes.</p>
 <p>All non-sysex events are discarded.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># match SysEx messages starting with &#39;F0 07 15 42&#39;</span>
-<span class="n">SysExFilter</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\xf0\x07\x15\x42</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="c"># match SysEx messages for Yamaha devices</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># match SysEx messages starting with &#39;F0 07 15 42&#39;</span>
+<span class="n">SysExFilter</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xf0\x07\x15\x42</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># match SysEx messages for Yamaha devices</span>
 <span class="n">SysExFilter</span><span class="p">(</span><span class="n">manufacturer</span><span class="o">=</span><span class="mh">0x43</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -181,425 +195,480 @@ bytes.</p>
 
 <p>For filters which accept an arbitrary number of arguments, each argument may
 also be a list or tuple of values. The following filters are equivalent:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">PortFilter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PortFilter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
 <span class="n">PortFilter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">PortFilter</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="splits">
-<span id="units-splits"></span><h2>Splits<a class="headerlink" href="#splits" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt>
-<tt class="descname">Split</tt><big>(</big><em>mapping</em><big>)</big></dt>
-<dd><p>Split by event type, see <a class="reference internal" href="connect.html#mididings.Split" title="mididings.Split"><tt class="xref py py-func docutils literal"><span class="pre">here</span></tt></a>.</p>
+</section>
+<section id="splits">
+<span id="units-splits"></span><h2>Splits<a class="headerlink" href="#splits" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Split</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Split by event type, see <a class="reference internal" href="connect.html#mididings.Split" title="mididings.Split"><code class="xref py py-func docutils literal notranslate"><span class="pre">here</span></code></a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.PortSplit">
-<tt class="descname">PortSplit</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#mididings.PortSplit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.PortSplit">
+<span class="sig-name descname"><span class="pre">PortSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PortSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split events by input port, with <em>mapping</em> being a dictionary of the form
-<tt class="docutils literal"><span class="pre">{ports:&nbsp;patch,&nbsp;...}</span></tt>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">config</span><span class="p">(</span><span class="n">in_ports</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;keyboard&#39;</span><span class="p">,</span> <span class="s">&#39;piano&#39;</span><span class="p">,</span> <span class="s">&#39;footswitch&#39;</span><span class="p">],</span>
-       <span class="n">out_ports</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="s">&#39;sampler&#39;</span><span class="p">])</span>
+<code class="docutils literal notranslate"><span class="pre">{ports: patch, ...}</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">config</span><span class="p">(</span><span class="n">in_ports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;keyboard&#39;</span><span class="p">,</span> <span class="s1">&#39;piano&#39;</span><span class="p">,</span> <span class="s1">&#39;footswitch&#39;</span><span class="p">],</span>
+       <span class="n">out_ports</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="s1">&#39;sampler&#39;</span><span class="p">])</span>
 <span class="o">...</span>
 <span class="n">PortSplit</span><span class="p">({</span>
-    <span class="s">&#39;keyboard&#39;</span><span class="p">:</span>   <span class="n">Output</span><span class="p">(</span><span class="s">&#39;sampler&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
-    <span class="s">&#39;piano&#39;</span><span class="p">:</span>      <span class="n">Transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s">&#39;sampler&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
-    <span class="s">&#39;footswitch&#39;</span><span class="p">:</span> <span class="n">Output</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;keyboard&#39;</span><span class="p">:</span>   <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;sampler&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+    <span class="s1">&#39;piano&#39;</span><span class="p">:</span>      <span class="n">Transpose</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;sampler&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="s1">&#39;footswitch&#39;</span><span class="p">:</span> <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.ChannelSplit">
-<tt class="descname">ChannelSplit</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#mididings.ChannelSplit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.ChannelSplit">
+<span class="sig-name descname"><span class="pre">ChannelSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.ChannelSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split events by input channel, with <em>mapping</em> being a dictionary of
-the form <tt class="docutils literal"><span class="pre">{channels:&nbsp;patch,&nbsp;...}</span></tt>.</p>
+the form <code class="docutils literal notranslate"><span class="pre">{channels: patch, ...}</span></code>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.KeySplit">
-<tt class="descname">KeySplit</tt><big>(</big><em>threshold</em>, <em>patch_lower</em>, <em>patch_upper</em><big>)</big><a class="headerlink" href="#mididings.KeySplit" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">KeySplit</tt><big>(</big><em>mapping</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.KeySplit">
+<span class="sig-name descname"><span class="pre">KeySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_upper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.KeySplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.KeySplitKeySplit">
+<span class="sig-name descname"><span class="pre">KeySplitKeySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.KeySplitKeySplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">KeySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Split events by key. Non-note events are sent to all patches.</p>
 <p>The first version splits at a single threshold. The second version allows
 an arbitrary number of (possibly overlapping) note ranges, with <em>mapping</em>
-being a dictionary of the form <tt class="docutils literal"><span class="pre">{note_range:&nbsp;patch,&nbsp;...}</span></tt>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeySplit</span><span class="p">(</span><span class="s">&#39;c3&#39;</span><span class="p">,</span> <span class="n">Port</span><span class="p">(</span><span class="s">&#39;bass&#39;</span><span class="p">),</span> <span class="n">Port</span><span class="p">(</span><span class="s">&#39;piano&#39;</span><span class="p">))</span>
+being a dictionary of the form <code class="docutils literal notranslate"><span class="pre">{note_range: patch, ...}</span></code>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KeySplit</span><span class="p">(</span><span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="n">Port</span><span class="p">(</span><span class="s1">&#39;bass&#39;</span><span class="p">),</span> <span class="n">Port</span><span class="p">(</span><span class="s1">&#39;piano&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">KeySplit</span><span class="p">({</span>
-    <span class="s">&#39;:c3&#39;</span><span class="p">:</span>      <span class="n">Port</span><span class="p">(</span><span class="s">&#39;bass&#39;</span><span class="p">),</span>
-    <span class="s">&#39;c3:a#5&#39;</span><span class="p">:</span>   <span class="n">Port</span><span class="p">(</span><span class="s">&#39;piano&#39;</span><span class="p">),</span>
-    <span class="s">&#39;a#5:&#39;</span><span class="p">:</span>     <span class="n">Port</span><span class="p">(</span><span class="s">&#39;strings&#39;</span><span class="p">),</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">KeySplit</span><span class="p">({</span>
+    <span class="s1">&#39;:c3&#39;</span><span class="p">:</span>      <span class="n">Port</span><span class="p">(</span><span class="s1">&#39;bass&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;c3:a#5&#39;</span><span class="p">:</span>   <span class="n">Port</span><span class="p">(</span><span class="s1">&#39;piano&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;a#5:&#39;</span><span class="p">:</span>     <span class="n">Port</span><span class="p">(</span><span class="s1">&#39;strings&#39;</span><span class="p">),</span>
 <span class="p">})</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.VelocitySplit">
-<tt class="descname">VelocitySplit</tt><big>(</big><em>threshold</em>, <em>patch_lower</em>, <em>patch_upper</em><big>)</big><a class="headerlink" href="#mididings.VelocitySplit" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">VelocitySplit</tt><big>(</big><em>mapping</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.VelocitySplit">
+<span class="sig-name descname"><span class="pre">VelocitySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_upper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocitySplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.VelocitySplitVelocitySplit">
+<span class="sig-name descname"><span class="pre">VelocitySplitVelocitySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocitySplitVelocitySplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Split events by note-on velocity. Non-note events are sent to all patches.</p>
 <p>The first version splits at a single threshold. The second version allows
 an arbitrary number of (possibly overlapping) value ranges, with
-<em>mapping</em> being a dictionary of the form <tt class="docutils literal"><span class="pre">{(lower,&nbsp;upper):&nbsp;patch,&nbsp;...}</span></tt>.</p>
+<em>mapping</em> being a dictionary of the form <code class="docutils literal notranslate"><span class="pre">{(lower, upper): patch, ...}</span></code>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlSplit">
-<tt class="descname">CtrlSplit</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#mididings.CtrlSplit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlSplit">
+<span class="sig-name descname"><span class="pre">CtrlSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split events by controller number, with <em>mapping</em> being a dictionary of
-the form <tt class="docutils literal"><span class="pre">{ctrls:&nbsp;patch,&nbsp;...}</span></tt>.
+the form <code class="docutils literal notranslate"><span class="pre">{ctrls: patch, ...}</span></code>.
 Non-control-change events are discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlValueSplit">
-<tt class="descname">CtrlValueSplit</tt><big>(</big><em>threshold</em>, <em>patch_lower</em>, <em>patch_upper</em><big>)</big><a class="headerlink" href="#mididings.CtrlValueSplit" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">CtrlValueSplit</tt><big>(</big><em>mapping</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlValueSplit">
+<span class="sig-name descname"><span class="pre">CtrlValueSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_upper</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlValueSplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.CtrlValueSplitCtrlValueSplit">
+<span class="sig-name descname"><span class="pre">CtrlValueSplitCtrlValueSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlValueSplitCtrlValueSplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlValueSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Split events by controller value.</p>
 <p>The first version splits at a single threshold. The second version allows
 an arbitrary number of (possibly overlapping) value ranges, with <em>mapping</em>
-being a dictionary of the form <tt class="docutils literal"><span class="pre">{value:&nbsp;patch,&nbsp;...}</span></tt> or
-<tt class="docutils literal"><span class="pre">{(lower,&nbsp;upper):&nbsp;patch,&nbsp;...}</span></tt>.</p>
+being a dictionary of the form <code class="docutils literal notranslate"><span class="pre">{value: patch, ...}</span></code> or
+<code class="docutils literal notranslate"><span class="pre">{(lower, upper): patch, ...}</span></code>.</p>
 <p>Non-control-change events are discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.ProgramSplit">
-<tt class="descname">ProgramSplit</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#mididings.ProgramSplit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.ProgramSplit">
+<span class="sig-name descname"><span class="pre">ProgramSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.ProgramSplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Split events by program number, with <em>mapping</em> being a dictionary of the
-form <tt class="docutils literal"><span class="pre">{programs:&nbsp;patch,&nbsp;...}</span></tt>.
+form <code class="docutils literal notranslate"><span class="pre">{programs: patch, ...}</span></code>.
 Non-program-change events are discarded.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.SysExSplit">
-<tt class="descname">SysExSplit</tt><big>(</big><em>mapping</em><big>)</big><a class="headerlink" href="#mididings.SysExSplit" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">SysExSplit</tt><big>(</big><em>manufacturers=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.SysExSplit">
+<span class="sig-name descname"><span class="pre">SysExSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mapping</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysExSplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.SysExSplitSysExSplit">
+<span class="sig-name descname"><span class="pre">SysExSplitSysExSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manufacturers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysExSplitSysExSplit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SysExSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manufacturers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Split events by sysex data or manufacturer id, with <em>mapping</em> being a
-dictionary of the form <tt class="docutils literal"><span class="pre">{sysex:&nbsp;patch,&nbsp;...}</span></tt>, and <em>manufacturers</em> being
-a dictionary of the form <tt class="docutils literal"><span class="pre">{manufacturer:&nbsp;patch,&nbsp;...}</span></tt>
-(cf. <a class="reference internal" href="#mididings.SysExFilter" title="mididings.SysExFilter"><tt class="xref py py-func docutils literal"><span class="pre">SysExFilter()</span></tt></a>).</p>
+dictionary of the form <code class="docutils literal notranslate"><span class="pre">{sysex: patch, ...}</span></code>, and <em>manufacturers</em> being
+a dictionary of the form <code class="docutils literal notranslate"><span class="pre">{manufacturer: patch, ...}</span></code>
+(cf. <a class="reference internal" href="#mididings.SysExFilter" title="mididings.SysExFilter"><code class="xref py py-func docutils literal notranslate"><span class="pre">SysExFilter()</span></code></a>).</p>
 <p>Non-sysex events are discarded.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="modifiers">
-<span id="units-modifiers"></span><h2>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.Port">
-<tt class="descname">Port</tt><big>(</big><em>port</em><big>)</big><a class="headerlink" href="#mididings.Port" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the event&#8217;s port number.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># route to the second output port</span>
+</section>
+<section id="modifiers">
+<span id="units-modifiers"></span><h2>Modifiers<a class="headerlink" href="#modifiers" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Port">
+<span class="sig-name descname"><span class="pre">Port</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Port" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the event’s port number.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># route to the second output port</span>
 <span class="n">Port</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="c"># route to the port named &#39;synth&#39;</span>
-<span class="n">Port</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">)</span>
+<span class="c1"># route to the port named &#39;synth&#39;</span>
+<span class="n">Port</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Channel">
-<tt class="descname">Channel</tt><big>(</big><em>channel</em><big>)</big><a class="headerlink" href="#mididings.Channel" title="Permalink to this definition">¶</a></dt>
-<dd><p>Change the event&#8217;s channel number.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Channel">
+<span class="sig-name descname"><span class="pre">Channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the event’s channel number.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Transpose">
-<tt class="descname">Transpose</tt><big>(</big><em>offset</em><big>)</big><a class="headerlink" href="#mididings.Transpose" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Transpose</tt><big>(</big><em>octaves=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Transpose">
+<span class="sig-name descname"><span class="pre">Transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Transpose" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.TransposeTranspose">
+<span class="sig-name descname"><span class="pre">TransposeTranspose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">octaves</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.TransposeTranspose" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Transpose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">octaves</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Transpose note events by the given number of semitones or octaves.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Key">
-<tt class="descname">Key</tt><big>(</big><em>note</em><big>)</big><a class="headerlink" href="#mididings.Key" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Key">
+<span class="sig-name descname"><span class="pre">Key</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Key" title="Permalink to this definition">¶</a></dt>
 <dd><p>Change note events to a fixed note number.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Velocity">
-<tt class="descname">Velocity</tt><big>(</big><em>offset</em><big>)</big><a class="headerlink" href="#mididings.Velocity" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Velocity</tt><big>(</big><em>multiply=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">Velocity</tt><big>(</big><em>fixed=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">Velocity</tt><big>(</big><em>curve=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">Velocity</tt><big>(</big><em>gamma=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">Velocity</tt><big>(</big><em>multiply</em>, <em>offset</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Velocity">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Velocity" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.VelocityVelocity">
+<span class="sig-name descname"><span class="pre">VelocityVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocityVelocity" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityVelocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Velocity</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Change the velocity of note-on events:</p>
 <ul class="simple">
-<li><em>offset</em>: add the given value to the event&#8217;s velocity.</li>
-<li><em>multiply</em>: multiply the event&#8217;s velocity with the given value.</li>
-<li><em>fixed</em>: set the event&#8217;s velocity to a fixed value.</li>
-<li><em>curve</em>: apply an exponential function
-<tt class="docutils literal"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">127</span> <span class="pre">*</span> <span class="pre">(exp(p*x/127)-1)</span> <span class="pre">/</span> <span class="pre">(exp(p)-1)</span></tt>.
-Positive values increase velocity, while negative values decrease it.</li>
-<li><em>gamma</em>: apply a simple power function
-<tt class="docutils literal"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">127</span> <span class="pre">*</span> <span class="pre">(x/127)**(1/p)</span></tt>.
+<li><p><em>offset</em>: add the given value to the event’s velocity.</p></li>
+<li><p><em>multiply</em>: multiply the event’s velocity with the given value.</p></li>
+<li><p><em>fixed</em>: set the event’s velocity to a fixed value.</p></li>
+<li><p><em>curve</em>: apply an exponential function
+<code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">127</span> <span class="pre">*</span> <span class="pre">(exp(p*x/127)-1)</span> <span class="pre">/</span> <span class="pre">(exp(p)-1)</span></code>.
+Positive values increase velocity, while negative values decrease it.</p></li>
+<li><p><em>gamma</em>: apply a simple power function
+<code class="docutils literal notranslate"><span class="pre">f(x)</span> <span class="pre">=</span> <span class="pre">127</span> <span class="pre">*</span> <span class="pre">(x/127)**(1/p)</span></code>.
 Values greater than 1 increase velocity, while values between 0 and 1
-decrease it.</li>
+decrease it.</p></li>
 </ul>
 <img alt="velocity" src="_images/velocity.png" />
 <p>Within mididings, velocity values may be (temporarily) greater than 127 or
 less than 1. When sending events through a MIDI output port, or by using
-the <a class="reference internal" href="#mididings.Sanitize" title="mididings.Sanitize"><tt class="xref py py-func docutils literal"><span class="pre">Sanitize()</span></tt></a> unit, velocities greater than 127 will automatically
+the <a class="reference internal" href="#mididings.Sanitize" title="mididings.Sanitize"><code class="xref py py-func docutils literal notranslate"><span class="pre">Sanitize()</span></code></a> unit, velocities greater than 127 will automatically
 be reduced to 127, and events with a velocity less than 1 will be removed.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># reduce velocity of note-on events by an offset</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># reduce velocity of note-on events by an offset</span>
 <span class="n">Velocity</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">)</span>
-<span class="c"># increase velocity of note-on events by applying a curve</span>
+<span class="c1"># increase velocity of note-on events by applying a curve</span>
 <span class="n">Velocity</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.VelocitySlope">
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>offset</em><big>)</big><a class="headerlink" href="#mididings.VelocitySlope" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>multiply=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>fixed=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>curve=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>gamma=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocitySlope</tt><big>(</big><em>notes</em>, <em>multiply</em>, <em>offset</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.VelocitySlope">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocitySlope" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.VelocitySlopeVelocitySlope">
+<span class="sig-name descname"><span class="pre">VelocitySlopeVelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocitySlopeVelocitySlope" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlopeVelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlopeVelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlopeVelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlopeVelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fixed</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocitySlope</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">notes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Change the velocity of note-on events, applying a linear slope between
-different notes. This can be thought of as a <a class="reference internal" href="#mididings.Velocity" title="mididings.Velocity"><tt class="xref py py-func docutils literal"><span class="pre">Velocity()</span></tt></a> unit
+different notes. This can be thought of as a <a class="reference internal" href="#mididings.Velocity" title="mididings.Velocity"><code class="xref py py-func docutils literal notranslate"><span class="pre">Velocity()</span></code></a> unit
 with different parameters for different note ranges, and is useful for
 example to fade-in a sound over a region of the keyboard.</p>
 <p>Both parameters must be sequences of the same length, with notes in
 ascending order, and one velocity parameter corresponding to each note.</p>
 <img alt="velocity slope" src="_images/velocityslope.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># apply a velocity slope as seen in the graphic above</span>
-<span class="n">VelocitySlope</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="p">(</span><span class="s">&#39;b1&#39;</span><span class="p">,</span><span class="s">&#39;g2&#39;</span><span class="p">,</span><span class="s">&#39;g#3&#39;</span><span class="p">,</span><span class="s">&#39;d4&#39;</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># apply a velocity slope as seen in the graphic above</span>
+<span class="n">VelocitySlope</span><span class="p">(</span><span class="n">notes</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;b1&#39;</span><span class="p">,</span><span class="s1">&#39;g2&#39;</span><span class="p">,</span><span class="s1">&#39;g#3&#39;</span><span class="p">,</span><span class="s1">&#39;d4&#39;</span><span class="p">),</span> <span class="n">offset</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.VelocityLimit">
-<tt class="descname">VelocityLimit</tt><big>(</big><em>min</em>, <em>max</em><big>)</big><a class="headerlink" href="#mididings.VelocityLimit" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">VelocityLimit</tt><big>(</big><em>min</em><big>)</big></dt>
-<dt>
-<tt class="descname">VelocityLimit</tt><big>(</big><em>max=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.VelocityLimit">
+<span class="sig-name descname"><span class="pre">VelocityLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocityLimit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.VelocityLimitVelocityLimit">
+<span class="sig-name descname"><span class="pre">VelocityLimitVelocityLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.VelocityLimitVelocityLimit" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityLimitVelocityLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">VelocityLimit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Limit velocities of note-on events to the given range.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># limit velocity values to a maximum of 100</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># limit velocity values to a maximum of 100</span>
 <span class="n">VelocityLimit</span><span class="p">(</span><span class="nb">max</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlMap">
-<tt class="descname">CtrlMap</tt><big>(</big><em>ctrl_in</em>, <em>ctrl_out</em><big>)</big><a class="headerlink" href="#mididings.CtrlMap" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert controller <em>ctrl_in</em> to <em>ctrl_out</em>, i.e. change the event&#8217;s
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlMap">
+<span class="sig-name descname"><span class="pre">CtrlMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl_in</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctrl_out</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlMap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert controller <em>ctrl_in</em> to <em>ctrl_out</em>, i.e. change the event’s
 control change number.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># convert sustain pedal to sostenuto</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert sustain pedal to sostenuto</span>
 <span class="n">CtrlMap</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">66</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlRange">
-<tt class="descname">CtrlRange</tt><big>(</big><em>ctrl</em>, <em>min</em>, <em>max</em>, <em>in_min=0</em>, <em>in_max=127</em><big>)</big><a class="headerlink" href="#mididings.CtrlRange" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlRange">
+<span class="sig-name descname"><span class="pre">CtrlRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">127</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlRange" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linearly map control change values for controller <em>ctrl</em> from the interval
 [<em>in_min</em>, <em>in_max</em>] to the interval [<em>min</em>, <em>max</em>].
 Any input value less than or equal to <em>in_min</em> results in an output value
 of <em>min</em>. Likewise, any value of <em>in_max</em> or greater results in an output
 value of <em>max</em>.</p>
 <img alt="ctrlrange" src="_images/ctrlrange.png" />
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># invert controller 11</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># invert controller 11</span>
 <span class="n">CtrlRange</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.CtrlCurve">
-<tt class="descname">CtrlCurve</tt><big>(</big><em>ctrl</em>, <em>gamma</em><big>)</big><a class="headerlink" href="#mididings.CtrlCurve" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">CtrlCurve</tt><big>(</big><em>ctrl</em>, <em>curve=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">CtrlCurve</tt><big>(</big><em>ctrl</em>, <em>offset=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">CtrlCurve</tt><big>(</big><em>ctrl</em>, <em>multiply=...</em><big>)</big></dt>
-<dt>
-<tt class="descname">CtrlCurve</tt><big>(</big><em>ctrl</em>, <em>multiply</em>, <em>offset</em><big>)</big></dt>
-<dd><p>Transform control change values. See <a class="reference internal" href="#mididings.Velocity" title="mididings.Velocity"><tt class="xref py py-func docutils literal"><span class="pre">Velocity()</span></tt></a> for a
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.CtrlCurve">
+<span class="sig-name descname"><span class="pre">CtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlCurve" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.CtrlCurveCtrlCurve">
+<span class="sig-name descname"><span class="pre">CtrlCurveCtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlCurveCtrlCurve" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurveCtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurveCtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurveCtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">curve</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">CtrlCurve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">multiply</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
+<dd><p>Transform control change values. See <a class="reference internal" href="#mididings.Velocity" title="mididings.Velocity"><code class="xref py py-func docutils literal notranslate"><span class="pre">Velocity()</span></code></a> for a
 description of the parameters.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.PitchbendRange">
-<tt class="descname">PitchbendRange</tt><big>(</big><em>min</em>, <em>max</em>, <em>in_min=-8192</em>, <em>in_max=8191</em><big>)</big><a class="headerlink" href="#mididings.PitchbendRange" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">PitchbendRange</tt><big>(</big><em>down</em>, <em>up</em>, <em>range=...</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.PitchbendRange">
+<span class="sig-name descname"><span class="pre">PitchbendRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">min</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_min</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-8192</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_max</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8191</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PitchbendRange" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.PitchbendRangePitchbendRange">
+<span class="sig-name descname"><span class="pre">PitchbendRangePitchbendRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PitchbendRangePitchbendRange" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PitchbendRange</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">down</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">up</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">range</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Change the pitchbend range to values between <em>min</em> and <em>max</em>, or to the
 given number of semitones <em>down</em> and <em>up</em>. The latter requires the tone
-generator&#8217;s pitchbend range to be specified as <em>range</em>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># set up the pitchbend wheel to bend a full octave down, but only</span>
-<span class="c"># one whole step up, assuming the synth is set to a symmetric range of</span>
-<span class="c"># 12 semitones</span>
+generator’s pitchbend range to be specified as <em>range</em>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># set up the pitchbend wheel to bend a full octave down, but only</span>
+<span class="c1"># one whole step up, assuming the synth is set to a symmetric range of</span>
+<span class="c1"># 12 semitones</span>
 <span class="n">PitchbendRange</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">range</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="generators">
-<span id="units-generators"></span><h2>Generators<a class="headerlink" href="#generators" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="generators">
+<span id="units-generators"></span><h2>Generators<a class="headerlink" href="#generators" title="Permalink to this heading">¶</a></h2>
 <p>Generators change the type of an event, either generating an entirely new
 event, or retaining some attributes of the original event.</p>
 <p>If the <em>port</em> and <em>channel</em> arguments are omitted for any of these
 generators, the values are retained from the incoming event.
-To reuse other values, one of the <a class="reference internal" href="misc.html#event-attributes"><em>Event Attribute</em></a>
+To reuse other values, one of the <a class="reference internal" href="misc.html#event-attributes"><span class="std std-ref">Event Attribute</span></a>
 constants can be used in place of any parameter.</p>
-<dl class="function">
-<dt id="mididings.NoteOn">
-<tt class="descname">NoteOn</tt><big>(</big><em>note</em>, <em>velocity</em><big>)</big><a class="headerlink" href="#mididings.NoteOn" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">NoteOn</tt><big>(</big><em>port</em>, <em>channel</em>, <em>note</em>, <em>velocity</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.NoteOn">
+<span class="sig-name descname"><span class="pre">NoteOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.NoteOn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.NoteOnNoteOn">
+<span class="sig-name descname"><span class="pre">NoteOnNoteOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.NoteOnNoteOn" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NoteOn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a note-on event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.NoteOff">
-<tt class="descname">NoteOff</tt><big>(</big><em>note</em>, <em>velocity=0</em><big>)</big><a class="headerlink" href="#mididings.NoteOff" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">NoteOff</tt><big>(</big><em>port</em>, <em>channel</em>, <em>note</em>, <em>velocity=0</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.NoteOff">
+<span class="sig-name descname"><span class="pre">NoteOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.NoteOff" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.NoteOffNoteOff">
+<span class="sig-name descname"><span class="pre">NoteOffNoteOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.NoteOffNoteOff" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">NoteOff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a note-off event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Ctrl">
-<tt class="descname">Ctrl</tt><big>(</big><em>ctrl</em>, <em>value</em><big>)</big><a class="headerlink" href="#mididings.Ctrl" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Ctrl</tt><big>(</big><em>port</em>, <em>channel</em>, <em>ctrl</em>, <em>value</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Ctrl">
+<span class="sig-name descname"><span class="pre">Ctrl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Ctrl" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.CtrlCtrl">
+<span class="sig-name descname"><span class="pre">CtrlCtrl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CtrlCtrl" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Ctrl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a control change event, replacing the incoming event.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># convert aftertouch to CC #1 (modulation)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># convert aftertouch to CC #1 (modulation)</span>
 <span class="n">Filter</span><span class="p">(</span><span class="n">AFTERTOUCH</span><span class="p">)</span> <span class="o">%</span> <span class="n">Ctrl</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">EVENT_VALUE</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Pitchbend">
-<tt class="descname">Pitchbend</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#mididings.Pitchbend" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Pitchbend</tt><big>(</big><em>port</em>, <em>channel</em>, <em>value</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Pitchbend">
+<span class="sig-name descname"><span class="pre">Pitchbend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Pitchbend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.PitchbendPitchbend">
+<span class="sig-name descname"><span class="pre">PitchbendPitchbend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PitchbendPitchbend" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Pitchbend</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a pitch-bend event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Aftertouch">
-<tt class="descname">Aftertouch</tt><big>(</big><em>value</em><big>)</big><a class="headerlink" href="#mididings.Aftertouch" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Aftertouch</tt><big>(</big><em>port</em>, <em>channel</em>, <em>value</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Aftertouch">
+<span class="sig-name descname"><span class="pre">Aftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Aftertouch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.AftertouchAftertouch">
+<span class="sig-name descname"><span class="pre">AftertouchAftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.AftertouchAftertouch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Aftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create an aftertouch event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.PolyAftertouch">
-<tt class="descname">PolyAftertouch</tt><big>(</big><em>note</em>, <em>value</em><big>)</big><a class="headerlink" href="#mididings.PolyAftertouch" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">PolyAftertouch</tt><big>(</big><em>port</em>, <em>channel</em>, <em>note</em>, <em>value</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.PolyAftertouch">
+<span class="sig-name descname"><span class="pre">PolyAftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PolyAftertouch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.PolyAftertouchPolyAftertouch">
+<span class="sig-name descname"><span class="pre">PolyAftertouchPolyAftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PolyAftertouchPolyAftertouch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">PolyAftertouch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">note</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a polyphonic aftertouch event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Program">
-<tt class="descname">Program</tt><big>(</big><em>program</em><big>)</big><a class="headerlink" href="#mididings.Program" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Program</tt><big>(</big><em>port</em>, <em>channel</em>, <em>program</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Program">
+<span class="sig-name descname"><span class="pre">Program</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Program" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.ProgramProgram">
+<span class="sig-name descname"><span class="pre">ProgramProgram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.ProgramProgram" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Program</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">program</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a program change event, replacing the incoming event.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.SysEx">
-<tt class="descname">SysEx</tt><big>(</big><em>sysex</em><big>)</big><a class="headerlink" href="#mididings.SysEx" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">SysEx</tt><big>(</big><em>port</em>, <em>sysex</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.SysEx">
+<span class="sig-name descname"><span class="pre">SysEx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sysex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysEx" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.SysExSysEx">
+<span class="sig-name descname"><span class="pre">SysExSysEx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sysex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SysExSysEx" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SysEx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sysex</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Create a system exclusive event, replacing the incoming event.
 <em>sysex</em> can be a string (binary or ASCII) or a sequence of integers,
-and must include the leading <tt class="docutils literal"><span class="pre">F0</span></tt> and trailing <tt class="docutils literal"><span class="pre">F7</span></tt> bytes.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># binary string notation</span>
-<span class="n">SysEx</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\xf0\x04\x08\x15\x16\x23\x42\xf7</span><span class="s">&#39;</span><span class="p">)</span>
-<span class="c"># ASCII string notation</span>
-<span class="n">SysEx</span><span class="p">(</span><span class="s">&#39;F0 04 08 15 16 23 42 F7&#39;</span><span class="p">)</span>
-<span class="c"># list notation</span>
+and must include the leading <code class="docutils literal notranslate"><span class="pre">F0</span></code> and trailing <code class="docutils literal notranslate"><span class="pre">F7</span></code> bytes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># binary string notation</span>
+<span class="n">SysEx</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\xf0\x04\x08\x15\x16\x23\x42\xf7</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># ASCII string notation</span>
+<span class="n">SysEx</span><span class="p">(</span><span class="s1">&#39;F0 04 08 15 16 23 42 F7&#39;</span><span class="p">)</span>
+<span class="c1"># list notation</span>
 <span class="n">SysEx</span><span class="p">([</span><span class="mh">0xf0</span><span class="p">,</span> <span class="mh">0x04</span><span class="p">,</span> <span class="mh">0x08</span><span class="p">,</span> <span class="mh">0x15</span><span class="p">,</span> <span class="mh">0x16</span><span class="p">,</span> <span class="mh">0x23</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">,</span> <span class="mh">0xf7</span><span class="p">])</span>
-<span class="c"># sysex message read from a file</span>
-<span class="n">SysEx</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s">&#39;example.syx&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
+<span class="c1"># sysex message read from a file</span>
+<span class="n">SysEx</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;example.syx&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Generator">
-<tt class="descname">Generator</tt><big>(</big><em>type</em>, <em>port</em>, <em>channel</em>, <em>data1=0</em>, <em>data2=0</em><big>)</big><a class="headerlink" href="#mididings.Generator" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generic generator to change the incoming event&#8217;s type and data.
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Generator">
+<span class="sig-name descname"><span class="pre">Generator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Generator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generic generator to change the incoming event’s type and data.
 System common and system realtime events can only be created this way.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="function-calls">
-<span id="units-call"></span><h2>Function Calls<a class="headerlink" href="#function-calls" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.Process">
-<tt class="descname">Process</tt><big>(</big><em>function</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mididings.Process" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="function-calls">
+<span id="units-call"></span><h2>Function Calls<a class="headerlink" href="#function-calls" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Process">
+<span class="sig-name descname"><span class="pre">Process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Process" title="Permalink to this definition">¶</a></dt>
 <dd><p>Process the incoming MIDI event using a Python function, then continue
 executing the mididings patch with the events returned from that
 function.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>function</strong> &#8211; <p>a function, or any other callable object, that will be called with
-a <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> object as its first argument.</p>
-<dl class="docutils">
-<dt>The function&#8217;s return value can be:</dt>
-<dd><ul class="first last">
-<li>a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> object.</li>
-<li>a list of <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> objects.</li>
-<li><tt class="docutils literal"><span class="pre">None</span></tt> (or an empty list).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – <p>a function, or any other callable object, that will be called with
+a <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> object as its first argument.</p>
+<dl class="simple">
+<dt>The function’s return value can be:</dt><dd><ul>
+<li><p>a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> object.</p></li>
+<li><p>a list of <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> objects.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code> (or an empty list).</p></li>
 </ul>
 </dd>
 </dl>
-<p>Instead of <tt class="docutils literal"><span class="pre">return</span></tt>ing <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> objects, <em>function</em>
-may also be a generator that <tt class="docutils literal"><span class="pre">yield</span></tt>s <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a>
+<p>Instead of <code class="docutils literal notranslate"><span class="pre">return</span></code>ing <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> objects, <em>function</em>
+may also be a generator that <code class="docutils literal notranslate"><span class="pre">yield</span></code>s <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a>
 objects.</p>
-</li>
-<li><strong>*args</strong> &#8211; optional positional arguments that will be passed to <em>function</em>.</li>
-<li><strong>**kwargs</strong> &#8211; optional keyword arguments that will be passed to <em>function</em>.</li>
+</p></li>
+<li><p><strong>*args</strong> – optional positional arguments that will be passed to <em>function</em>.</p></li>
+<li><p><strong>**kwargs</strong> – optional keyword arguments that will be passed to <em>function</em>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Any other MIDI processing will be stalled until <em>function</em> returns,
-so this should only be used with functions that don&#8217;t block.
-Use <a class="reference internal" href="#mididings.Call" title="mididings.Call"><tt class="xref py py-func docutils literal"><span class="pre">Call()</span></tt></a> for tasks that may take longer and/or don&#8217;t require
+so this should only be used with functions that don’t block.
+Use <a class="reference internal" href="#mididings.Call" title="mididings.Call"><code class="xref py py-func docutils literal notranslate"><span class="pre">Call()</span></code></a> for tasks that may take longer and/or don’t require
 returning any MIDI events.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># invert velocities of all note-on events</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># invert velocities of all note-on events</span>
 <span class="k">def</span> <span class="nf">invert_velocity</span><span class="p">(</span><span class="n">ev</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">ev</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">NOTEON</span><span class="p">:</span>
         <span class="n">ev</span><span class="o">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="mi">128</span> <span class="o">-</span> <span class="n">ev</span><span class="o">.</span><span class="n">velocity</span>
@@ -610,111 +679,110 @@ returning any MIDI events.</p>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Call">
-<tt class="descname">Call</tt><big>(</big><em>function</em>, <em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mididings.Call" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Call</tt><big>(</big><em>thread=...</em>, <em>**kwargs</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Call">
+<span class="sig-name descname"><span class="pre">Call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Call" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.CallCall">
+<span class="sig-name descname"><span class="pre">CallCall</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.CallCall" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Call</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thread</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Schedule a Python function for execution.
 The incoming event is discarded.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>function</strong> &#8211; <p>a function, or any other callable object.
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> – <p>a function, or any other callable object.
 If the function accepts arguments, its first argument will be a copy
-of the <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> that triggered the function call.</p>
-<p>The function&#8217;s return value is ignored.</p>
-</li>
-<li><strong>thread</strong> &#8211; like <em>function</em>, but causes the function to be run in its own thread.</li>
-<li><strong>*args</strong> &#8211; optional positional arguments that will be passed to <em>function</em>.</li>
-<li><strong>**kwargs</strong> &#8211; optional keyword arguments that will be passed to <em>function</em>.</li>
+of the <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> that triggered the function call.</p>
+<p>The function’s return value is ignored.</p>
+</p></li>
+<li><p><strong>thread</strong> – like <em>function</em>, but causes the function to be run in its own thread.</p></li>
+<li><p><strong>*args</strong> – optional positional arguments that will be passed to <em>function</em>.</p></li>
+<li><p><strong>**kwargs</strong> – optional keyword arguments that will be passed to <em>function</em>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.System">
-<tt class="descname">System</tt><big>(</big><em>command</em><big>)</big><a class="headerlink" href="#mididings.System" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.System">
+<span class="sig-name descname"><span class="pre">System</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.System" title="Permalink to this definition">¶</a></dt>
 <dd><p>Run an arbitrary shell command.
 The incoming event is discarded.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>command</strong> &#8211; <p>a string which will be passed verbatim to the shell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> – <p>a string which will be passed verbatim to the shell.</p>
 <p>Alternatively it may also be a Python function that accepts a
-<a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> argument and returns the command string to
+<a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> argument and returns the command string to
 be executed.</p>
-</td>
-</tr>
-</tbody>
-</table>
+</p>
+</dd>
+</dl>
 </dd></dl>
 
-</div>
-<div class="section" id="scene-switching">
-<span id="units-scenes"></span><h2>Scene Switching<a class="headerlink" href="#scene-switching" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.SceneSwitch">
-<tt class="descname">SceneSwitch</tt><big>(</big><em>number=EVENT_PROGRAM</em><big>)</big><a class="headerlink" href="#mididings.SceneSwitch" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">SceneSwitch</tt><big>(</big><em>offset=...</em><big>)</big></dt>
+</section>
+<section id="scene-switching">
+<span id="units-scenes"></span><h2>Scene Switching<a class="headerlink" href="#scene-switching" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.SceneSwitch">
+<span class="sig-name descname"><span class="pre">SceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">EVENT_PROGRAM</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SceneSwitch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.SceneSwitchSceneSwitch">
+<span class="sig-name descname"><span class="pre">SceneSwitchSceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SceneSwitchSceneSwitch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Switch to another scene.</p>
 <p><em>number</em> can be a fixed scene number, or one of the
-<a class="reference internal" href="misc.html#event-attributes"><em>Event Attribute</em></a> constants to use a value from
-the incoming event&#8217;s data.
+<a class="reference internal" href="misc.html#event-attributes"><span class="std std-ref">Event Attribute</span></a> constants to use a value from
+the incoming event’s data.
 With no arguments, the program number of the incoming event (which should
 be a program change) will be used.</p>
 <p><em>offset</em> can be a positive or negative value that will be added to the
 current scene number, allowing you to go forward or backward in the list
 of scenes.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># switch scenes based on incoming program change messages</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># switch scenes based on incoming program change messages</span>
 <span class="n">Filter</span><span class="p">(</span><span class="n">PROGRAM</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">SceneSwitch</span><span class="p">()</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.SubSceneSwitch">
-<tt class="descname">SubSceneSwitch</tt><big>(</big><em>number=EVENT_PROGRAM</em><big>)</big><a class="headerlink" href="#mididings.SubSceneSwitch" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">SubSceneSwitch</tt><big>(</big><em>offset=...</em>, <em>wrap=True</em><big>)</big></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.SubSceneSwitch">
+<span class="sig-name descname"><span class="pre">SubSceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">number</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">EVENT_PROGRAM</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SubSceneSwitch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.SubSceneSwitchSubSceneSwitch">
+<span class="sig-name descname"><span class="pre">SubSceneSwitchSubSceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.SubSceneSwitchSubSceneSwitch" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">SubSceneSwitch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wrap</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Switches between subscenes within a scene group.</p>
 <p><em>number</em> can be a fixed subscene number, or one of the
-<a class="reference internal" href="misc.html#event-attributes"><em>Event Attribute</em></a> constants to use a value from
-the incoming event&#8217;s data.
+<a class="reference internal" href="misc.html#event-attributes"><span class="std std-ref">Event Attribute</span></a> constants to use a value from
+the incoming event’s data.
 With no arguments, the program number of the incoming event (which should
 be a program change) will be used.</p>
 <p><em>offset</em> can be a positive or negative value that will be added to the
 current subscene number, allowing you to go forward or backward in the
-list of subscenes. If <em>wrap</em> is <tt class="docutils literal"><span class="pre">True</span></tt> you can loop through subscenes.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># switch to the next subscene when C1 is pressed</span>
-<span class="n">Filter</span><span class="p">(</span><span class="n">NOTEON</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">KeyFilter</span><span class="p">(</span><span class="s">&#39;c1&#39;</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">SubSceneSwitch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+list of subscenes. If <em>wrap</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> you can loop through subscenes.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># switch to the next subscene when C1 is pressed</span>
+<span class="n">Filter</span><span class="p">(</span><span class="n">NOTEON</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">KeyFilter</span><span class="p">(</span><span class="s1">&#39;c1&#39;</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">SubSceneSwitch</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Init">
-<tt class="descname">Init</tt><big>(</big><em>patch</em><big>)</big><a class="headerlink" href="#mididings.Init" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Init">
+<span class="sig-name descname"><span class="pre">Init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add <em>patch</em> to the init patch of the scene containing this unit, so that
 it will be executed when switching to this scene.
 The patch is added in parallel to whatever is already in the init patch.</p>
 <p>This unit does no event processing in the patch it is inserted in, and
 discards all events.</p>
-<p>Most of the time it&#8217;s more convenient to create a <a class="reference internal" href="main.html#mididings.Scene" title="mididings.Scene"><tt class="xref py py-class docutils literal"><span class="pre">Scene</span></tt></a> object
-with an explicit init patch, or to use <a class="reference internal" href="#mididings.Output" title="mididings.Output"><tt class="xref py py-func docutils literal"><span class="pre">Output()</span></tt></a>, rather than
-using <a class="reference internal" href="#mididings.Init" title="mididings.Init"><tt class="xref py py-func docutils literal"><span class="pre">Init()</span></tt></a> directly.</p>
+<p>Most of the time it’s more convenient to create a <a class="reference internal" href="main.html#mididings.Scene" title="mididings.Scene"><code class="xref py py-class docutils literal notranslate"><span class="pre">Scene</span></code></a> object
+with an explicit init patch, or to use <a class="reference internal" href="#mididings.Output" title="mididings.Output"><code class="xref py py-func docutils literal notranslate"><span class="pre">Output()</span></code></a>, rather than
+using <a class="reference internal" href="#mididings.Init" title="mididings.Init"><code class="xref py py-func docutils literal notranslate"><span class="pre">Init()</span></code></a> directly.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Exit">
-<tt class="descname">Exit</tt><big>(</big><em>patch</em><big>)</big><a class="headerlink" href="#mididings.Exit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Exit">
+<span class="sig-name descname"><span class="pre">Exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Exit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add <em>patch</em> to the exit patch of the scene containing this unit, so that
 it will be executed when leaving this scene, switching to a different one.
 The patch is added in parallel to whatever is already in the exit patch.</p>
@@ -722,9 +790,9 @@ The patch is added in parallel to whatever is already in the exit patch.</p>
 discards all events.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Output">
-<tt class="descname">Output</tt><big>(</big><em>port=None</em>, <em>channel=None</em>, <em>program=None</em>, <em>volume=None</em>, <em>pan=None</em>, <em>expression=None</em>, <em>ctrls={}</em><big>)</big><a class="headerlink" href="#mididings.Output" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Output">
+<span class="sig-name descname"><span class="pre">Output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">program</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">volume</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pan</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expression</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ctrls</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Route incoming events to the specified <em>port</em> and <em>channel</em>.
 When switching to the scene containing this unit, a program change and/or
 arbitrary control changes can be sent.</p>
@@ -735,115 +803,114 @@ bank number, and the second is the program number.</p>
 <em>expression</em> (#11) can be specified directly. For all other controllers,
 the <em>ctrls</em> argument can contain a mapping from controller numbers to
 their respective values.</p>
-<p>If <em>port</em> or <em>channel</em> are <tt class="docutils literal"><span class="pre">None</span></tt>, events will be routed to the first
+<p>If <em>port</em> or <em>channel</em> are <code class="docutils literal notranslate"><span class="pre">None</span></code>, events will be routed to the first
 port/channel.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># route all events to output &#39;synth&#39;, channel 1, and set volume to 100</span>
-<span class="n">Output</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># route all events to output &#39;synth&#39;, channel 1, and set volume to 100</span>
+<span class="n">Output</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">volume</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="class">
-<dt id="mididings.OutputTemplate">
-<em class="property">class </em><tt class="descname">OutputTemplate</tt><big>(</big><em>*args</em>, <em>**kwargs</em><big>)</big><a class="headerlink" href="#mididings.OutputTemplate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create an object that when called will behave like <a class="reference internal" href="#mididings.Output" title="mididings.Output"><tt class="xref py py-func docutils literal"><span class="pre">Output()</span></tt></a>,
+<dl class="py class">
+<dt class="sig sig-object py" id="mididings.OutputTemplate">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OutputTemplate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.OutputTemplate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an object that when called will behave like <a class="reference internal" href="#mididings.Output" title="mididings.Output"><code class="xref py py-func docutils literal notranslate"><span class="pre">Output()</span></code></a>,
 with <em>args</em> and <em>kwargs</em> replacing some of its arguments.
-That is, <a class="reference internal" href="#mididings.OutputTemplate" title="mididings.OutputTemplate"><tt class="xref py py-class docutils literal"><span class="pre">OutputTemplate()</span></tt></a> is not a unit by itself, but returns
+That is, <a class="reference internal" href="#mididings.OutputTemplate" title="mididings.OutputTemplate"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputTemplate()</span></code></a> is not a unit by itself, but returns
 one when called.</p>
-<p>This works just like <tt class="docutils literal"><span class="pre">functools.partial(Output,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></tt>, but
-with the added benefit that an <a class="reference internal" href="#mididings.OutputTemplate" title="mididings.OutputTemplate"><tt class="xref py py-class docutils literal"><span class="pre">OutputTemplate()</span></tt></a> object also
-supports operator <tt class="docutils literal"><span class="pre">&gt;&gt;</span></tt> like any unit.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># define an instrument by specifying its output port, channel,</span>
-<span class="c"># program number and transposition, then use the same instrument</span>
-<span class="c"># in two different patches at different volumes</span>
-<span class="n">synth</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">OutputTemplate</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
+<p>This works just like <code class="docutils literal notranslate"><span class="pre">functools.partial(Output,</span> <span class="pre">*args,</span> <span class="pre">**kwargs)</span></code>, but
+with the added benefit that an <a class="reference internal" href="#mididings.OutputTemplate" title="mididings.OutputTemplate"><code class="xref py py-class docutils literal notranslate"><span class="pre">OutputTemplate()</span></code></a> object also
+supports operator <code class="docutils literal notranslate"><span class="pre">&gt;&gt;</span></code> like any unit.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define an instrument by specifying its output port, channel,</span>
+<span class="c1"># program number and transposition, then use the same instrument</span>
+<span class="c1"># in two different patches at different volumes</span>
+<span class="n">synth</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">OutputTemplate</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
 
 <span class="n">patch1</span> <span class="o">=</span> <span class="n">synth</span><span class="p">(</span><span class="mi">64</span><span class="p">)</span>
 <span class="n">patch2</span> <span class="o">=</span> <span class="n">synth</span><span class="p">(</span><span class="mi">127</span><span class="p">)</span>
 
-<span class="c"># the above is equivalent to:</span>
-<span class="n">patch1</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
-<span class="n">patch2</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">127</span><span class="p">)</span>
+<span class="c1"># the above is equivalent to:</span>
+<span class="n">patch1</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">64</span><span class="p">)</span>
+<span class="n">patch2</span> <span class="o">=</span> <span class="n">Transpose</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;synth&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">127</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="miscellaneous">
-<span id="units-misc"></span><h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.Print">
-<tt class="descname">Print</tt><big>(</big><em>name=None</em>, <em>portnames=None</em><big>)</big><a class="headerlink" href="#mididings.Print" title="Permalink to this definition">¶</a></dt>
-<dt>
-<tt class="descname">Print</tt><big>(</big><em>string=...</em><big>)</big></dt>
+</section>
+<section id="miscellaneous">
+<span id="units-misc"></span><h2>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Print">
+<span class="sig-name descname"><span class="pre">Print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">portnames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Print" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="mididings.PrintPrint">
+<span class="sig-name descname"><span class="pre">PrintPrint</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.PrintPrint" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">Print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">...</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span></dt>
 <dd><p>Print event data or strings to the console.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>name</strong> &#8211; an optional identifier that will be printed before any event data,
-in order to distinguish between multiple <a class="reference internal" href="#mididings.Print" title="mididings.Print"><tt class="xref py py-func docutils literal"><span class="pre">Print()</span></tt></a> units
-in the same patch.</li>
-<li><strong>portnames</strong> &#8211; <p>determines which port names will be printed:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – an optional identifier that will be printed before any event data,
+in order to distinguish between multiple <a class="reference internal" href="#mididings.Print" title="mididings.Print"><code class="xref py py-func docutils literal notranslate"><span class="pre">Print()</span></code></a> units
+in the same patch.</p></li>
+<li><p><strong>portnames</strong> – <p>determines which port names will be printed:</p>
 <ul>
-<li><tt class="docutils literal"><span class="pre">'in'</span></tt>: the input port name corresponding to the event&#8217;s
-port number.</li>
-<li><tt class="docutils literal"><span class="pre">'out'</span></tt>: the output port name corresponding to the event&#8217;s
-port number.</li>
-<li><tt class="docutils literal"><span class="pre">None</span></tt>: port number only.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'in'</span></code>: the input port name corresponding to the event’s
+port number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'out'</span></code>: the output port name corresponding to the event’s
+port number.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: port number only.</p></li>
 </ul>
-</li>
-<li><strong>string</strong> &#8211; print a fixed string.
+</p></li>
+<li><p><strong>string</strong> – print a fixed string.
 Alternatively <em>string</em> may also be a Python function that accepts
-a <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> argument and returns the string to be printed.</li>
+a <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> argument and returns the string to be printed.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight-python"><div class="highlight"><pre># a simple command-line MIDI event monitor
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span># a simple command-line MIDI event monitor
 $ mididings &quot;Print()&quot;
 </pre></div>
 </div>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># print a graph of note-on velocities</span>
-<span class="n">Filter</span><span class="p">(</span><span class="n">NOTEON</span><span class="p">)</span> <span class="o">%</span> <span class="n">Print</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ev</span><span class="p">:</span> <span class="s">&#39;#&#39;</span> <span class="o">*</span> <span class="n">ev</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># print a graph of note-on velocities</span>
+<span class="n">Filter</span><span class="p">(</span><span class="n">NOTEON</span><span class="p">)</span> <span class="o">%</span> <span class="n">Print</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ev</span><span class="p">:</span> <span class="s1">&#39;#&#39;</span> <span class="o">*</span> <span class="n">ev</span><span class="o">.</span><span class="n">velocity</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Pass">
-<tt class="descname">Pass</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.Pass" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Pass">
+<span class="sig-name descname"><span class="pre">Pass</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Pass" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do nothing. This is sometimes useful/necessary as a placeholder, much like
-the <tt class="docutils literal"><span class="pre">pass</span></tt> statement in Python.</p>
+the <code class="docutils literal notranslate"><span class="pre">pass</span></code> statement in Python.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Discard">
-<tt class="descname">Discard</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.Discard" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Discard">
+<span class="sig-name descname"><span class="pre">Discard</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Discard" title="Permalink to this definition">¶</a></dt>
 <dd><p>Stop processing the incoming event. Note that it is rarely neccessary to
 use this, as filters and splits already take care of removing unwanted
 events.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.Sanitize">
-<tt class="descname">Sanitize</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.Sanitize" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.Sanitize">
+<span class="sig-name descname"><span class="pre">Sanitize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.Sanitize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make sure the event is a valid MIDI message.
 Events with invalid port (output), channel, controller, program or note
 number are discarded. Note velocity and controller values are confined to
 the range 0-127.</p>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul class="current">
@@ -853,9 +920,28 @@ the range 0-127.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="connect.html">Connections</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Chain"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Fork"><code class="docutils literal notranslate"><span class="pre">Fork</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Unit.add"><code class="docutils literal notranslate"><span class="pre">Unit.add</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.invert"><code class="docutils literal notranslate"><span class="pre">Filter.invert</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.negate"><code class="docutils literal notranslate"><span class="pre">Filter.negate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Split"><code class="docutils literal notranslate"><span class="pre">Split</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Selector.apply"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#id0"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.AndSelector"><code class="docutils literal notranslate"><span class="pre">AndSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.And"><code class="docutils literal notranslate"><span class="pre">And</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.OrSelector"><code class="docutils literal notranslate"><span class="pre">OrSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Or"><code class="docutils literal notranslate"><span class="pre">Or</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a><ul>
@@ -866,37 +952,184 @@ the range 0-127.</p>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#mididings-and-python">mididings and Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">Module <tt class="docutils literal"><span class="pre">mididings</span></tt></a><ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="main.html#global-configuration">Global Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.config"><code class="docutils literal notranslate"><span class="pre">config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.hook"><code class="docutils literal notranslate"><span class="pre">hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.runrun"><code class="docutils literal notranslate"><span class="pre">runrun()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">mididings</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#filters">Filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#modifiers">Modifiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#generators">Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#function-calls">Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#scene-switching">Scene Switching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.Scene"><code class="docutils literal notranslate"><span class="pre">Scene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.SceneGroup"><code class="docutils literal notranslate"><span class="pre">SceneGroup</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="extra-units.html"><tt class="docutils literal"><span class="pre">mididings.extra</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#voicing">Voicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#utilities">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#messaging">Messaging</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="extra.html">Module <tt class="docutils literal"><span class="pre">mididings.extra</span></tt></a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#filters">Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PortFilter"><code class="docutils literal notranslate"><span class="pre">PortFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.ChannelFilter"><code class="docutils literal notranslate"><span class="pre">ChannelFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.KeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.KeyFilterKeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilterKeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocityFilterVelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilterVelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlFilter"><code class="docutils literal notranslate"><span class="pre">CtrlFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlValueFilterCtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilterCtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.ProgramFilter"><code class="docutils literal notranslate"><span class="pre">ProgramFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysExFilterSysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilterSysExFilter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PortSplit"><code class="docutils literal notranslate"><span class="pre">PortSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.ChannelSplit"><code class="docutils literal notranslate"><span class="pre">ChannelSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.KeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.KeySplitKeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplitKeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocitySplitVelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplitVelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlSplit"><code class="docutils literal notranslate"><span class="pre">CtrlSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlValueSplitCtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplitCtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.ProgramSplit"><code class="docutils literal notranslate"><span class="pre">ProgramSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysExSplitSysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplitSysExSplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#modifiers">Modifiers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Port"><code class="docutils literal notranslate"><span class="pre">Port()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Channel"><code class="docutils literal notranslate"><span class="pre">Channel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Transpose"><code class="docutils literal notranslate"><span class="pre">Transpose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.TransposeTranspose"><code class="docutils literal notranslate"><span class="pre">TransposeTranspose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Key"><code class="docutils literal notranslate"><span class="pre">Key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Velocity"><code class="docutils literal notranslate"><span class="pre">Velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocityVelocity"><code class="docutils literal notranslate"><span class="pre">VelocityVelocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocitySlopeVelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlopeVelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.VelocityLimitVelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimitVelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlMap"><code class="docutils literal notranslate"><span class="pre">CtrlMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlRange"><code class="docutils literal notranslate"><span class="pre">CtrlRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlCurveCtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurveCtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PitchbendRangePitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRangePitchbendRange()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#generators">Generators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.NoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.NoteOnNoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOnNoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.NoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.NoteOffNoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOffNoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Ctrl"><code class="docutils literal notranslate"><span class="pre">Ctrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CtrlCtrl"><code class="docutils literal notranslate"><span class="pre">CtrlCtrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Pitchbend"><code class="docutils literal notranslate"><span class="pre">Pitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PitchbendPitchbend"><code class="docutils literal notranslate"><span class="pre">PitchbendPitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Aftertouch"><code class="docutils literal notranslate"><span class="pre">Aftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.AftertouchAftertouch"><code class="docutils literal notranslate"><span class="pre">AftertouchAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PolyAftertouchPolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchPolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Program"><code class="docutils literal notranslate"><span class="pre">Program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.ProgramProgram"><code class="docutils literal notranslate"><span class="pre">ProgramProgram()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysEx"><code class="docutils literal notranslate"><span class="pre">SysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SysExSysEx"><code class="docutils literal notranslate"><span class="pre">SysExSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Generator"><code class="docutils literal notranslate"><span class="pre">Generator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#function-calls">Function Calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Process"><code class="docutils literal notranslate"><span class="pre">Process()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Call"><code class="docutils literal notranslate"><span class="pre">Call()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.CallCall"><code class="docutils literal notranslate"><span class="pre">CallCall()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.System"><code class="docutils literal notranslate"><span class="pre">System()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#scene-switching">Scene Switching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SceneSwitchSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitchSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.SubSceneSwitchSubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitchSubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Init"><code class="docutils literal notranslate"><span class="pre">Init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Exit"><code class="docutils literal notranslate"><span class="pre">Exit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Output"><code class="docutils literal notranslate"><span class="pre">Output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.OutputTemplate"><code class="docutils literal notranslate"><span class="pre">OutputTemplate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Print"><code class="docutils literal notranslate"><span class="pre">Print()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.PrintPrint"><code class="docutils literal notranslate"><span class="pre">PrintPrint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Pass"><code class="docutils literal notranslate"><span class="pre">Pass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Discard"><code class="docutils literal notranslate"><span class="pre">Discard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.Sanitize"><code class="docutils literal notranslate"><span class="pre">Sanitize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra-units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#voicing">Voicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Harmonize"><code class="docutils literal notranslate"><span class="pre">Harmonize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.VoiceFilter"><code class="docutils literal notranslate"><span class="pre">VoiceFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.VoiceSplit"><code class="docutils literal notranslate"><span class="pre">VoiceSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.LimitPolyphony"><code class="docutils literal notranslate"><span class="pre">LimitPolyphony()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.MakeMonophonic"><code class="docutils literal notranslate"><span class="pre">MakeMonophonic()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.FloatingKeySplit"><code class="docutils literal notranslate"><span class="pre">FloatingKeySplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#utilities">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.PedalToNoteoff"><code class="docutils literal notranslate"><span class="pre">PedalToNoteoff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.LatchNotes"><code class="docutils literal notranslate"><span class="pre">LatchNotes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.SuppressPC"><code class="docutils literal notranslate"><span class="pre">SuppressPC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.KeyColorFilter"><code class="docutils literal notranslate"><span class="pre">KeyColorFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.CtrlToSysEx"><code class="docutils literal notranslate"><span class="pre">CtrlToSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Panic"><code class="docutils literal notranslate"><span class="pre">Panic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Restart"><code class="docutils literal notranslate"><span class="pre">Restart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Quit"><code class="docutils literal notranslate"><span class="pre">Quit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#messaging">Messaging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.osc.SendOSC"><code class="docutils literal notranslate"><span class="pre">SendOSC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.dbus.SendDBUS"><code class="docutils literal notranslate"><span class="pre">SendDBUS()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="extra.html#hooks">Hooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra.html#general-midi">General MIDI</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="event.html">Module <tt class="docutils literal"><span class="pre">mididings.event</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <tt class="docutils literal"><span class="pre">mididings.engine</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">Module <tt class="docutils literal"><span class="pre">mididings.util</span></tt></a></li>
+<li class="toctree-l1"><a class="reference internal" href="event.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.MidiEvent"><code class="docutils literal notranslate"><span class="pre">MidiEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.type"><code class="docutils literal notranslate"><span class="pre">MidiEvent.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.port"><code class="docutils literal notranslate"><span class="pre">MidiEvent.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.channel"><code class="docutils literal notranslate"><span class="pre">MidiEvent.channel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data1"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data2"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.note"><code class="docutils literal notranslate"><span class="pre">MidiEvent.note</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.velocity"><code class="docutils literal notranslate"><span class="pre">MidiEvent.velocity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.ctrl"><code class="docutils literal notranslate"><span class="pre">MidiEvent.ctrl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.value"><code class="docutils literal notranslate"><span class="pre">MidiEvent.value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.program"><code class="docutils literal notranslate"><span class="pre">MidiEvent.program</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.sysex"><code class="docutils literal notranslate"><span class="pre">MidiEvent.sysex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOnEvent"><code class="docutils literal notranslate"><span class="pre">NoteOnEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOffEvent"><code class="docutils literal notranslate"><span class="pre">NoteOffEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.CtrlEvent"><code class="docutils literal notranslate"><span class="pre">CtrlEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PitchbendEvent"><code class="docutils literal notranslate"><span class="pre">PitchbendEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.AftertouchEvent"><code class="docutils literal notranslate"><span class="pre">AftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PolyAftertouchEvent"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.ProgramEvent"><code class="docutils literal notranslate"><span class="pre">ProgramEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.SysExEvent"><code class="docutils literal notranslate"><span class="pre">SysExEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.engine</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.util</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools and GUI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#mididings"><strong class="command">mididings</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#livedings"><strong class="command">livedings</strong></a></li>
@@ -905,30 +1138,31 @@ the range 0-127.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="main.html"
-                        title="previous chapter">Module <tt class="docutils literal"><span class="pre">mididings</span></tt></a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="extra-units.html"
-                        title="next chapter"><tt class="docutils literal"><span class="pre">mididings.extra</span></tt> Units</a></p>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="main.html"
+                          title="previous chapter">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="extra-units.html"
+                          title="next chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -943,12 +1177,13 @@ the range 0-127.</p>
         <li class="right" >
           <a href="main.html" title="Module mididings"
              >previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2008-2014, Dominic Sacré.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2014, Dominic Sacré.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.0.0.
     </div>
   </body>
 </html>

@@ -1,34 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Module mididings.extra &#8212; mididings  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nasophon.css" />
     
-    <title>Module mididings.extra &mdash; mididings  documentation</title>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     
-    <link rel="stylesheet" href="_static/nasophon.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="mididings  documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module mididings.event" href="event.html" />
     <link rel="prev" title="mididings.extra Units" href="extra-units.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,40 +34,38 @@
         <li class="right" >
           <a href="extra-units.html" title="mididings.extra Units"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="module-mididings-extra">
-<span id="extra"></span><h1>Module <a class="reference internal" href="extra-units.html#module-mididings.extra" title="mididings.extra"><tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra</span></tt></a><a class="headerlink" href="#module-mididings-extra" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="hooks">
-<span id="extra-hooks"></span><h2>Hooks<a class="headerlink" href="#hooks" title="Permalink to this headline">¶</a></h2>
+  <section id="module-mididings-extra">
+<span id="extra"></span><h1>Module <a class="reference internal" href="extra-units.html#module-mididings.extra" title="mididings.extra"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a><a class="headerlink" href="#module-mididings-extra" title="Permalink to this heading">¶</a></h1>
+<section id="hooks">
+<span id="extra-hooks"></span><h2>Hooks<a class="headerlink" href="#hooks" title="Permalink to this heading">¶</a></h2>
 <p>Hooks extend the functionality of mididings.
-Instances of these classes can be registered using the <a class="reference internal" href="main.html#mididings.hook" title="mididings.hook"><tt class="xref py py-func docutils literal"><span class="pre">hook()</span></tt></a>
+Instances of these classes can be registered using the <a class="reference internal" href="main.html#mididings.hook" title="mididings.hook"><code class="xref py py-func docutils literal notranslate"><span class="pre">hook()</span></code></a>
 function.</p>
-<dl class="class">
-<dt id="mididings.extra.MemorizeScene">
-<em class="property">class </em><tt class="descname">MemorizeScene</tt><big>(</big><em>memo_file</em><big>)</big><a class="headerlink" href="#mididings.extra.MemorizeScene" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="mididings.extra.MemorizeScene">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MemorizeScene</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">memo_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.MemorizeScene" title="Permalink to this definition">¶</a></dt>
 <dd><p>Saves the currently selected scene number to a file when terminating
 mididings, and restores it at the next startup.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>memo_file</strong> &#8211; the path of the file to be used to store the scene number.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>memo_file</strong> – the path of the file to be used to store the scene number.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="class">
-<dt id="mididings.extra.inotify.AutoRestart">
-<em class="property">class </em><tt class="descname">AutoRestart</tt><big>(</big><em>modules=True</em>, <em>filenames=</em><span class="optional">[</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#mididings.extra.inotify.AutoRestart" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="mididings.extra.inotify.AutoRestart">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">AutoRestart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modules</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filenames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.inotify.AutoRestart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Automatically restarts mididings when the script changes.</p>
 <p>This restarts the entire mididings script, so MIDI processing is
 interrupted, and mididings does not take care of reestablishing any
@@ -84,231 +73,224 @@ ALSA/JACK connections that were made manually.
 If the new script contains errors that prevent it from running,
 mididings exits and needs to be restarted manually once the errors
 are fixed.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>modules</strong> &#8211; If true, all imported local Python modules are monitored for
-changes as well.</li>
-<li><strong>filenames</strong> &#8211; a list of additional files to be monitored.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>modules</strong> – If true, all imported local Python modules are monitored for
+changes as well.</p></li>
+<li><p><strong>filenames</strong> – a list of additional files to be monitored.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<p>Defined in <tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra.inotify</span></tt>.
+</dd>
+</dl>
+<p>Defined in <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra.inotify</span></code>.
 Requires <a class="reference external" href="https://github.com/seb-m/pyinotify">pyinotify</a>.</p>
 </dd></dl>
 
-<dl class="class">
-<dt id="mididings.extra.osc.OSCInterface">
-<em class="property">class </em><tt class="descname">OSCInterface</tt><big>(</big><em>port=56418, notify_ports=[56419]</em><big>)</big><a class="headerlink" href="#mididings.extra.osc.OSCInterface" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="mididings.extra.osc.OSCInterface">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">OSCInterface</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">56418</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">notify_ports</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[56419]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.osc.OSCInterface" title="Permalink to this definition">¶</a></dt>
 <dd><p>Allows controlling mididings via OSC.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>port</strong> &#8211; the OSC port to listen on.</li>
-<li><strong>notify_ports</strong> &#8211; a list of OSC ports to notify when the current scene changes.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>port</strong> – the OSC port to listen on.</p></li>
+<li><p><strong>notify_ports</strong> – a list of OSC ports to notify when the current scene changes.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>These messages are currently understood:</p>
 <ul class="simple">
-<li><strong>/mididings/switch_scene ,i</strong>: switch to the given scene number.</li>
-<li><strong>/mididings/switch_subscene ,i</strong>: switch to the given subscene number.</li>
-<li><strong>/mididings/prev_scene</strong>: switch to the previous scene.</li>
-<li><strong>/mididings/next_scene</strong>: switch to the next scene.</li>
-<li><strong>/mididings/prev_subscene</strong>: switch to the previous subscene.</li>
-<li><strong>/mididings/next_subscene</strong>: switch to the next subscene.</li>
-<li><strong>/mididings/panic</strong>: send all-notes-off on all channels and on all
-output ports.</li>
-<li><strong>/mididings/quit</strong>: terminate mididings.</li>
+<li><p><strong>/mididings/switch_scene ,i</strong>: switch to the given scene number.</p></li>
+<li><p><strong>/mididings/switch_subscene ,i</strong>: switch to the given subscene number.</p></li>
+<li><p><strong>/mididings/prev_scene</strong>: switch to the previous scene.</p></li>
+<li><p><strong>/mididings/next_scene</strong>: switch to the next scene.</p></li>
+<li><p><strong>/mididings/prev_subscene</strong>: switch to the previous subscene.</p></li>
+<li><p><strong>/mididings/next_subscene</strong>: switch to the next subscene.</p></li>
+<li><p><strong>/mididings/panic</strong>: send all-notes-off on all channels and on all
+output ports.</p></li>
+<li><p><strong>/mididings/quit</strong>: terminate mididings.</p></li>
 </ul>
-<p>Defined in <tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra.osc</span></tt>.
+<p>Defined in <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra.osc</span></code>.
 Requires <a class="reference external" href="http://das.nasophon.de/pyliblo/">pyliblo</a>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="general-midi">
-<span id="extra-gm"></span><h2>General MIDI<a class="headerlink" href="#general-midi" title="Permalink to this headline">¶</a></h2>
-<p>The <tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra.gm</span></tt> module contains constants for program and
+</section>
+<section id="general-midi">
+<span id="extra-gm"></span><h2>General MIDI<a class="headerlink" href="#general-midi" title="Permalink to this heading">¶</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra.gm</span></code> module contains constants for program and
 controller numbers defined in the General MIDI standard.</p>
-<div class="section" id="programs">
-<h3>Programs<a class="headerlink" href="#programs" title="Permalink to this headline">¶</a></h3>
+<section id="programs">
+<h3>Programs<a class="headerlink" href="#programs" title="Permalink to this heading">¶</a></h3>
 <table class="hlist"><tr><td><ul class="simple">
-<li>ACOUSTIC_GRAND_PIANO</li>
-<li>BRIGHT_ACOUSTIC_PIANO</li>
-<li>ELECTRIC_GRAND_PIANO</li>
-<li>HONKY_TONK_PIANO</li>
-<li>ELECTRIC_PIANO_1</li>
-<li>ELECTRIC_PIANO_2</li>
-<li>HARPSICHORD</li>
-<li>CLAVINET</li>
-<li>CELESTA</li>
-<li>GLOCKENSPIEL</li>
-<li>MUSIC_BOX</li>
-<li>VIBRAPHONE</li>
-<li>MARIMBA</li>
-<li>XYLOPHONE</li>
-<li>TUBULAR_BELLS</li>
-<li>DULCIMER</li>
-<li>DRAWBAR_ORGAN</li>
-<li>PERCUSSIVE_ORGAN</li>
-<li>ROCK_ORGAN</li>
-<li>CHURCH_ORGAN</li>
-<li>REED_ORGAN</li>
-<li>ACCORDION</li>
-<li>HARMONICA</li>
-<li>TANGO_ACCORDION</li>
-<li>ACOUSTIC_GUITAR_NYLON</li>
-<li>ACOUSTIC_GUITAR_STEEL</li>
-<li>ELECTRIC_GUITAR_JAZZ</li>
-<li>ELECTRIC_GUITAR_CLEAN</li>
-<li>ELECTRIC_GUITAR_MUTED</li>
-<li>OVERDRIVEN_GUITAR</li>
-<li>DISTORTION_GUITAR</li>
-<li>GUITAR_HARMONICS</li>
-<li>ACOUSTIC_BASS</li>
-<li>ELECTRIC_BASS_FINGER</li>
-<li>ELECTRIC_BASS_PICK</li>
-<li>FRETLESS_BASS</li>
-<li>SLAP_BASS_1</li>
-<li>SLAP_BASS_2</li>
-<li>SYNTH_BASS_1</li>
-<li>SYNTH_BASS_2</li>
-<li>VIOLIN</li>
-<li>VIOLA</li>
-<li>CELLO</li>
-<li>CONTRABASS</li>
-<li>TREMOLO_STRINGS</li>
-<li>PIZZICATO_STRINGS</li>
-<li>ORCHESTRAL_HARP</li>
-<li>TIMPANI</li>
-<li>STRING_ENSEMBLE_1</li>
-<li>STRING_ENSEMBLE_2</li>
-<li>SYNTH_STRINGS_1</li>
-<li>SYNTH_STRINGS_2</li>
-<li>CHOIR_AAHS</li>
-<li>VOICE_OOHS</li>
-<li>SYNTH_VOICE</li>
-<li>ORCHESTRA_HIT</li>
-<li>TRUMPET</li>
-<li>TROMBONE</li>
-<li>TUBA</li>
-<li>MUTED_TRUMPET</li>
-<li>FRENCH_HORN</li>
-<li>BRASS_SECTION</li>
-<li>SYNTHBRASS_1</li>
-<li>SYNTHBRASS_2</li>
+<li><p>ACOUSTIC_GRAND_PIANO</p></li>
+<li><p>BRIGHT_ACOUSTIC_PIANO</p></li>
+<li><p>ELECTRIC_GRAND_PIANO</p></li>
+<li><p>HONKY_TONK_PIANO</p></li>
+<li><p>ELECTRIC_PIANO_1</p></li>
+<li><p>ELECTRIC_PIANO_2</p></li>
+<li><p>HARPSICHORD</p></li>
+<li><p>CLAVINET</p></li>
+<li><p>CELESTA</p></li>
+<li><p>GLOCKENSPIEL</p></li>
+<li><p>MUSIC_BOX</p></li>
+<li><p>VIBRAPHONE</p></li>
+<li><p>MARIMBA</p></li>
+<li><p>XYLOPHONE</p></li>
+<li><p>TUBULAR_BELLS</p></li>
+<li><p>DULCIMER</p></li>
+<li><p>DRAWBAR_ORGAN</p></li>
+<li><p>PERCUSSIVE_ORGAN</p></li>
+<li><p>ROCK_ORGAN</p></li>
+<li><p>CHURCH_ORGAN</p></li>
+<li><p>REED_ORGAN</p></li>
+<li><p>ACCORDION</p></li>
+<li><p>HARMONICA</p></li>
+<li><p>TANGO_ACCORDION</p></li>
+<li><p>ACOUSTIC_GUITAR_NYLON</p></li>
+<li><p>ACOUSTIC_GUITAR_STEEL</p></li>
+<li><p>ELECTRIC_GUITAR_JAZZ</p></li>
+<li><p>ELECTRIC_GUITAR_CLEAN</p></li>
+<li><p>ELECTRIC_GUITAR_MUTED</p></li>
+<li><p>OVERDRIVEN_GUITAR</p></li>
+<li><p>DISTORTION_GUITAR</p></li>
+<li><p>GUITAR_HARMONICS</p></li>
+<li><p>ACOUSTIC_BASS</p></li>
+<li><p>ELECTRIC_BASS_FINGER</p></li>
+<li><p>ELECTRIC_BASS_PICK</p></li>
+<li><p>FRETLESS_BASS</p></li>
+<li><p>SLAP_BASS_1</p></li>
+<li><p>SLAP_BASS_2</p></li>
+<li><p>SYNTH_BASS_1</p></li>
+<li><p>SYNTH_BASS_2</p></li>
+<li><p>VIOLIN</p></li>
+<li><p>VIOLA</p></li>
+<li><p>CELLO</p></li>
+<li><p>CONTRABASS</p></li>
+<li><p>TREMOLO_STRINGS</p></li>
+<li><p>PIZZICATO_STRINGS</p></li>
+<li><p>ORCHESTRAL_HARP</p></li>
+<li><p>TIMPANI</p></li>
+<li><p>STRING_ENSEMBLE_1</p></li>
+<li><p>STRING_ENSEMBLE_2</p></li>
+<li><p>SYNTH_STRINGS_1</p></li>
+<li><p>SYNTH_STRINGS_2</p></li>
+<li><p>CHOIR_AAHS</p></li>
+<li><p>VOICE_OOHS</p></li>
+<li><p>SYNTH_VOICE</p></li>
+<li><p>ORCHESTRA_HIT</p></li>
+<li><p>TRUMPET</p></li>
+<li><p>TROMBONE</p></li>
+<li><p>TUBA</p></li>
+<li><p>MUTED_TRUMPET</p></li>
+<li><p>FRENCH_HORN</p></li>
+<li><p>BRASS_SECTION</p></li>
+<li><p>SYNTHBRASS_1</p></li>
+<li><p>SYNTHBRASS_2</p></li>
 </ul>
 </td><td><ul class="simple">
-<li>SOPRANO_SAX</li>
-<li>ALTO_SAX</li>
-<li>TENOR_SAX</li>
-<li>BARITONE_SAX</li>
-<li>OBOE</li>
-<li>ENGLISH_HORN</li>
-<li>BASSOON</li>
-<li>CLARINET</li>
-<li>PICCOLO</li>
-<li>FLUTE</li>
-<li>RECORDER</li>
-<li>PAN_FLUTE</li>
-<li>BLOWN_BOTTLE</li>
-<li>SHAKUHACHI</li>
-<li>WHISTLE</li>
-<li>OCARINA</li>
-<li>LEAD_1_SQUARE</li>
-<li>LEAD_2_SAWTOOTH</li>
-<li>LEAD_3_CALLIOPE</li>
-<li>LEAD_4_CHIFF</li>
-<li>LEAD_5_CHARANG</li>
-<li>LEAD_6_VOICE</li>
-<li>LEAD_7_FIFTHS</li>
-<li>LEAD_8_BASS_LEAD</li>
-<li>PAD_1_NEW_AGE</li>
-<li>PAD_2_WARM</li>
-<li>PAD_3_POLYSYNTH</li>
-<li>PAD_4_CHOIR</li>
-<li>PAD_5_BOWED</li>
-<li>PAD_6_METALLIC</li>
-<li>PAD_7_HALO</li>
-<li>PAD_8_SWEEP</li>
-<li>FX_1_RAIN</li>
-<li>FX_2_SOUNDTRACK</li>
-<li>FX_3_CRYSTAL</li>
-<li>FX_4_ATMOSPHERE</li>
-<li>FX_5_BRIGHTNESS</li>
-<li>FX_6_GOBLINS</li>
-<li>FX_7_ECHOES</li>
-<li>FX_8_SCI_FI</li>
-<li>SITAR</li>
-<li>BANJO</li>
-<li>SHAMISEN</li>
-<li>KOTO</li>
-<li>KALIMBA</li>
-<li>BAGPIPE</li>
-<li>FIDDLE</li>
-<li>SHANAI</li>
-<li>TINKLE_BELL</li>
-<li>AGOGO</li>
-<li>STEEL_DRUMS</li>
-<li>WOODBLOCK</li>
-<li>TAIKO_DRUM</li>
-<li>MELODIC_TOM</li>
-<li>SYNTH_DRUM</li>
-<li>REVERSE_CYMBAL</li>
-<li>GUITAR_FRET_NOISE</li>
-<li>BREATH_NOISE</li>
-<li>SEASHORE</li>
-<li>BIRD_TWEET</li>
-<li>TELEPHONE_RING</li>
-<li>HELICOPTER</li>
-<li>APPLAUSE</li>
-<li>GUNSHOT</li>
+<li><p>SOPRANO_SAX</p></li>
+<li><p>ALTO_SAX</p></li>
+<li><p>TENOR_SAX</p></li>
+<li><p>BARITONE_SAX</p></li>
+<li><p>OBOE</p></li>
+<li><p>ENGLISH_HORN</p></li>
+<li><p>BASSOON</p></li>
+<li><p>CLARINET</p></li>
+<li><p>PICCOLO</p></li>
+<li><p>FLUTE</p></li>
+<li><p>RECORDER</p></li>
+<li><p>PAN_FLUTE</p></li>
+<li><p>BLOWN_BOTTLE</p></li>
+<li><p>SHAKUHACHI</p></li>
+<li><p>WHISTLE</p></li>
+<li><p>OCARINA</p></li>
+<li><p>LEAD_1_SQUARE</p></li>
+<li><p>LEAD_2_SAWTOOTH</p></li>
+<li><p>LEAD_3_CALLIOPE</p></li>
+<li><p>LEAD_4_CHIFF</p></li>
+<li><p>LEAD_5_CHARANG</p></li>
+<li><p>LEAD_6_VOICE</p></li>
+<li><p>LEAD_7_FIFTHS</p></li>
+<li><p>LEAD_8_BASS_LEAD</p></li>
+<li><p>PAD_1_NEW_AGE</p></li>
+<li><p>PAD_2_WARM</p></li>
+<li><p>PAD_3_POLYSYNTH</p></li>
+<li><p>PAD_4_CHOIR</p></li>
+<li><p>PAD_5_BOWED</p></li>
+<li><p>PAD_6_METALLIC</p></li>
+<li><p>PAD_7_HALO</p></li>
+<li><p>PAD_8_SWEEP</p></li>
+<li><p>FX_1_RAIN</p></li>
+<li><p>FX_2_SOUNDTRACK</p></li>
+<li><p>FX_3_CRYSTAL</p></li>
+<li><p>FX_4_ATMOSPHERE</p></li>
+<li><p>FX_5_BRIGHTNESS</p></li>
+<li><p>FX_6_GOBLINS</p></li>
+<li><p>FX_7_ECHOES</p></li>
+<li><p>FX_8_SCI_FI</p></li>
+<li><p>SITAR</p></li>
+<li><p>BANJO</p></li>
+<li><p>SHAMISEN</p></li>
+<li><p>KOTO</p></li>
+<li><p>KALIMBA</p></li>
+<li><p>BAGPIPE</p></li>
+<li><p>FIDDLE</p></li>
+<li><p>SHANAI</p></li>
+<li><p>TINKLE_BELL</p></li>
+<li><p>AGOGO</p></li>
+<li><p>STEEL_DRUMS</p></li>
+<li><p>WOODBLOCK</p></li>
+<li><p>TAIKO_DRUM</p></li>
+<li><p>MELODIC_TOM</p></li>
+<li><p>SYNTH_DRUM</p></li>
+<li><p>REVERSE_CYMBAL</p></li>
+<li><p>GUITAR_FRET_NOISE</p></li>
+<li><p>BREATH_NOISE</p></li>
+<li><p>SEASHORE</p></li>
+<li><p>BIRD_TWEET</p></li>
+<li><p>TELEPHONE_RING</p></li>
+<li><p>HELICOPTER</p></li>
+<li><p>APPLAUSE</p></li>
+<li><p>GUNSHOT</p></li>
 </ul>
 </td></tr></table>
-</div>
-<div class="section" id="controllers">
-<h3>Controllers<a class="headerlink" href="#controllers" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="controllers">
+<h3>Controllers<a class="headerlink" href="#controllers" title="Permalink to this heading">¶</a></h3>
 <table class="hlist"><tr><td><ul class="simple">
-<li>CTRL_BANK_SELECT_MSB</li>
-<li>CTRL_MODULATION</li>
-<li>CTRL_DATA_ENTRY_MSB</li>
-<li>CTRL_VOLUME</li>
-<li>CTRL_PAN</li>
-<li>CTRL_EXPRESSION</li>
-<li>CTRL_BANK_SELECT_LSB</li>
-<li>CTRL_DATA_ENTRY_LSB</li>
-<li>CTRL_SUSTAIN</li>
-<li>CTRL_PORTAMENTO</li>
+<li><p>CTRL_BANK_SELECT_MSB</p></li>
+<li><p>CTRL_MODULATION</p></li>
+<li><p>CTRL_DATA_ENTRY_MSB</p></li>
+<li><p>CTRL_VOLUME</p></li>
+<li><p>CTRL_PAN</p></li>
+<li><p>CTRL_EXPRESSION</p></li>
+<li><p>CTRL_BANK_SELECT_LSB</p></li>
+<li><p>CTRL_DATA_ENTRY_LSB</p></li>
+<li><p>CTRL_SUSTAIN</p></li>
+<li><p>CTRL_PORTAMENTO</p></li>
 </ul>
 </td><td><ul class="simple">
-<li>CTRL_SOSTENUTO</li>
-<li>CTRL_SOFT_PEDAL</li>
-<li>CTRL_LEGATO_PEDAL</li>
-<li>CTRL_NRPN_LSB</li>
-<li>CTRL_NRPN_MSB</li>
-<li>CTRL_RPN_LSB</li>
-<li>CTRL_RPN_MSB</li>
-<li>CTRL_RESET_ALL_CONTROLLERS</li>
-<li>CTRL_ALL_NOTES_OFF</li>
+<li><p>CTRL_SOSTENUTO</p></li>
+<li><p>CTRL_SOFT_PEDAL</p></li>
+<li><p>CTRL_LEGATO_PEDAL</p></li>
+<li><p>CTRL_NRPN_LSB</p></li>
+<li><p>CTRL_NRPN_MSB</p></li>
+<li><p>CTRL_RPN_LSB</p></li>
+<li><p>CTRL_RPN_MSB</p></li>
+<li><p>CTRL_RESET_ALL_CONTROLLERS</p></li>
+<li><p>CTRL_ALL_NOTES_OFF</p></li>
 </ul>
 </td></tr></table>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul class="current">
@@ -318,9 +300,28 @@ controller numbers defined in the General MIDI standard.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="connect.html">Connections</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Chain"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Fork"><code class="docutils literal notranslate"><span class="pre">Fork</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Unit.add"><code class="docutils literal notranslate"><span class="pre">Unit.add</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.invert"><code class="docutils literal notranslate"><span class="pre">Filter.invert</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.negate"><code class="docutils literal notranslate"><span class="pre">Filter.negate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Split"><code class="docutils literal notranslate"><span class="pre">Split</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Selector.apply"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#id0"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.AndSelector"><code class="docutils literal notranslate"><span class="pre">AndSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.And"><code class="docutils literal notranslate"><span class="pre">And</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.OrSelector"><code class="docutils literal notranslate"><span class="pre">OrSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Or"><code class="docutils literal notranslate"><span class="pre">Or</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a><ul>
@@ -331,37 +332,193 @@ controller numbers defined in the General MIDI standard.</p>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#mididings-and-python">mididings and Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">Module <tt class="docutils literal"><span class="pre">mididings</span></tt></a><ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="main.html#global-configuration">Global Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.config"><code class="docutils literal notranslate"><span class="pre">config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.hook"><code class="docutils literal notranslate"><span class="pre">hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.runrun"><code class="docutils literal notranslate"><span class="pre">runrun()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="units.html"><tt class="docutils literal"><span class="pre">mididings</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="units.html#filters">Filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#modifiers">Modifiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#generators">Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#function-calls">Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#scene-switching">Scene Switching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.Scene"><code class="docutils literal notranslate"><span class="pre">Scene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.SceneGroup"><code class="docutils literal notranslate"><span class="pre">SceneGroup</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="extra-units.html"><tt class="docutils literal"><span class="pre">mididings.extra</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#voicing">Voicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#utilities">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="extra-units.html#messaging">Messaging</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Module <tt class="docutils literal"><span class="pre">mididings.extra</span></tt></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#hooks">Hooks</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#general-midi">General MIDI</a></li>
+<li class="toctree-l1"><a class="reference internal" href="units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#filters">Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PortFilter"><code class="docutils literal notranslate"><span class="pre">PortFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ChannelFilter"><code class="docutils literal notranslate"><span class="pre">ChannelFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeyFilterKeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilterKeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityFilterVelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilterVelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlFilter"><code class="docutils literal notranslate"><span class="pre">CtrlFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueFilterCtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilterCtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramFilter"><code class="docutils literal notranslate"><span class="pre">ProgramFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExFilterSysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilterSysExFilter()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="event.html">Module <tt class="docutils literal"><span class="pre">mididings.event</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <tt class="docutils literal"><span class="pre">mididings.engine</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">Module <tt class="docutils literal"><span class="pre">mididings.util</span></tt></a></li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PortSplit"><code class="docutils literal notranslate"><span class="pre">PortSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ChannelSplit"><code class="docutils literal notranslate"><span class="pre">ChannelSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeySplitKeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplitKeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySplitVelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplitVelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlSplit"><code class="docutils literal notranslate"><span class="pre">CtrlSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueSplitCtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplitCtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramSplit"><code class="docutils literal notranslate"><span class="pre">ProgramSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSplitSysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplitSysExSplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#modifiers">Modifiers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Port"><code class="docutils literal notranslate"><span class="pre">Port()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Channel"><code class="docutils literal notranslate"><span class="pre">Channel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Transpose"><code class="docutils literal notranslate"><span class="pre">Transpose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.TransposeTranspose"><code class="docutils literal notranslate"><span class="pre">TransposeTranspose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Key"><code class="docutils literal notranslate"><span class="pre">Key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Velocity"><code class="docutils literal notranslate"><span class="pre">Velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityVelocity"><code class="docutils literal notranslate"><span class="pre">VelocityVelocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySlopeVelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlopeVelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityLimitVelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimitVelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlMap"><code class="docutils literal notranslate"><span class="pre">CtrlMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlRange"><code class="docutils literal notranslate"><span class="pre">CtrlRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCurveCtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurveCtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendRangePitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRangePitchbendRange()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#generators">Generators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOnNoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOnNoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOffNoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOffNoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Ctrl"><code class="docutils literal notranslate"><span class="pre">Ctrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCtrl"><code class="docutils literal notranslate"><span class="pre">CtrlCtrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Pitchbend"><code class="docutils literal notranslate"><span class="pre">Pitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendPitchbend"><code class="docutils literal notranslate"><span class="pre">PitchbendPitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Aftertouch"><code class="docutils literal notranslate"><span class="pre">Aftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.AftertouchAftertouch"><code class="docutils literal notranslate"><span class="pre">AftertouchAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PolyAftertouchPolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchPolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Program"><code class="docutils literal notranslate"><span class="pre">Program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramProgram"><code class="docutils literal notranslate"><span class="pre">ProgramProgram()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysEx"><code class="docutils literal notranslate"><span class="pre">SysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSysEx"><code class="docutils literal notranslate"><span class="pre">SysExSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Generator"><code class="docutils literal notranslate"><span class="pre">Generator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#function-calls">Function Calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Process"><code class="docutils literal notranslate"><span class="pre">Process()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Call"><code class="docutils literal notranslate"><span class="pre">Call()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CallCall"><code class="docutils literal notranslate"><span class="pre">CallCall()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.System"><code class="docutils literal notranslate"><span class="pre">System()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#scene-switching">Scene Switching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SceneSwitchSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitchSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SubSceneSwitchSubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitchSubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Init"><code class="docutils literal notranslate"><span class="pre">Init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Exit"><code class="docutils literal notranslate"><span class="pre">Exit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Output"><code class="docutils literal notranslate"><span class="pre">Output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.OutputTemplate"><code class="docutils literal notranslate"><span class="pre">OutputTemplate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Print"><code class="docutils literal notranslate"><span class="pre">Print()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PrintPrint"><code class="docutils literal notranslate"><span class="pre">PrintPrint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Pass"><code class="docutils literal notranslate"><span class="pre">Pass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Discard"><code class="docutils literal notranslate"><span class="pre">Discard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Sanitize"><code class="docutils literal notranslate"><span class="pre">Sanitize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra-units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#voicing">Voicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Harmonize"><code class="docutils literal notranslate"><span class="pre">Harmonize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.VoiceFilter"><code class="docutils literal notranslate"><span class="pre">VoiceFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.VoiceSplit"><code class="docutils literal notranslate"><span class="pre">VoiceSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.LimitPolyphony"><code class="docutils literal notranslate"><span class="pre">LimitPolyphony()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.MakeMonophonic"><code class="docutils literal notranslate"><span class="pre">MakeMonophonic()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.FloatingKeySplit"><code class="docutils literal notranslate"><span class="pre">FloatingKeySplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#utilities">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.PedalToNoteoff"><code class="docutils literal notranslate"><span class="pre">PedalToNoteoff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.LatchNotes"><code class="docutils literal notranslate"><span class="pre">LatchNotes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.SuppressPC"><code class="docutils literal notranslate"><span class="pre">SuppressPC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.KeyColorFilter"><code class="docutils literal notranslate"><span class="pre">KeyColorFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.CtrlToSysEx"><code class="docutils literal notranslate"><span class="pre">CtrlToSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Panic"><code class="docutils literal notranslate"><span class="pre">Panic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Restart"><code class="docutils literal notranslate"><span class="pre">Restart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.Quit"><code class="docutils literal notranslate"><span class="pre">Quit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="extra-units.html#messaging">Messaging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.osc.SendOSC"><code class="docutils literal notranslate"><span class="pre">SendOSC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="extra-units.html#mididings.extra.dbus.SendDBUS"><code class="docutils literal notranslate"><span class="pre">SendDBUS()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hooks">Hooks</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.MemorizeScene"><code class="docutils literal notranslate"><span class="pre">MemorizeScene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.inotify.AutoRestart"><code class="docutils literal notranslate"><span class="pre">AutoRestart</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.osc.OSCInterface"><code class="docutils literal notranslate"><span class="pre">OSCInterface</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#general-midi">General MIDI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#programs">Programs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers">Controllers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="event.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.MidiEvent"><code class="docutils literal notranslate"><span class="pre">MidiEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.type"><code class="docutils literal notranslate"><span class="pre">MidiEvent.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.port"><code class="docutils literal notranslate"><span class="pre">MidiEvent.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.channel"><code class="docutils literal notranslate"><span class="pre">MidiEvent.channel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data1"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data2"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.note"><code class="docutils literal notranslate"><span class="pre">MidiEvent.note</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.velocity"><code class="docutils literal notranslate"><span class="pre">MidiEvent.velocity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.ctrl"><code class="docutils literal notranslate"><span class="pre">MidiEvent.ctrl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.value"><code class="docutils literal notranslate"><span class="pre">MidiEvent.value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.program"><code class="docutils literal notranslate"><span class="pre">MidiEvent.program</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.sysex"><code class="docutils literal notranslate"><span class="pre">MidiEvent.sysex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOnEvent"><code class="docutils literal notranslate"><span class="pre">NoteOnEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOffEvent"><code class="docutils literal notranslate"><span class="pre">NoteOffEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.CtrlEvent"><code class="docutils literal notranslate"><span class="pre">CtrlEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PitchbendEvent"><code class="docutils literal notranslate"><span class="pre">PitchbendEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.AftertouchEvent"><code class="docutils literal notranslate"><span class="pre">AftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PolyAftertouchEvent"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.ProgramEvent"><code class="docutils literal notranslate"><span class="pre">ProgramEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.SysExEvent"><code class="docutils literal notranslate"><span class="pre">SysExEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.engine</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.util</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools and GUI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#mididings"><strong class="command">mididings</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#livedings"><strong class="command">livedings</strong></a></li>
@@ -370,30 +527,31 @@ controller numbers defined in the General MIDI standard.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="extra-units.html"
-                        title="previous chapter"><tt class="docutils literal"><span class="pre">mididings.extra</span></tt> Units</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="event.html"
-                        title="next chapter">Module <tt class="docutils literal"><span class="pre">mididings.event</span></tt></a></p>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="extra-units.html"
+                          title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="event.html"
+                          title="next chapter">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -408,12 +566,13 @@ controller numbers defined in the General MIDI standard.</p>
         <li class="right" >
           <a href="extra-units.html" title="mididings.extra Units"
              >previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2008-2014, Dominic Sacré.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2014, Dominic Sacré.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.0.0.
     </div>
   </body>
 </html>

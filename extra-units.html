@@ -1,34 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>mididings.extra Units &#8212; mididings  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nasophon.css" />
     
-    <title>mididings.extra Units &mdash; mididings  documentation</title>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     
-    <link rel="stylesheet" href="_static/nasophon.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  false
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="mididings  documentation" href="index.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Module mididings.extra" href="extra.html" />
     <link rel="prev" title="mididings Units" href="units.html" /> 
-  </head>
-  <body>
-    <div class="related">
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -43,354 +34,320 @@
         <li class="right" >
           <a href="units.html" title="mididings Units"
              accesskey="P">previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <span class="target" id="module-mididings.extra"></span><div class="section" id="mididings-extra-units">
-<span id="extra-units"></span><h1><a class="reference internal" href="#module-mididings.extra" title="mididings.extra"><tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra</span></tt></a> Units<a class="headerlink" href="#mididings-extra-units" title="Permalink to this headline">¶</a></h1>
-<p>These units offer some more advanced/specific functionality than what&#8217;s
+  <span class="target" id="module-mididings.extra"></span><section id="mididings-extra-units">
+<span id="extra-units"></span><h1><a class="reference internal" href="#module-mididings.extra" title="mididings.extra"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a> Units<a class="headerlink" href="#mididings-extra-units" title="Permalink to this heading">¶</a></h1>
+<p>These units offer some more advanced/specific functionality than what’s
 provided in the core mididings module.
 Unless otherwise noted, they are made available by importing the
-<a class="reference internal" href="#module-mididings.extra" title="mididings.extra"><tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra</span></tt></a> module.</p>
+<a class="reference internal" href="#module-mididings.extra" title="mididings.extra"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a> module.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Some of these units are implemented in Python using <a class="reference internal" href="units.html#mididings.Process" title="mididings.Process"><tt class="xref py py-func docutils literal"><span class="pre">Process()</span></tt></a>,
-and are thus not safe to use with the <tt class="docutils literal"><span class="pre">jack-rt</span></tt> backend.</p>
+<p class="admonition-title">Note</p>
+<p>Some of these units are implemented in Python using <a class="reference internal" href="units.html#mididings.Process" title="mididings.Process"><code class="xref py py-func docutils literal notranslate"><span class="pre">Process()</span></code></a>,
+and are thus not safe to use with the <code class="docutils literal notranslate"><span class="pre">jack-rt</span></code> backend.</p>
 </div>
-<div class="section" id="voicing">
-<span id="extra-voicing"></span><h2>Voicing<a class="headerlink" href="#voicing" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.extra.Harmonize">
-<tt class="descname">Harmonize</tt><big>(</big><em>tonic</em>, <em>scale</em>, <em>interval</em>, <em>non_harmonic='below'</em><big>)</big><a class="headerlink" href="#mididings.extra.Harmonize" title="Permalink to this definition">¶</a></dt>
+<section id="voicing">
+<span id="extra-voicing"></span><h2>Voicing<a class="headerlink" href="#voicing" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.Harmonize">
+<span class="sig-name descname"><span class="pre">Harmonize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tonic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">non_harmonic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'below'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.Harmonize" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div>A diatonic harmonizer.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>tonic</strong> &#8211; The tonic of the scale, as a note name.</li>
-<li><strong>scale</strong> &#8211; The type/mode, of the scale, one of:
-<tt class="docutils literal"><span class="pre">'major'</span></tt>, <tt class="docutils literal"><span class="pre">'minor'</span></tt>, <tt class="docutils literal"><span class="pre">'minor_harmonic'</span></tt>, <tt class="docutils literal"><span class="pre">'ionian'</span></tt>,
-<tt class="docutils literal"><span class="pre">'dorian'</span></tt>, <tt class="docutils literal"><span class="pre">'phrygian'</span></tt>, <tt class="docutils literal"><span class="pre">'lydian'</span></tt>, <tt class="docutils literal"><span class="pre">'mixolydian'</span></tt>,
-<tt class="docutils literal"><span class="pre">'aeolian'</span></tt>, <tt class="docutils literal"><span class="pre">'locrian'</span></tt>.</li>
-<li><strong>interval</strong> &#8211; <p>The number of steps to transpose the notes by
+<div><p>A diatonic harmonizer.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tonic</strong> – The tonic of the scale, as a note name.</p></li>
+<li><p><strong>scale</strong> – The type/mode, of the scale, one of:
+<code class="docutils literal notranslate"><span class="pre">'major'</span></code>, <code class="docutils literal notranslate"><span class="pre">'minor'</span></code>, <code class="docutils literal notranslate"><span class="pre">'minor_harmonic'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ionian'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'dorian'</span></code>, <code class="docutils literal notranslate"><span class="pre">'phrygian'</span></code>, <code class="docutils literal notranslate"><span class="pre">'lydian'</span></code>, <code class="docutils literal notranslate"><span class="pre">'mixolydian'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'aeolian'</span></code>, <code class="docutils literal notranslate"><span class="pre">'locrian'</span></code>.</p></li>
+<li><p><strong>interval</strong> – <p>The number of steps to transpose the notes by
 (as an integer), or one of these interval names:
-<tt class="docutils literal"><span class="pre">'unison'</span></tt>, <tt class="docutils literal"><span class="pre">'second'</span></tt>, <tt class="docutils literal"><span class="pre">'third'</span></tt>, <tt class="docutils literal"><span class="pre">'fourth'</span></tt>, <tt class="docutils literal"><span class="pre">'fifth'</span></tt>,
-<tt class="docutils literal"><span class="pre">'sixth'</span></tt>, <tt class="docutils literal"><span class="pre">'seventh'</span></tt>, <tt class="docutils literal"><span class="pre">'octave'</span></tt>, <tt class="docutils literal"><span class="pre">'ninth'</span></tt>, <tt class="docutils literal"><span class="pre">'tenth'</span></tt>,
-<tt class="docutils literal"><span class="pre">'eleventh'</span></tt>, <tt class="docutils literal"><span class="pre">'twelfth'</span></tt>, <tt class="docutils literal"><span class="pre">'thirteenth'</span></tt>.</p>
+<code class="docutils literal notranslate"><span class="pre">'unison'</span></code>, <code class="docutils literal notranslate"><span class="pre">'second'</span></code>, <code class="docutils literal notranslate"><span class="pre">'third'</span></code>, <code class="docutils literal notranslate"><span class="pre">'fourth'</span></code>, <code class="docutils literal notranslate"><span class="pre">'fifth'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'sixth'</span></code>, <code class="docutils literal notranslate"><span class="pre">'seventh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'octave'</span></code>, <code class="docutils literal notranslate"><span class="pre">'ninth'</span></code>, <code class="docutils literal notranslate"><span class="pre">'tenth'</span></code>,
+<code class="docutils literal notranslate"><span class="pre">'eleventh'</span></code>, <code class="docutils literal notranslate"><span class="pre">'twelfth'</span></code>, <code class="docutils literal notranslate"><span class="pre">'thirteenth'</span></code>.</p>
 <p>It is also possible to pass a list of intervals, to create
 multiple harmonized voices.</p>
-</li>
-<li><strong>non_harmonic</strong> &#8211; <p>What to do with out-of-scale notes:</p>
+</p></li>
+<li><p><strong>non_harmonic</strong> – <p>What to do with out-of-scale notes:</p>
 <ul>
-<li><tt class="docutils literal"><span class="pre">'below'</span></tt>: Transpose by the same interval as the next on-scale</li>
-<li><tt class="docutils literal"><span class="pre">'above'</span></tt>: Transpose by the same interval as the next on-scale</li>
-<li><tt class="docutils literal"><span class="pre">'skip'</span></tt>: Ignore note.</li>
-<li><tt class="docutils literal"><span class="pre">'same'</span></tt>: Output note as is, without transposing it.</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'below'</span></code>: Transpose by the same interval as the next on-scale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'above'</span></code>: Transpose by the same interval as the next on-scale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'skip'</span></code>: Ignore note.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'same'</span></code>: Output note as is, without transposing it.</p></li>
 </ul>
-</li>
+</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># add a third above each note, based on the C# harmonic minor scale</span>
-<span class="n">Harmonize</span><span class="p">(</span><span class="s">&#39;c#&#39;</span><span class="p">,</span> <span class="s">&#39;minor_harmonic&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s">&#39;unison&#39;</span><span class="p">,</span> <span class="s">&#39;third&#39;</span><span class="p">])</span>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a third above each note, based on the C# harmonic minor scale</span>
+<span class="n">Harmonize</span><span class="p">(</span><span class="s1">&#39;c#&#39;</span><span class="p">,</span> <span class="s1">&#39;minor_harmonic&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;unison&#39;</span><span class="p">,</span> <span class="s1">&#39;third&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.VoiceFilter">
-<tt class="descname">VoiceFilter</tt><big>(</big><em>voice='highest'</em>, <em>time=0.1</em>, <em>retrigger=False</em><big>)</big><a class="headerlink" href="#mididings.extra.VoiceFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.VoiceFilter">
+<span class="sig-name descname"><span class="pre">VoiceFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">voice</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'highest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retrigger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.VoiceFilter" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div>Filter individual voices from a chord.</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>voice</strong> &#8211; <p>The voice to be filtered.</p>
-<p>This can be <tt class="docutils literal"><span class="pre">'highest'</span></tt>, <tt class="docutils literal"><span class="pre">'lowest'</span></tt>, or an integer index
+<div><p>Filter individual voices from a chord.</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>voice</strong> – <p>The voice to be filtered.</p>
+<p>This can be <code class="docutils literal notranslate"><span class="pre">'highest'</span></code>, <code class="docutils literal notranslate"><span class="pre">'lowest'</span></code>, or an integer index
 (positive or negative, the same way Python lists are indexed,
 with 0 being the lowest voice and -1 the highest).</p>
-</li>
-<li><strong>time</strong> &#8211; The period in seconds for which a newly played note may still be
-unassigned from the selected voice, when additional notes are played.</li>
-<li><strong>retrigger</strong> &#8211; If true, a new note-on event will be sent when a note is reassigned
-to the selected voice as a result of another note being released.</li>
+</p></li>
+<li><p><strong>time</strong> – The period in seconds for which a newly played note may still be
+unassigned from the selected voice, when additional notes are played.</p></li>
+<li><p><strong>retrigger</strong> – If true, a new note-on event will be sent when a note is reassigned
+to the selected voice as a result of another note being released.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.VoiceSplit">
-<tt class="descname">VoiceSplit</tt><big>(</big><em>patches</em>, <em>fallback='highest'</em>, <em>time=0.1</em>, <em>retrigger=False</em><big>)</big><a class="headerlink" href="#mididings.extra.VoiceSplit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Create multiple <a class="reference internal" href="#mididings.extra.VoiceFilter" title="mididings.extra.VoiceFilter"><tt class="xref py py-func docutils literal"><span class="pre">VoiceFilter()</span></tt></a> units to route each voice to
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.VoiceSplit">
+<span class="sig-name descname"><span class="pre">VoiceSplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">patches</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fallback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'highest'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">retrigger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.VoiceSplit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create multiple <a class="reference internal" href="#mididings.extra.VoiceFilter" title="mididings.extra.VoiceFilter"><code class="xref py py-func docutils literal notranslate"><span class="pre">VoiceFilter()</span></code></a> units to route each voice to
 a different instrument.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>patches</strong> &#8211; A list of patches, one for each voice.</li>
-<li><strong>fallback</strong> &#8211; Which note to double when the number of notes played is less than
-the number of voices. Can be <tt class="docutils literal"><span class="pre">'highest'</span></tt> or <tt class="docutils literal"><span class="pre">'lowest'</span></tt>.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>patches</strong> – A list of patches, one for each voice.</p></li>
+<li><p><strong>fallback</strong> – Which note to double when the number of notes played is less than
+the number of voices. Can be <code class="docutils literal notranslate"><span class="pre">'highest'</span></code> or <code class="docutils literal notranslate"><span class="pre">'lowest'</span></code>.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Regardless of the number of voices specified, the lowest and highest
 note played will always be routed to the first and last patch in
 the list, respectively.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c">#route up to three voices to different channels</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#route up to three voices to different channels</span>
 <span class="n">VoiceSplit</span><span class="p">([</span><span class="n">Channel</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">3</span><span class="p">)])</span>
 </pre></div>
 </div>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.LimitPolyphony">
-<tt class="descname">LimitPolyphony</tt><big>(</big><em>max_polyphony</em>, <em>remove_oldest=True</em><big>)</big><a class="headerlink" href="#mididings.extra.LimitPolyphony" title="Permalink to this definition">¶</a></dt>
-<dd><p>Limit the &#8220;MIDI polyphony&#8221;.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>max_polyphony</strong> &#8211; The maximum number of simultaneous notes.</li>
-<li><strong>remove_oldest</strong> &#8211; If true, the oldest notes will be stopped when the maximum polyphony
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.LimitPolyphony">
+<span class="sig-name descname"><span class="pre">LimitPolyphony</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_polyphony</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remove_oldest</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.LimitPolyphony" title="Permalink to this definition">¶</a></dt>
+<dd><p>Limit the “MIDI polyphony”.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>max_polyphony</strong> – The maximum number of simultaneous notes.</p></li>
+<li><p><strong>remove_oldest</strong> – If true, the oldest notes will be stopped when the maximum polyphony
 is exceeded.
 If false, no new notes are accepted while <em>max_polyphony</em> notes
-are already held.</li>
+are already held.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 <p>Note that the actual polyphony of a connected synthesizer can still be
 higher than the limit set here, e.g. due to a long release phase.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.MakeMonophonic">
-<tt class="descname">MakeMonophonic</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.extra.MakeMonophonic" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.MakeMonophonic">
+<span class="sig-name descname"><span class="pre">MakeMonophonic</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.MakeMonophonic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Make the MIDI signal monophonic, i.e. only one note can be played at
 any given time.
 When one note is released while another is still held (but silent),
 the previous one will be retriggered.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="splits">
-<span id="extra-splits"></span><h2>Splits<a class="headerlink" href="#splits" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.extra.FloatingKeySplit">
-<tt class="descname">FloatingKeySplit</tt><big>(</big><em>threshold_lower</em>, <em>threshold_upper</em>, <em>patch_lower</em>, <em>patch_upper</em>, <em>hold_time=1.0</em>, <em>margin_lower=12</em>, <em>margin_upper=12</em><big>)</big><a class="headerlink" href="#mididings.extra.FloatingKeySplit" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="splits">
+<span id="extra-splits"></span><h2>Splits<a class="headerlink" href="#splits" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.FloatingKeySplit">
+<span class="sig-name descname"><span class="pre">FloatingKeySplit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">threshold_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold_upper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_lower</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">patch_upper</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hold_time</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_lower</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">margin_upper</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.FloatingKeySplit" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a floating split point that moves dynamically depending on what
 you are playing, allowing a region of the keyboard to be shared between
 two split zones.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>threshold_lower</strong> &#8211; </li>
-<li><strong>threshold_upper</strong> &#8211; The lowest and highest notes between which the split point is
-allowed to move.</li>
-<li><strong>patch_lower</strong> &#8211; </li>
-<li><strong>patch_upper</strong> &#8211; The patch to which notes below/above the split point will be sent.</li>
-<li><strong>hold_time</strong> &#8211; How long released notes will still be taken into account when
-determining the split point (in seconds).</li>
-<li><strong>margin_lower</strong> &#8211; </li>
-<li><strong>margin_upper</strong> &#8211; How close you must get to the split point before it starts getting
-pushed into the opposite direction (in semitones).</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>threshold_lower</strong> – </p></li>
+<li><p><strong>threshold_upper</strong> – The lowest and highest notes between which the split point is
+allowed to move.</p></li>
+<li><p><strong>patch_lower</strong> – </p></li>
+<li><p><strong>patch_upper</strong> – The patch to which notes below/above the split point will be sent.</p></li>
+<li><p><strong>hold_time</strong> – How long released notes will still be taken into account when
+determining the split point (in seconds).</p></li>
+<li><p><strong>margin_lower</strong> – </p></li>
+<li><p><strong>margin_upper</strong> – How close you must get to the split point before it starts getting
+pushed into the opposite direction (in semitones).</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># split the keyboard somewhere between C2 and C3</span>
-<span class="n">FloatingKeySplit</span><span class="p">(</span><span class="s">&#39;c2&#39;</span><span class="p">,</span> <span class="s">&#39;c3&#39;</span><span class="p">,</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># split the keyboard somewhere between C2 and C3</span>
+<span class="n">FloatingKeySplit</span><span class="p">(</span><span class="s1">&#39;c2&#39;</span><span class="p">,</span> <span class="s1">&#39;c3&#39;</span><span class="p">,</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span> <span class="n">Channel</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="utilities">
-<span id="extra-util"></span><h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.extra.PedalToNoteoff">
-<tt class="descname">PedalToNoteoff</tt><big>(</big><em>ctrl=64</em>, <em>sostenuto=False</em><big>)</big><a class="headerlink" href="#mididings.extra.PedalToNoteoff" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="utilities">
+<span id="extra-util"></span><h2>Utilities<a class="headerlink" href="#utilities" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.PedalToNoteoff">
+<span class="sig-name descname"><span class="pre">PedalToNoteoff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sostenuto</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.PedalToNoteoff" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert sustain pedal control changes to note-off events,
 by delaying note-offs until the pedal is released.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ctrl</strong> &#8211; The pedal&#8217;s controller number.</li>
-<li><strong>sostenuto</strong> &#8211; If true act like a sostenuto pedal, instead of a regular sustain
-pedal.</li>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctrl</strong> – The pedal’s controller number.</p></li>
+<li><p><strong>sostenuto</strong> – If true act like a sostenuto pedal, instead of a regular sustain
+pedal.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.LatchNotes">
-<tt class="descname">LatchNotes</tt><big>(</big><em>polyphonic=False</em>, <em>reset=None</em><big>)</big><a class="headerlink" href="#mididings.extra.LatchNotes" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.LatchNotes">
+<span class="sig-name descname"><span class="pre">LatchNotes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polyphonic</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.LatchNotes" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes notes latching, so they will keep playing when the key is
 released.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>polyphonic</strong> &#8211; If true, each note can be stopped individually by pressing the
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>polyphonic</strong> – If true, each note can be stopped individually by pressing the
 corresponding key again.
 Otherwise pressing a key will automatically turn off any previous
-notes.</li>
-<li><strong>reset</strong> &#8211; a note (name/number) that acts as a reset key, stopping all
-currently playing notes.</li>
+notes.</p></li>
+<li><p><strong>reset</strong> – a note (name/number) that acts as a reset key, stopping all
+currently playing notes.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.SuppressPC">
-<tt class="descname">SuppressPC</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.extra.SuppressPC" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.SuppressPC">
+<span class="sig-name descname"><span class="pre">SuppressPC</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.SuppressPC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter out program changes if the same program has already
 been selected on the same port/channel.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.KeyColorFilter">
-<tt class="descname">KeyColorFilter</tt><big>(</big><em>color</em><big>)</big><a class="headerlink" href="#mididings.extra.KeyColorFilter" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.KeyColorFilter">
+<span class="sig-name descname"><span class="pre">KeyColorFilter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.KeyColorFilter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter notes by key color.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> &#8211; the key color, either <tt class="docutils literal"><span class="pre">'black'</span></tt> or <tt class="docutils literal"><span class="pre">'white'</span></tt>.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>color</strong> – the key color, either <code class="docutils literal notranslate"><span class="pre">'black'</span></code> or <code class="docutils literal notranslate"><span class="pre">'white'</span></code>.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.CtrlToSysEx">
-<tt class="descname">CtrlToSysEx</tt><big>(</big><em>ctrl</em>, <em>sysex</em>, <em>index</em>, <em>checksum_start=None</em><big>)</big><a class="headerlink" href="#mididings.extra.CtrlToSysEx" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.CtrlToSysEx">
+<span class="sig-name descname"><span class="pre">CtrlToSysEx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ctrl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sysex</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">checksum_start</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.CtrlToSysEx" title="Permalink to this definition">¶</a></dt>
 <dd><p>Convert control change to system exclusive event using a sysex pattern.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
-<li><strong>ctrl</strong> &#8211; controller number to be replaced.</li>
-<li><strong>sysex</strong> &#8211; sysex pattern.</li>
-<li><strong>index</strong> &#8211; index of sysex pattern byte to be replaced by the
-controller value.</li>
-<li><strong>checksum_start</strong> &#8211; index of first sysex byte to be incorporated into
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ctrl</strong> – controller number to be replaced.</p></li>
+<li><p><strong>sysex</strong> – sysex pattern.</p></li>
+<li><p><strong>index</strong> – index of sysex pattern byte to be replaced by the
+controller value.</p></li>
+<li><p><strong>checksum_start</strong> – index of first sysex byte to be incorporated into
 Roland checksum computation. The checksum will replace the
 next-to-last byte of the sysex pattern.
-If this parameter is <tt class="docutils literal"><span class="pre">None</span></tt>, no checksum is computed.</li>
+If this parameter is <code class="docutils literal notranslate"><span class="pre">None</span></code>, no checksum is computed.</p></li>
 </ul>
-</td>
-</tr>
-</tbody>
-</table>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.Panic">
-<tt class="descname">Panic</tt><big>(</big><em>bypass=True</em><big>)</big><a class="headerlink" href="#mididings.extra.Panic" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.Panic">
+<span class="sig-name descname"><span class="pre">Panic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bypass</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.Panic" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate all-notes-off (CC #123) and sustain off (CC #64) events on
 all channels.</p>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bypass</strong> &#8211; If true, events will be sent directly on all output ports, instead
-of originating from the <a class="reference internal" href="#mididings.extra.Panic" title="mididings.extra.Panic"><tt class="xref py py-func docutils literal"><span class="pre">Panic()</span></tt></a> unit and being subject to
-further processing.</td>
-</tr>
-</tbody>
-</table>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>bypass</strong> – If true, events will be sent directly on all output ports, instead
+of originating from the <a class="reference internal" href="#mididings.extra.Panic" title="mididings.extra.Panic"><code class="xref py py-func docutils literal notranslate"><span class="pre">Panic()</span></code></a> unit and being subject to
+further processing.</p>
+</dd>
+</dl>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.Restart">
-<tt class="descname">Restart</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.extra.Restart" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call <a class="reference internal" href="engine.html#mididings.engine.restart" title="mididings.engine.restart"><tt class="xref py py-func docutils literal"><span class="pre">engine.restart()</span></tt></a>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.Restart">
+<span class="sig-name descname"><span class="pre">Restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.Restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <code class="xref py py-func docutils literal notranslate"><span class="pre">engine.restart()</span></code>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.Quit">
-<tt class="descname">Quit</tt><big>(</big><big>)</big><a class="headerlink" href="#mididings.extra.Quit" title="Permalink to this definition">¶</a></dt>
-<dd><p>Call <a class="reference internal" href="engine.html#mididings.engine.quit" title="mididings.engine.quit"><tt class="xref py py-func docutils literal"><span class="pre">engine.quit()</span></tt></a>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.Quit">
+<span class="sig-name descname"><span class="pre">Quit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.Quit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call <code class="xref py py-func docutils literal notranslate"><span class="pre">engine.quit()</span></code>.</p>
 </dd></dl>
 
-</div>
-<div class="section" id="messaging">
-<span id="extra-message"></span><h2>Messaging<a class="headerlink" href="#messaging" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="mididings.extra.osc.SendOSC">
-<tt class="descname">SendOSC</tt><big>(</big><em>target</em>, <em>path</em>, <em>*args</em><big>)</big><a class="headerlink" href="#mididings.extra.osc.SendOSC" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="messaging">
+<span id="extra-message"></span><h2>Messaging<a class="headerlink" href="#messaging" title="Permalink to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.osc.SendOSC">
+<span class="sig-name descname"><span class="pre">SendOSC</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.osc.SendOSC" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send an OSC message.
-Parameters are the same as for <tt class="xref py py-func docutils literal"><span class="pre">liblo.send()</span></tt>.
+Parameters are the same as for <code class="xref py py-func docutils literal notranslate"><span class="pre">liblo.send()</span></code>.
 Additionally, instead of a specific value, each data argument may also
-be a Python function that takes a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> parameter,
+be a Python function that takes a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> parameter,
 and returns the value to be sent.</p>
-<p>Defined in <tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra.osc</span></tt>.
+<p>Defined in <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra.osc</span></code>.
 Requires <a class="reference external" href="http://das.nasophon.de/pyliblo/">pyliblo</a>.</p>
 </dd></dl>
 
-<dl class="function">
-<dt id="mididings.extra.dbus.SendDBUS">
-<tt class="descname">SendDBUS</tt><big>(</big><em>service</em>, <em>path</em>, <em>interface</em>, <em>method</em>, <em>*args</em><big>)</big><a class="headerlink" href="#mididings.extra.dbus.SendDBUS" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mididings.extra.dbus.SendDBUS">
+<span class="sig-name descname"><span class="pre">SendDBUS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">service</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interface</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">method</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mididings.extra.dbus.SendDBUS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Send a DBUS message.
 Instead of a specific value, each data argument may also be a Python
-function that takes a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><tt class="xref py py-class docutils literal"><span class="pre">MidiEvent</span></tt></a> parameter, and
+function that takes a single <a class="reference internal" href="event.html#mididings.event.MidiEvent" title="mididings.event.MidiEvent"><code class="xref py py-class docutils literal notranslate"><span class="pre">MidiEvent</span></code></a> parameter, and
 returns the value to be sent.</p>
-<p>Defined in <tt class="xref py py-mod docutils literal"><span class="pre">mididings.extra.dbus</span></tt>.
+<p>Defined in <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra.dbus</span></code>.
 Requires dbus-python.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="c"># change FFADO output volume using a MIDI controller</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># change FFADO output volume using a MIDI controller</span>
 <span class="n">CtrlFilter</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="n">SendDBUS</span><span class="p">(</span>
-    <span class="s">&#39;org.ffado.Control&#39;</span><span class="p">,</span>
-    <span class="s">&#39;/org/ffado/Control/DeviceManager/</span><span class="si">%s</span><span class="s">/Mixer/OUT0Gain&#39;</span> <span class="o">%</span> <span class="n">DEVICEID</span><span class="p">,</span>
-    <span class="s">&#39;org.ffado.Control.Element.Continuous&#39;</span><span class="p">,</span>
-    <span class="s">&#39;setValue&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;org.ffado.Control&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;/org/ffado/Control/DeviceManager/</span><span class="si">%s</span><span class="s1">/Mixer/OUT0Gain&#39;</span> <span class="o">%</span> <span class="n">DEVICEID</span><span class="p">,</span>
+    <span class="s1">&#39;org.ffado.Control.Element.Continuous&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;setValue&#39;</span><span class="p">,</span>
     <span class="k">lambda</span> <span class="n">ev</span><span class="p">:</span> <span class="n">ev</span><span class="o">.</span><span class="n">value</span> <span class="o">*</span> <span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">17</span><span class="p">)</span>
 <span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="index.html">Table of Contents</a></h3>
   <ul class="current">
@@ -400,9 +357,28 @@ Requires dbus-python.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="connect.html">Connections</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#serial-and-parallel">Serial and Parallel</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Chain"><code class="docutils literal notranslate"><span class="pre">Chain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Fork"><code class="docutils literal notranslate"><span class="pre">Fork</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Unit.add"><code class="docutils literal notranslate"><span class="pre">Unit.add</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#filtering-and-splitting">Filtering and Splitting</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.invert"><code class="docutils literal notranslate"><span class="pre">Filter.invert</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Filter.negate"><code class="docutils literal notranslate"><span class="pre">Filter.negate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Split"><code class="docutils literal notranslate"><span class="pre">Split</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="connect.html#selective-processing">Selective Processing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Selector.apply"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#id0"><code class="docutils literal notranslate"><span class="pre">Selector.apply</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.AndSelector"><code class="docutils literal notranslate"><span class="pre">AndSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.And"><code class="docutils literal notranslate"><span class="pre">And</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.OrSelector"><code class="docutils literal notranslate"><span class="pre">OrSelector</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="connect.html#mididings.Or"><code class="docutils literal notranslate"><span class="pre">Or</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a><ul>
@@ -413,37 +389,184 @@ Requires dbus-python.</p>
 <li class="toctree-l2"><a class="reference internal" href="misc.html#mididings-and-python">mididings and Python</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="main.html">Module <tt class="docutils literal"><span class="pre">mididings</span></tt></a><ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="main.html#global-configuration">Global Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#functions">Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.config"><code class="docutils literal notranslate"><span class="pre">config()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.hook"><code class="docutils literal notranslate"><span class="pre">hook()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.run"><code class="docutils literal notranslate"><span class="pre">run()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.runrun"><code class="docutils literal notranslate"><span class="pre">runrun()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="units.html"><tt class="docutils literal"><span class="pre">mididings</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="units.html#filters">Filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#modifiers">Modifiers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#generators">Generators</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#function-calls">Function Calls</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#scene-switching">Scene Switching</a></li>
-<li class="toctree-l2"><a class="reference internal" href="units.html#miscellaneous">Miscellaneous</a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#classes">Classes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.Scene"><code class="docutils literal notranslate"><span class="pre">Scene</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="main.html#mididings.SceneGroup"><code class="docutils literal notranslate"><span class="pre">SceneGroup</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href=""><tt class="docutils literal"><span class="pre">mididings.extra</span></tt> Units</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#voicing">Voicing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#splits">Splits</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#messaging">Messaging</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="extra.html">Module <tt class="docutils literal"><span class="pre">mididings.extra</span></tt></a><ul>
+<li class="toctree-l1"><a class="reference internal" href="units.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="units.html#filters">Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PortFilter"><code class="docutils literal notranslate"><span class="pre">PortFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ChannelFilter"><code class="docutils literal notranslate"><span class="pre">ChannelFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeyFilterKeyFilter"><code class="docutils literal notranslate"><span class="pre">KeyFilterKeyFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityFilterVelocityFilter"><code class="docutils literal notranslate"><span class="pre">VelocityFilterVelocityFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlFilter"><code class="docutils literal notranslate"><span class="pre">CtrlFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueFilterCtrlValueFilter"><code class="docutils literal notranslate"><span class="pre">CtrlValueFilterCtrlValueFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramFilter"><code class="docutils literal notranslate"><span class="pre">ProgramFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExFilterSysExFilter"><code class="docutils literal notranslate"><span class="pre">SysExFilterSysExFilter()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PortSplit"><code class="docutils literal notranslate"><span class="pre">PortSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ChannelSplit"><code class="docutils literal notranslate"><span class="pre">ChannelSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.KeySplitKeySplit"><code class="docutils literal notranslate"><span class="pre">KeySplitKeySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySplitVelocitySplit"><code class="docutils literal notranslate"><span class="pre">VelocitySplitVelocitySplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlSplit"><code class="docutils literal notranslate"><span class="pre">CtrlSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlValueSplitCtrlValueSplit"><code class="docutils literal notranslate"><span class="pre">CtrlValueSplitCtrlValueSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramSplit"><code class="docutils literal notranslate"><span class="pre">ProgramSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSplitSysExSplit"><code class="docutils literal notranslate"><span class="pre">SysExSplitSysExSplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#modifiers">Modifiers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Port"><code class="docutils literal notranslate"><span class="pre">Port()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Channel"><code class="docutils literal notranslate"><span class="pre">Channel()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Transpose"><code class="docutils literal notranslate"><span class="pre">Transpose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.TransposeTranspose"><code class="docutils literal notranslate"><span class="pre">TransposeTranspose()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Key"><code class="docutils literal notranslate"><span class="pre">Key()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Velocity"><code class="docutils literal notranslate"><span class="pre">Velocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityVelocity"><code class="docutils literal notranslate"><span class="pre">VelocityVelocity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocitySlopeVelocitySlope"><code class="docutils literal notranslate"><span class="pre">VelocitySlopeVelocitySlope()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.VelocityLimitVelocityLimit"><code class="docutils literal notranslate"><span class="pre">VelocityLimitVelocityLimit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlMap"><code class="docutils literal notranslate"><span class="pre">CtrlMap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlRange"><code class="docutils literal notranslate"><span class="pre">CtrlRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCurveCtrlCurve"><code class="docutils literal notranslate"><span class="pre">CtrlCurveCtrlCurve()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRange()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendRangePitchbendRange"><code class="docutils literal notranslate"><span class="pre">PitchbendRangePitchbendRange()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#generators">Generators</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOnNoteOn"><code class="docutils literal notranslate"><span class="pre">NoteOnNoteOn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.NoteOffNoteOff"><code class="docutils literal notranslate"><span class="pre">NoteOffNoteOff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Ctrl"><code class="docutils literal notranslate"><span class="pre">Ctrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CtrlCtrl"><code class="docutils literal notranslate"><span class="pre">CtrlCtrl()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Pitchbend"><code class="docutils literal notranslate"><span class="pre">Pitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PitchbendPitchbend"><code class="docutils literal notranslate"><span class="pre">PitchbendPitchbend()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Aftertouch"><code class="docutils literal notranslate"><span class="pre">Aftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.AftertouchAftertouch"><code class="docutils literal notranslate"><span class="pre">AftertouchAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PolyAftertouchPolyAftertouch"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchPolyAftertouch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Program"><code class="docutils literal notranslate"><span class="pre">Program()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.ProgramProgram"><code class="docutils literal notranslate"><span class="pre">ProgramProgram()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysEx"><code class="docutils literal notranslate"><span class="pre">SysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SysExSysEx"><code class="docutils literal notranslate"><span class="pre">SysExSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Generator"><code class="docutils literal notranslate"><span class="pre">Generator()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#function-calls">Function Calls</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Process"><code class="docutils literal notranslate"><span class="pre">Process()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Call"><code class="docutils literal notranslate"><span class="pre">Call()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.CallCall"><code class="docutils literal notranslate"><span class="pre">CallCall()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.System"><code class="docutils literal notranslate"><span class="pre">System()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#scene-switching">Scene Switching</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SceneSwitchSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SceneSwitchSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.SubSceneSwitchSubSceneSwitch"><code class="docutils literal notranslate"><span class="pre">SubSceneSwitchSubSceneSwitch()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Init"><code class="docutils literal notranslate"><span class="pre">Init()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Exit"><code class="docutils literal notranslate"><span class="pre">Exit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Output"><code class="docutils literal notranslate"><span class="pre">Output()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.OutputTemplate"><code class="docutils literal notranslate"><span class="pre">OutputTemplate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="units.html#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Print"><code class="docutils literal notranslate"><span class="pre">Print()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.PrintPrint"><code class="docutils literal notranslate"><span class="pre">PrintPrint()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Pass"><code class="docutils literal notranslate"><span class="pre">Pass()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Discard"><code class="docutils literal notranslate"><span class="pre">Discard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="units.html#mididings.Sanitize"><code class="docutils literal notranslate"><span class="pre">Sanitize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#voicing">Voicing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.Harmonize"><code class="docutils literal notranslate"><span class="pre">Harmonize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.VoiceFilter"><code class="docutils literal notranslate"><span class="pre">VoiceFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.VoiceSplit"><code class="docutils literal notranslate"><span class="pre">VoiceSplit()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.LimitPolyphony"><code class="docutils literal notranslate"><span class="pre">LimitPolyphony()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.MakeMonophonic"><code class="docutils literal notranslate"><span class="pre">MakeMonophonic()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#splits">Splits</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.FloatingKeySplit"><code class="docutils literal notranslate"><span class="pre">FloatingKeySplit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#utilities">Utilities</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.PedalToNoteoff"><code class="docutils literal notranslate"><span class="pre">PedalToNoteoff()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.LatchNotes"><code class="docutils literal notranslate"><span class="pre">LatchNotes()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.SuppressPC"><code class="docutils literal notranslate"><span class="pre">SuppressPC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.KeyColorFilter"><code class="docutils literal notranslate"><span class="pre">KeyColorFilter()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.CtrlToSysEx"><code class="docutils literal notranslate"><span class="pre">CtrlToSysEx()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.Panic"><code class="docutils literal notranslate"><span class="pre">Panic()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.Restart"><code class="docutils literal notranslate"><span class="pre">Restart()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.Quit"><code class="docutils literal notranslate"><span class="pre">Quit()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#messaging">Messaging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.osc.SendOSC"><code class="docutils literal notranslate"><span class="pre">SendOSC()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mididings.extra.dbus.SendDBUS"><code class="docutils literal notranslate"><span class="pre">SendDBUS()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="extra.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="extra.html#hooks">Hooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="extra.html#general-midi">General MIDI</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="event.html">Module <tt class="docutils literal"><span class="pre">mididings.event</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <tt class="docutils literal"><span class="pre">mididings.engine</span></tt></a></li>
-<li class="toctree-l1"><a class="reference internal" href="util.html">Module <tt class="docutils literal"><span class="pre">mididings.util</span></tt></a></li>
+<li class="toctree-l1"><a class="reference internal" href="event.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.event</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.MidiEvent"><code class="docutils literal notranslate"><span class="pre">MidiEvent</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.type"><code class="docutils literal notranslate"><span class="pre">MidiEvent.type</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.port"><code class="docutils literal notranslate"><span class="pre">MidiEvent.port</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.channel"><code class="docutils literal notranslate"><span class="pre">MidiEvent.channel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data1"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data1</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.data2"><code class="docutils literal notranslate"><span class="pre">MidiEvent.data2</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.note"><code class="docutils literal notranslate"><span class="pre">MidiEvent.note</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.velocity"><code class="docutils literal notranslate"><span class="pre">MidiEvent.velocity</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.ctrl"><code class="docutils literal notranslate"><span class="pre">MidiEvent.ctrl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.value"><code class="docutils literal notranslate"><span class="pre">MidiEvent.value</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.program"><code class="docutils literal notranslate"><span class="pre">MidiEvent.program</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#mididings.event.MidiEvent.sysex"><code class="docutils literal notranslate"><span class="pre">MidiEvent.sysex</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOnEvent"><code class="docutils literal notranslate"><span class="pre">NoteOnEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.NoteOffEvent"><code class="docutils literal notranslate"><span class="pre">NoteOffEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.CtrlEvent"><code class="docutils literal notranslate"><span class="pre">CtrlEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PitchbendEvent"><code class="docutils literal notranslate"><span class="pre">PitchbendEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.AftertouchEvent"><code class="docutils literal notranslate"><span class="pre">AftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.PolyAftertouchEvent"><code class="docutils literal notranslate"><span class="pre">PolyAftertouchEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.ProgramEvent"><code class="docutils literal notranslate"><span class="pre">ProgramEvent()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="event.html#mididings.event.SysExEvent"><code class="docutils literal notranslate"><span class="pre">SysExEvent()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="engine.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.engine</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="util.html">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.util</span></code></a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Command Line Tools and GUI</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#mididings"><strong class="command">mididings</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#livedings"><strong class="command">livedings</strong></a></li>
@@ -452,30 +575,31 @@ Requires dbus-python.</p>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="units.html"
-                        title="previous chapter"><tt class="docutils literal"><span class="pre">mididings</span></tt> Units</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="extra.html"
-                        title="next chapter">Module <tt class="docutils literal"><span class="pre">mididings.extra</span></tt></a></p>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="units.html"
+                          title="previous chapter"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings</span></code> Units</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="extra.html"
+                          title="next chapter">Module <code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code></a></p>
+  </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
@@ -490,12 +614,13 @@ Requires dbus-python.</p>
         <li class="right" >
           <a href="units.html" title="mididings Units"
              >previous</a> |</li>
-        <li><a href="index.html">mididings  documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">mididings  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href=""><code class="xref py py-mod docutils literal notranslate"><span class="pre">mididings.extra</span></code> Units</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2008-2014, Dominic Sacré.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2008-2014, Dominic Sacré.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 6.0.0.
     </div>
   </body>
 </html>
