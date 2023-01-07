@@ -121,14 +121,14 @@ def Process(function, *args, **kwargs):
           - a list of :class:`~.MidiEvent` objects.
           - ``None`` (or an empty list).
 
-        Instead of ``return``\ ing :class:`~.MidiEvent` objects, *function*
-        may also be a generator that ``yield``\ s :class:`~.MidiEvent`
+        Instead of ``return``\\ ing :class:`~.MidiEvent` objects, *function*
+        may also be a generator that ``yield``\\ s :class:`~.MidiEvent`
         objects.
 
-    :param \*args:
+    :param \\*args:
         optional positional arguments that will be passed to *function*.
 
-    :param \*\*kwargs:
+    :param \\*\\*kwargs:
         optional keyword arguments that will be passed to *function*.
 
 

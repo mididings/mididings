@@ -107,7 +107,7 @@ def config(**kwargs):
     called only once at the beginning of the script, before constructing
     any processing units.
 
-    :param \*\*kwargs: an arbitrary number of keyword arguments, matching
+    :param \\*\\*kwargs: an arbitrary number of keyword arguments, matching
         the names and values described in section :ref:`main-config`.
     """
     _config_impl(**kwargs)
@@ -147,7 +147,7 @@ def hook(*args):
     Hook classes that ship with mididings are described in section
     :ref:`extra-hooks`.
 
-    :param \*args: an arbitrary number of hook objects.
+    :param \\*args: an arbitrary number of hook objects.
     """
     _hooks.extend(args)
 
