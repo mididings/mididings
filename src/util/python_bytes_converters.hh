@@ -21,8 +21,6 @@ namespace das {
 namespace python {
 
 
-#if PY_VERSION_HEX >= 0x03000000
-
 /**
  * Converter from a Python bytes object to std::vector.
  */
@@ -60,9 +58,6 @@ struct to_bytes_converter
         return &PyBytes_Type;
     }
 };
-
-#endif // PY_VERSION_HEX >= 0x03000000
-
 
 
 /**
