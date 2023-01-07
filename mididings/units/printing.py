@@ -83,7 +83,7 @@ class _Printer(object):
         eventstr = ev.to_string(self.ports, _Print.max_portname_length,
                                 eventmax)
 
-        print('%s%s' % (namestr, eventstr))
+        print(f"{namestr}{eventstr}")
 
 
 class _PrintString(_CallBase):

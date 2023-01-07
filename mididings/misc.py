@@ -124,10 +124,9 @@ class deprecated(object):
         if (not (hasattr(f, '_already_used') and f._already_used) and
                 not get_config('silent')):
             if self.replacement:
-                print("%s() is deprecated, please use %s() instead" %
-                        (f.__name__, self.replacement))
+                print(f"{f.__name__}() is deprecated, please use {self.replacement}() instead")
             else:
-                print("%s() is deprecated" % f.__name__)
+                print(f"{f.__name__}() is deprecated")
             f._already_used = True
         return f(*args, **kwargs)
 

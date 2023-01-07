@@ -190,9 +190,9 @@ class Engine(_mididings.Engine):
 
                 scene_desc = (("%s: %s" % (number, name)) if name
                                 else str(number))
-                print("switching to scene %s" % scene_desc)
+                print(f"switching to scene {scene_desc}")
             else:
-                print("no such scene: %s" % number)
+                print(f"no such scene: {number}")
 
         if found:
             self._call_hooks('on_switch_scene', scene, subscene)

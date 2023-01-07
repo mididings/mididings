@@ -50,4 +50,4 @@ class MemorizeScene(object):
             f.write("%d %d\n" % (_engine.current_scene(),
                                  _engine.current_subscene()))
         except IOError as ex:
-            print("couldn't store current scene:\n%s" % str(ex))
+            print(f"couldn't store current scene:\n{ex}")
