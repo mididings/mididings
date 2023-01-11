@@ -171,4 +171,14 @@ setup(
         'scripts/livedings',
         'scripts/send_midi',
     ],
+    data_files=[
+        (
+            "share/man/man1",
+            [
+                "doc/man/mididings.1",
+                "doc/man/livedings.1",
+                "doc/man/send_midi.1",
+            ],
+        ),
+    ],
 )

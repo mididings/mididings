@@ -25,18 +25,22 @@ clean-build: ## Delete distribution artifacts
 build: sdist wheel ## Build sdist & wheel
 
 .PHONY: wheel
-wheel: ## Build wheel with the build module
+wheel: manpages ## Build wheel with the build module
 	@python -m build --no-isolation --wheel
 
 .PHONY: sdist
-sdist: ## Build sdist with the build module
+sdist: manpages ## Build sdist with the build module
 	@python -m build --no-isolation --sdist
 
 # requires library to be built & installed due to
 # sphinx's introspection into the library
 .PHONY: docs
-docs: ## Build documentation with Sphinx
+docs: ## Build html documentation with Sphinx
 	make -C doc
+
+.PHONY: manpages
+manpages: ## Build manpages using scdoc
+	make -C doc/man
 
 ##@ Utilities
 .DEFAULT_GOAL = help

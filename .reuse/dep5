@@ -14,7 +14,7 @@ Copyright: 2008-2015  Dominic Sacré  <dominic.sacre@gmx.de>, mididings contribu
 License: GFDL-1.3-or-later
 
 # more documentation
-Files: NEWS README.md MANIFEST.in setup.py pyproject.toml .gitignore Makefile
+Files: NEWS README.md MANIFEST.in setup.py pyproject.toml .gitignore Makefile doc/man/*
 Copyright: mididings contributors
 License: GPL-2.0-or-later
 
