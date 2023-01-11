@@ -96,6 +96,9 @@ class SubSceneSwitch
             int n = engine.current_subscene() + _offset;
             if (_wrap) {
                 n %= engine.num_subscenes();
+                if (n < 0) {
+                    n += engine.num_subscenes();
+                }
             }
             if (engine.has_subscene(n)) {
                 engine.switch_scene(-1, n);
