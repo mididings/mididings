@@ -161,10 +161,10 @@ def Process(function, *args, **kwargs):
     :param thread:
         like *function*, but causes the function to be run in its own thread.
 
-    :param \*args:
+    :param \\*args:
         optional positional arguments that will be passed to *function*.
 
-    :param \*\*kwargs:
+    :param \\*\\*kwargs:
         optional keyword arguments that will be passed to *function*.
     """
 )
