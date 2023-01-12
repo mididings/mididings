@@ -1,5 +1,3 @@
-# mididings
-
 A MIDI router/processor based on Python, supporting ALSA and JACK MIDI.
 It is available under the GNU GPL and currently runs on Linux.
 
@@ -82,8 +80,16 @@ pacman -Syu mididings
 
 ## Documentation
 
-Documentation is currently being worked on, the original
-[homepage][original-home] & [documentation][original-docs] are valuable resources.
+* [API documentation][api-docs]
+* [GitHub Wiki][gh-wiki]
+
+Some links that might also be of interest:
+
+* [Original homepage][original-home]
+* [Original documentation][original-docs]
+* [QJackCtl and the Patchbay][qjack]
+* [The Python Tutorial][py-tutorial]
+* [Guide to the MIDI specification][midi-spec]
 
 ## Support
 
@@ -116,6 +122,11 @@ The example scripts in `doc/examples` are available under the terms of the
 [pyinotify]: https://github.com/seb-m/pyinotify
 [tkinter]: https://docs.python.org/3/library/tkinter.html
 [pyxdg]: https://freedesktop.org/wiki/Software/pyxdg/
+[api-docs]: https://mididings.github.io/mididings/
+[gh-wiki]: https://github.com/mididings/mididings/wiki
+[qjack]: https://www.rncbc.org/drupal/node/76
+[py-tutorial]: https://docs.python.org/3/tutorial/
+[midi-spec]: http://www.somascape.org/midi/tech/spec.html
 [mailing-list]: https://groups.google.com/g/mididings
 [spdx-gpl2]: https://spdx.org/licenses/GPL-2.0-or-later.html
 [spdx-gfdl]: https://spdx.org/licenses/GFDL-1.3-or-later.html
