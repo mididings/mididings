@@ -197,6 +197,12 @@ class LiveDings(object):
         self.listbox.selection_set(sorted(self.scenes.keys()).index(scene))
         self.update()
 
+    def on_exit(self):
+        pass
+
+    def on_start(self):
+        pass
+
     def update_scenes(self):
         self.listbox.delete(0, 'end')
         for n in sorted(self.scenes.keys()):
