@@ -42,6 +42,7 @@ class OSCInterface(object):
     - **/mididings/panic**: send all-notes-off on all channels and on all
       output ports.
     - **/mididings/quit**: terminate mididings.
+    - **/mididings/restart**: restart mididings.
     """
     def __init__(self, port=56418, notify_ports=[56419]):
         self.port = port
