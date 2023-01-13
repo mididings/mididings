@@ -67,3 +67,11 @@ class LiveOSC(liblo.ServerThread):
     @liblo.make_method('/mididings/current_scene', 'ii')
     def current_scene_cb(self, path, args):
         self.dings.set_current_scene(args[0], args[1])
+
+    @liblo.make_method('/mididings/exit', '')
+    def on_exit_cb(self, path, args):
+        self.dings.on_exit()
+
+    @liblo.make_method('/mididings/start', '')
+    def on_start_cb(self, path, args):
+        self.dings.on_start()

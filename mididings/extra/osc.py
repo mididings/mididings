@@ -56,10 +56,12 @@ class OSCInterface(object):
             self.server.register_methods(self)
             self.server.start()
 
-        self.send_config()
+        self.send_config(True)
 
     def on_exit(self):
         if self.port is not None:
+            for p in self.notify_ports:
+                _liblo.send(p, '/mididings/exit')
             self.server.stop()
             del self.server
 
@@ -67,8 +69,9 @@ class OSCInterface(object):
         for p in self.notify_ports:
             _liblo.send(p, '/mididings/current_scene', scene, subscene)
 
-    def send_config(self):
+    def send_config(self, start=False):
         for p in self.notify_ports:
+            if start: _liblo.send(p, '/mididings/start')
             # send data offset
             _liblo.send(p, '/mididings/data_offset',
                         _setup.get_config('data_offset'))
