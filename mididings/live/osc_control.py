@@ -46,6 +46,12 @@ class LiveOSC(liblo.ServerThread):
     def panic(self):
         self.send(self.control_port, '/mididings/panic')
 
+    def quit(self):
+        self.send(self.control_port, '/mididings/quit')
+
+    def restart(self):
+        self.send(self.control_port, '/mididings/restart')
+
     @liblo.make_method('/mididings/data_offset', 'i')
     def data_offset_cb(self, path, args):
         self.dings.set_data_offset(args[0])
