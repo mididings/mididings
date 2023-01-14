@@ -1,3 +1,5 @@
+# mididings
+
 A MIDI router/processor based on Python, supporting ALSA and JACK MIDI.
 It is available under the GNU GPL and currently runs on Linux.
 
