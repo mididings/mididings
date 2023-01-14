@@ -15,7 +15,7 @@ master_doc = 'index'
 
 project = u'mididings'
 copyright = u'2008-2014, Dominic Sacré'
-version = ''
+version = '20230114'
 release = ''
 
 html_theme = 'nasophon'
