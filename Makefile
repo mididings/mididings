@@ -18,7 +18,7 @@ clean-pyc: ## Delete Python cache artifacts
 
 .PHONY: clean-build
 clean-build: ## Delete distribution artifacts
-	@rm --force --recursive build dist *.egg-info doc/build
+	@rm --force --recursive build dist *.egg-info doc/build doc/man/*.1
 
 ##@ Build
 .PHONY: build
