@@ -60,6 +60,18 @@ official repositories:
 pacman -Syu mididings
 ```
 
+### Source
+
+An additonal dependency is required ([scdoc][scdoc]) and can be uninstalled
+afterwards.
+
+```sh
+make manpages
+python -m build
+```
+
+Distribution artifacts (wheel & sdist) can be found in `dist/` folder.
+
 ## Dependencies
 
 ### Required
@@ -118,6 +130,7 @@ The example scripts in `doc/examples` are available under the terms of the
 [boost]: https://www.boost.org
 [glib]: https://docs.gtk.org/glib/
 [decorator]: https://github.com/micheles/decorator
+[scdoc]: https://git.sr.ht/~sircmpwn/scdoc
 [pyliblo]: https://github.com/dsacre/pyliblo
 [pysmf]: https://github.com/dsacre/pysmf
 [dbus-python]: https://www.freedesktop.org/wiki/Software/dbus/
