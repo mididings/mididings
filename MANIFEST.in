@@ -14,7 +14,7 @@ include .reuse/dep5
 recursive-include mididings *.py
 
 # extension source
-recursive-include src SConstruct *.hh *.cc
+recursive-include src *.hh *.cc
 
 # tests
 recursive-include tests *.py
