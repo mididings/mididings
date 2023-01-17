@@ -59,3 +59,7 @@ reuse: ## Validate licensing information with reuse
 .PHONY: ruff
 ruff: ## Lint source code with ruff
 	@ruff mididings tests
+
+.PHONY: mdl
+mdl: ## Lint all markdown documentation with mdl
+	@mdl .
