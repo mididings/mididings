@@ -68,7 +68,7 @@ lint-python:
 
 # lint cython source code with cppcheck
 lint-cython:
-  cppcheck src
+  cppcheck --language=c++ $(find src -name "*.hh" -o -name "*.cc")
 
 # lint all markdown documentation with mdl
 lint-markdown:
