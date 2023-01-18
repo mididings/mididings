@@ -45,7 +45,6 @@ version = extract_version()
 config = {
     'alsa-seq':     (platform.system() == 'Linux'),
     'jack-midi':    True,
-    'debug':        False,
 }
 
 # information for compiled extension
