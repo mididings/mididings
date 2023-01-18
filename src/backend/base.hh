@@ -78,11 +78,11 @@ class BackendBase
     virtual void connect_ports(PortConnectionMap const &,
                                PortConnectionMap const &) { }
 
-    virtual std::string get_actual_client_name() { }
+    virtual std::string get_actual_client_name() { return ""; }
 
-    virtual int get_client_id() { }
+    virtual int get_client_id() { return 0; }
 
-    virtual std::string get_client_uuid() { }
+    virtual std::string get_client_uuid() { return ""; }
 
     // start MIDI processing, run init function. depending on the backend,
     // cycle may be called once (and not return) or periodically.
