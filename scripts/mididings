@@ -13,7 +13,7 @@
 
 import sys
 import os
-import optparse
+import argparse
 import platform
 import functools
 
@@ -26,28 +26,31 @@ import mididings.patch
 
 try:
     import xdg.BaseDirectory
-    MIDIDINGS_CONFIG_DIR = os.path.join(
-                            xdg.BaseDirectory.xdg_config_home, 'mididings')
-    MIDIDINGS_DATA_DIR = os.path.join(
-                            xdg.BaseDirectory.xdg_data_home, 'mididings')
+
+    MIDIDINGS_CONFIG_DIR = os.path.join(xdg.BaseDirectory.xdg_config_home, "mididings")
+    MIDIDINGS_DATA_DIR = os.path.join(xdg.BaseDirectory.xdg_data_home, "mididings")
 except ImportError:
-    MIDIDINGS_CONFIG_DIR = os.path.expanduser('~/.config/mididings')
-    MIDIDINGS_DATA_DIR = os.path.expanduser('~/.local/share/mididings')
+    MIDIDINGS_CONFIG_DIR = os.path.expanduser("~/.config/mididings")
+    MIDIDINGS_DATA_DIR = os.path.expanduser("~/.local/share/mididings")
 
-MIDIDINGS_DEFAULTS = os.path.join(MIDIDINGS_CONFIG_DIR, 'default.py')
-MIDIDINGS_HISTFILE = os.path.join(MIDIDINGS_DATA_DIR, 'history')
+MIDIDINGS_DEFAULTS = os.path.join(MIDIDINGS_CONFIG_DIR, "default.py")
+MIDIDINGS_HISTFILE = os.path.join(MIDIDINGS_DATA_DIR, "history")
 MIDIDINGS_HISTSIZE = 100
-
 
 
 class Dings(object):
     def __init__(self, options):
         # build dict of all public members of mididings and mididings.extra
-        self.dings_dict = dict((k, v) for k, v in mididings.__dict__.items()
-                                      if k in mididings.__all__)
+        self.dings_dict = dict(
+            (k, v) for k, v in mididings.__dict__.items() if k in mididings.__all__
+        )
         self.dings_dict.update(
-                      dict((k, v) for k, v in mididings.extra.__dict__.items()
-                                  if k in mididings.extra.__all__))
+            dict(
+                (k, v)
+                for k, v in mididings.extra.__dict__.items()
+                if k in mididings.extra.__all__
+            )
+        )
 
         # load defaults from config file
         try:
@@ -68,11 +71,13 @@ class Dings(object):
             self.config(octave_offset=options.octave_offset)
         if options.in_ports is not None or options.in_connections:
             in_ports = self.make_port_definitions(
-                            options.in_connections, options.in_ports)
+                options.in_connections, options.in_ports
+            )
             self.config(in_ports=in_ports)
         if options.out_ports is not None or options.out_connections:
             out_ports = self.make_port_definitions(
-                            options.out_connections, options.out_ports)
+                options.out_connections, options.out_ports
+            )
             self.config(out_ports=out_ports)
 
     def config(self, **kwargs):
@@ -91,19 +96,19 @@ class Dings(object):
         return [(None, c) for c in connections]
 
     def exec_dings(self, filename):
-        exec(compile(open(filename).read(), filename, 'exec'),
-                 self.dings_dict)
+        exec(compile(open(filename).read(), filename, "exec"), self.dings_dict)
 
     def run_file(self, filename):
         # add filename's directory to sys.path to allow import from the same
         # directory
         d = os.path.dirname(filename)
         if not d:
-            d = '.'
+            d = "."
         sys.path.insert(0, d)
         # just a kludge to make AutoRestart() work
-        sys.modules['__mididings_main__'] = type(
-                'MididingsMain', (), {'__file__': os.path.abspath(filename)})
+        sys.modules["__mididings_main__"] = type(
+            "MididingsMain", (), {"__file__": os.path.abspath(filename)}
+        )
 
         self.exec_dings(filename)
 
@@ -115,13 +120,13 @@ class Dings(object):
 
     def run_print(self):
         # don't override user-defined client name
-        mididings.setup.config(client_name='printdings')
+        mididings.setup.config(client_name="printdings")
         self.config(out_ports=0)
         mididings.run(mididings.Print())
 
     def run_interactive(self, source=None, auto=False):
         import code
-        import readline     # it's... magic!
+        import readline  # it's... magic!
 
         shell = code.InteractiveConsole(self.dings_dict)
         readline.set_history_length(MIDIDINGS_HISTSIZE)
@@ -138,6 +143,7 @@ class Dings(object):
                         return cmd
                     else:
                         state -= 1
+
         readline.parse_and_bind("tab: complete")
         readline.set_completer(complete_dings)
 
@@ -152,25 +158,29 @@ class Dings(object):
         @functools.wraps(mididings.run)
         def run_wrapper(*args, **kwargs):
             mididings.run(*args, **kwargs)
-            print('')
-        self.dings_dict['run'] = run_wrapper
+            print("")
+
+        self.dings_dict["run"] = run_wrapper
 
         if auto:
             # monkey-patch shell.raw_input() to remember whether the input
             # started with a blank.
             started_with_blank = [False]
+
             def raw_input_wrapper(prompt):
                 r = code.InteractiveConsole.raw_input(shell, prompt)
-                started_with_blank[0] = r.startswith(' ')
+                started_with_blank[0] = r.startswith(" ")
                 if started_with_blank[0]:
                     return r[1:]
                 else:
                     return r
+
             shell.raw_input = raw_input_wrapper
 
             # replace sys.displayhook to execute anything that is a valid
             # mididings patch, unless input started with a blank.
             displayhook_orig = sys.displayhook
+
             def displayhook_wrapper(value):
                 try:
                     # build a throw-away patch to check for exceptions
@@ -183,11 +193,13 @@ class Dings(object):
                     run_wrapper(value)
                 else:
                     displayhook_orig(value)
+
             sys.displayhook = displayhook_wrapper
 
         # run interactive shell
-        shell.interact(banner='mididings %s, using Python %s' %
-                        (mididings.__version__, platform.python_version()))
+        shell.interact(
+            banner=f"mididings {mididings.__version__}, using Python {platform.python_version()}"
+        )
         # save history
         try:
             os.makedirs(MIDIDINGS_DATA_DIR)
@@ -199,85 +211,130 @@ class Dings(object):
             pass
 
 
-if __name__ == '__main__':
-    usage   = "Usage: mididings [backend options] \"patch\"\n" \
-              "       mididings [backend options] [mode option]"
-    description = "A MIDI router and processor based on Python."
-    epilog  = "See the mididings manual for more information."
-    version = ("mididings %s, using Python %s" %
-                        (mididings.__version__, platform.python_version()))
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        prog="mididings",
+        #    usage="""
+        #    Usage: mididings [backend options] \"patch\"
+        #           mididings [backend options] [mode option]""",
+        description="A MIDI router and processor.",
+        epilog="See the mididings manual for more information.",
+    )
 
-    parser = optparse.OptionParser(usage=usage, description=description,
-                                   epilog=epilog, version=version)
+    backend_group = parser.add_argument_group("Backend options")
+    backend_mutex = backend_group.add_mutually_exclusive_group()
+    general_group = parser.add_argument_group("General options")
+    mode_group = parser.add_argument_group("Mode options")
 
-#    parser.format_description = lambda formatter: parser.description
-#    parser.format_epilog = lambda formatter: parser.epilog
+    backend_mutex.add_argument(
+        "-A",
+        dest="backend",
+        action="store_const",
+        const="alsa",
+        help="use ALSA sequencer",
+    )
+    backend_mutex.add_argument(
+        "-J",
+        dest="backend",
+        action="store_const",
+        const="jack",
+        help="use JACK MIDI (buffered)",
+    )
+    backend_mutex.add_argument(
+        "-R",
+        dest="backend",
+        action="store_const",
+        const="jack-rt",
+        help="use JACK MIDI (realtime)",
+    )
+    backend_group.add_argument("-c", dest="client_name", help="ALSA/JACK client name")
+    backend_group.add_argument(
+        "-i", dest="in_ports", type=int, help="number of input ports"
+    )
+    backend_group.add_argument(
+        "-o", dest="out_ports", type=int, help="number of output ports"
+    )
+    backend_group.add_argument(
+        "-I",
+        dest="in_connections",
+        action="append",
+        type=str,
+        help="input port connections (regular expression)",
+    )
+    backend_group.add_argument(
+        "-O",
+        dest="out_connections",
+        action="append",
+        type=str,
+        help="output port connections (regular expression)",
+    )
 
-    backopt = optparse.OptionGroup(parser, "Backend options")
-    backopt.add_option('-b', dest='backend', help=optparse.SUPPRESS_HELP)
-    backopt.add_option('-A', dest='backend',
-                       action='store_const', const='alsa',
-                       help="use ALSA sequencer")
-    backopt.add_option('-J', dest='backend',
-                       action='store_const', const='jack',
-                       help="use JACK MIDI (buffered)")
-    backopt.add_option('-R', dest='backend',
-                       action='store_const', const='jack-rt',
-                       help="use JACK MIDI (realtime)")
-    backopt.add_option('-c', dest='client_name',
-                       help="ALSA or JACK client name")
-    backopt.add_option('-i', dest='in_ports', type=int,
-                       help="number of input ports")
-    backopt.add_option('-o', dest='out_ports', type=int,
-                       help="number of output ports")
-    backopt.add_option('-I', dest='in_connections', type=str, action='append',
-                       help='input port connections (regular expression)')
-    backopt.add_option('-O', dest='out_connections', type=str, action='append',
-                       help='output port connections (regular expression)')
-    parser.add_option_group(backopt)
+    general_group.add_argument(
+        "-d",
+        dest="start_delay",
+        type=float,
+        help="delay (seconds) before processing starts",
+    )
+    general_group.add_argument(
+        "-t", dest="octave_offset", type=int, help="octave offset"
+    )
+    general_group.add_argument(
+        "-z",
+        dest="data_offset",
+        type=int,
+        help="offset for port, channel & program numbers",
+    )
 
-    gnrlopt = optparse.OptionGroup(parser, "General options")
-    gnrlopt.add_option('-d', dest='start_delay', type=float,
-                       help="delay (in seconds) before processing starts")
-    gnrlopt.add_option('-t', dest='octave_offset', type=int,
-                       help="octave offset")
-    gnrlopt.add_option('-z', dest='data_offset', type=int,
-                       help="offset for port, channel, and program numbers")
-    parser.add_option_group(gnrlopt)
+    mode_group.add_argument("-f", dest="filename", help="file name of script to run")
+    mode_group.add_argument(
+        "-s", dest="interactive", action="store_true", help="interactive shell"
+    )
+    mode_group.add_argument(
+        "-S",
+        dest="interactive_auto",
+        action="store_true",
+        help="interactive shell with automatic patch execution",
+    )
+    mode_group.add_argument(
+        "-p",
+        dest="print_events",
+        action="store_true",
+        help="print MIDI events (no processing)",
+    )
 
-    modeopt = optparse.OptionGroup(parser, "Mode options")
-    modeopt.add_option('-f', dest='filename',
-                       help="file name of script to run")
-    modeopt.add_option('-s', dest='interactive', action='store_true',
-                       help="interactive shell")
-    modeopt.add_option('-S', dest='interactive_auto', action='store_true',
-                       help="interactive shell with automatic patch execution")
-    modeopt.add_option('-p', action='store_true', dest='print_events',
-                       help="print MIDI events (no processing)")
-    parser.add_option_group(modeopt)
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"%(prog)s {mididings.__version__}, using Python {platform.python_version()}",
+    )
 
-    options, args = parser.parse_args(sys.argv[1:])
+    parser.add_argument("patch", nargs="?", help="name of patch")
 
-    if (len(args) == 0 and not options.filename and
-            not options.print_events and
-            not options.interactive and
-            not options.interactive_auto):
-        parser.error("no patch and no file name specified")
-    elif len(args) > 1:
-        parser.error("more than one patch specified")
-    elif options.filename and (options.interactive or
-                               options.interactive_auto):
-        parser.error("file name and interactive shell are mutually exclusive")
+    args = parser.parse_args()
 
-    app = Dings(options)
+    if (
+        not args.patch
+        and not args.filename
+        and not args.print_events
+        and not args.interactive
+        and not args.interactive_auto
+    ):
+        parser.print_usage()
+        print("No patch and no filename specified.")
+        sys.exit(1)
+    elif args.filename and (args.interactive or args.interactive_auto):
+        print("File name and interactive shell are mutually exclusive.")
+        sys.exit(1)
 
-    if options.print_events:
+    app = Dings(args)
+
+    if args.print_events:
         app.run_print()
-    elif options.filename:
-        app.run_file(options.filename)
-    elif options.interactive:
-        app.run_interactive(args[0] if len(args) else None, False)
-    elif options.interactive_auto:
-        app.run_interactive(args[0] if len(args) else None, True)
+    elif args.filename:
+        app.run_file(args.filename)
+    elif args.interactive:
+        app.run_interactive(args.patch if args.patch else None, False)
+    elif args.interactive_auto:
+        app.run_interactive(args.patch if args.patch else None, True)
     else:
-        app.run_patch(args[0])
+        app.run_patch(args.patch)
