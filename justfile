@@ -2,10 +2,10 @@
 # ^ A shebang isn't required, but allows a justfile to be executed
 #   like a script, with `./justfile test`, for example.
 
-build-dir := `python dev/get-buildpath.py`
+build-dir := `python3 dev/get-buildpath.py`
 
-# list all recipes by default
-default:
+# default recipe: list all recipes
+_default:
   just --list
 
 # clean everything
@@ -34,11 +34,11 @@ build: build-wheel build-sdist
 
 # build wheel artifact with python -m build
 build-wheel: build-manpages
-  python -m build --no-isolation --wheel
+  python3 -m build --no-isolation --wheel
 
 # build sdist artifact with python -m build
 build-sdist: build-manpages
-  python -m build --no-isolation --sdist
+  python3 -m build --no-isolation --sdist
 
 # generate documentation with sphinx
 build-documentation: build-wheel
