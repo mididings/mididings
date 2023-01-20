@@ -22,7 +22,7 @@ source_suffix = ".rst"
 master_doc = "index"
 
 project = "mididings"
-copyright = "2008-2014, Dominic Sacré"
+copyright = "mididings contributors"
 version = "20230114"
 release = ""
 
