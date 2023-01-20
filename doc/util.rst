@@ -2,4 +2,5 @@ Module :mod:`mididings.util`
 ============================
 
 .. automodule:: mididings.util
-    :no-undoc-members:
+  :members:
+  :no-undoc-members:
