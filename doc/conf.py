@@ -1,67 +1,36 @@
 # -*- coding: utf-8 -*-
 #
-import sys
-import os
 import re
 
-from sphinx.ext.autodoc import py_ext_sig_re
-from sphinx.util.docstrings import prepare_docstring
 from sphinx.domains.python import PyFunction
 from sphinx import addnodes
 
-
-sys.path.insert(0, os.path.abspath(".."))
-
-extensions = ["sphinx.ext.autodoc", "sphinxcontrib.fulltoc"]
-
-templates_path = ["templates"]
-html_theme_path = ["theme"]
-exclude_patterns = ["build"]
-
-source_suffix = ".rst"
-master_doc = "index"
-
+# project-specific configuration
 project = "mididings"
 copyright = "mididings contributors"
 version = "20230114"
-release = ""
 
-html_theme = "nasophon"
-html_copy_source = False
-pygments_style = "sphinx"
-
+# general configuration
+extensions = [
+    "sphinx.ext.autodoc",
+    "sphinxcontrib.fulltoc",
+]
+root_doc = "index"
+exclude_patterns = ["build"]
+templates_path = ["templates"]
 add_module_names = False
+
+# html configuration
+html_theme = "nasophon"
+html_theme_path = ["theme"]
+html_copy_source = False
+
+# extension configuration - autodoc
 autodoc_member_order = "bysource"
-autodoc_default_flags = ["members", "undoc-members"]
-
-
-def process_docstring(app, what, name, obj, options, lines):
-    """
-    Remove leading function signatures from docstring.
-    """
-    while len(lines) and py_ext_sig_re.match(lines[0]) is not None:
-        del lines[0]
-
-
-def process_signature(app, what, name, obj, options, signature, return_annotation):
-    """
-    Replace function signature with those specified in the docstring.
-    """
-    if hasattr(obj, "__doc__") and obj.__doc__ is not None:
-        lines = prepare_docstring(obj.__doc__)
-        siglines = []
-
-        for line in lines:
-            if py_ext_sig_re.match(line) is not None:
-                siglines.append(line)
-            else:
-                break
-
-        if len(siglines):
-            siglines[0] = siglines[0][siglines[0].index("(") :]
-            return ("\n".join(siglines), None)
-
-    return (signature, return_annotation)
+autodoc_default_options = {
+    "members": True,
+    "undoc-members": True,
+}
 
 
 class DingsFunction(PyFunction):
@@ -90,6 +59,4 @@ class DingsFunction(PyFunction):
 
 
 def setup(app):
-    app.connect("autodoc-process-docstring", process_docstring)
-    app.connect("autodoc-process-signature", process_signature)
     app.add_directive("dingsfun", DingsFunction)
