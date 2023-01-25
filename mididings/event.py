@@ -73,8 +73,7 @@ class MidiEvent(_mididings.MidiEvent):
 
     def _check_type_attribute(self, type, name):
         if not self.type & type:
-            message = ("MidiEvent type '%s' has no attribute '%s'" %
-                                (self._type_to_string(), name))
+            message = (f"MidiEvent type '{self._type_to_string()}' has no attribute '{name}'")
             raise AttributeError(message)
 
     def _type_to_string(self):
@@ -88,7 +87,7 @@ class MidiEvent(_mididings.MidiEvent):
         if max_length:
             m = max(0, max_length // 3)
             if len(data) > m:
-                return '%s ...' % _misc.sequence_to_hex(data[:m])
+                return f"{_misc.sequence_to_hex(data[:m])} ..."
         return _misc.sequence_to_hex(data)
 
     _to_string_mapping = {

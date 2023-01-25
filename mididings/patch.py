@@ -50,9 +50,7 @@ class Patch(_mididings.Patch):
         elif isinstance(p, _constants._EventType):
             return Patch.Single(_mididings.TypeFilter(p))
 
-        raise TypeError(
-                "type '%s' not allowed in patch. offending object is: %r" %
-                (type(p).__name__, p))
+        raise TypeError(f"type '{type(p).__name__}' not allowed in patch. offending object is: {p!r}")
 
 
 def get_init_patches(patch):

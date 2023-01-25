@@ -83,4 +83,4 @@ def split_to_string(split):
 
 def inverted_filter_to_string(invfilt):
     prefix = '-' if invfilt.negate else '~'
-    return '%s%r' % (prefix, invfilt.filt)
+    return f"{prefix}{invfilt.filt!r}"

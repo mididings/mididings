@@ -35,10 +35,10 @@ class LiveDings(object):
         # create the main window
         self.win = widget_factory.Tk(padx=8, pady=8)
         self.win.minsize(480, 120)
-        self.win.geometry('%dx%d' % (self.options.width, self.options.height))
+        self.win.geometry(f"{self.options.width}x{self.options.height}")
 
         if self.options.name:
-            self.win.title('livedings - %s' % self.options.name)
+            self.win.title(f"livedings - {self.options.name}")
         else:
             self.win.title('livedings')
 
@@ -91,7 +91,7 @@ class LiveDings(object):
             button_size = int(int(self.options.font.split(' ')[1]) / 1.5)
         except IndexError:
             button_size = 20
-        button_font = 'Sans %d bold' % button_size
+        button_font = f"Sans {button_size} bold"
 
         self.btn_prev_scene = widget_factory.Button(
                                     self.win, text=chr(0x25c0)*2,
@@ -208,9 +208,9 @@ class LiveDings(object):
         for n in sorted(self.scenes.keys()):
             name = self.scenes[n][0]
             if name:
-                self.listbox.insert('end', "%d: %s" % (n, name))
+                self.listbox.insert('end', f"{int(n)}: {name}")
             else:
-                self.listbox.insert('end', "%d" % n)
+                self.listbox.insert('end', f"{int(n)}")
 
     def draw_canvas(self, width, height):
         if not self._ready or not len(self.scenes):
@@ -230,7 +230,7 @@ class LiveDings(object):
         self.canvas.create_text(
             24,
             8,
-            text=(("%d.%d" % (scene, subscene))
+            text=((f"{int(scene)}.{int(subscene)}")
                     if has_subscenes else str(scene)),
             fill=self.options.color,
             font=self.options.font,

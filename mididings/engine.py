@@ -167,7 +167,7 @@ class Engine(_mididings.Engine):
         # get string representation of scene/subscene number
         if (subscene_index or
                 (scene in self._scenes and len(self._scenes[scene][1]))):
-            number = "%d.%d" % (scene, subscene)
+            number = f"{int(scene)}.{int(subscene)}"
         else:
             number = str(scene)
 
@@ -176,13 +176,11 @@ class Engine(_mididings.Engine):
                 # get scene/subscene name
                 scene_data = self._scenes[scene]
                 if scene_data[1]:
-                    name = "%s - %s" % (scene_data[0],
-                                        scene_data[1][subscene_index])
+                    name = f"{scene_data[0]} - {scene_data[1][subscene_index]}"
                 else:
                     name = scene_data[0]
 
-                scene_desc = (("%s: %s" % (number, name)) if name
-                                else str(number))
+                scene_desc = (f"{number}: {name}" if name else str(number))
                 print(f"switching to scene {scene_desc}")
             else:
                 print(f"no such scene: {number}")

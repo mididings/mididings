@@ -12,6 +12,7 @@
 
 from mididings import misc
 
+import os
 import inspect
 import functools
 
@@ -49,18 +50,17 @@ def call(args, kwargs, funcs, name=None):
 
     # format arg spec for each candidate
     formatargspec = lambda f: misc.formatargspec(*misc.getargspec(f))
-    candidates = ('    %s%s' % (name, formatargspec(f)) for f in funcs)
+    candidates = (f"    {name}{formatargspec(f)}" for f in funcs)
 
     # formatargspec() doesn't seem to care that the first argument mixes
     # asterisks and argument names
     argx = ['*'] * len(args)
     kwargx = ['*'] * len(kwargs)
-    formatvalue = lambda v: '=%s' % v
+    formatvalue = lambda v: f"={v}"
     args_used = misc.formatargspec(argx + list(kwargs.keys()),
                                       defaults=kwargx, formatvalue=formatvalue)
 
-    message = ("no suitable overload found for %s%s, candidates are:\n%s" %
-                    (name, args_used, '\n'.join(candidates)))
+    message = (f"no suitable overload found for {name}{args_used}, candidates are:{os.linesep}{os.linesep.join(candidates)}")
     raise TypeError(message)
 
 

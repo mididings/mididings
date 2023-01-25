@@ -95,13 +95,13 @@ def note_number(note, allow_end=False):
             r = (_NOTE_NUMBERS[name] +
                     (octave + _setup.get_config('octave_offset')) * 12)
         except Exception:
-            raise ValueError("invalid note name '%s'" % note)
+            raise ValueError(f"invalid note name '{note}'")
     else:
         raise TypeError("note must be an integer or string")
 
     end = 128 if not allow_end else 129
     if not (0 <= r < end):
-        raise ValueError("note number %d is out of range" % r)
+        raise ValueError(f"note number {r} is out of range")
     return r
 
 
@@ -137,10 +137,9 @@ def note_range(notes):
                 upper = note_limit(nn[1]) if nn[1] else 0
                 return lower, upper
             else:
-                raise TypeError("note range must be a tuple"
-                                " of integers or a string")
+                raise TypeError("note range must be a tuple of integers or a string")
         except (ValueError, IndexError):
-            raise ValueError("invalid note range %r" % notes)
+            raise ValueError(f"invalid note range {notes!r}")
 
 
 def note_name(note):
@@ -174,7 +173,7 @@ def controller_name(ctrl):
 
 def event_type(type):
     if type not in _constants._EVENT_TYPES:
-        raise ValueError("invalid event type %r" % type)
+        raise ValueError(f"invalid event type {type!r}")
     return type
 
 
@@ -189,7 +188,7 @@ def port_number(port):
     """
     if isinstance(port, int):
         if actual(port) < 0:
-            raise ValueError("invalid port number %d" % port)
+            raise ValueError(f"invalid port number {port}")
         return port
     elif isinstance(port, str):
         in_ports = _setup._in_portnames
@@ -197,13 +196,13 @@ def port_number(port):
 
         if (port in in_ports and port in out_ports and
                 in_ports.index(port) != out_ports.index(port)):
-            raise ValueError("port name '%s' is ambiguous" % port)
+            raise ValueError(f"port name '{port}' is ambiguous")
         elif port in in_ports:
             return offset(in_ports.index(port))
         elif port in out_ports:
             return offset(out_ports.index(port))
         else:
-            raise ValueError("invalid port name '%s'" % port)
+            raise ValueError(f"invalid port name '{port}'")
     else:
         raise TypeError("port must be an integer or string")
 
@@ -212,7 +211,7 @@ def channel_number(channel):
     if not isinstance(channel, int):
         raise TypeError("channel must be an integer")
     if not (0 <= actual(channel) < 16):
-        raise ValueError("channel number %d is out of range" % channel)
+        raise ValueError(f"channel number {channel} is out of range")
     return channel
 
 
@@ -220,7 +219,7 @@ def program_number(program):
     if not isinstance(program, int):
         raise TypeError("program must be an integer")
     if not (0 <= actual(program) < 128):
-        raise ValueError("program number %d is out of range" % program)
+        raise ValueError(f"program number {program} is out of range")
     return program
 
 
@@ -228,7 +227,7 @@ def ctrl_number(ctrl):
     if not isinstance(ctrl, int):
         raise TypeError("controller must be an integer")
     if not (0 <= ctrl < 128):
-        raise ValueError("controller number %d is out of range" % ctrl)
+        raise ValueError(f"controller number {ctrl} is out of range")
     return ctrl
 
 
@@ -237,7 +236,7 @@ def ctrl_value(value, allow_end=False):
         raise TypeError("controller value must be an integer")
     end = 128 if not allow_end else 129
     if not (0 <= value < end):
-        raise ValueError("controller value %d is out of range" % value)
+        raise ValueError(f"controller value {value} is out of range")
     return value
 
 def ctrl_limit(value):
@@ -250,7 +249,7 @@ def ctrl_range(value):
     except Exception:
         if isinstance(value, tuple) and len(value) == 2:
             return (ctrl_limit(value[0]), ctrl_limit(value[1]))
-    raise ValueError("invalid controller value range %r" % value)
+    raise ValueError(f"invalid controller value range {value!r}")
 
 
 def velocity_value(velocity, allow_end=False):
@@ -258,7 +257,7 @@ def velocity_value(velocity, allow_end=False):
         raise TypeError("velocity must be an integer")
     end = 128 if not allow_end else 129
     if not (0 <= velocity < end):
-        raise ValueError("velocity %d is out of range" % velocity)
+        raise ValueError(f"velocity {velocity} is out of range")
     return velocity
 
 def velocity_limit(velocity):
@@ -271,14 +270,14 @@ def velocity_range(velocity):
     except Exception:
         if isinstance(velocity, tuple) and len(velocity) == 2:
             return (velocity_limit(velocity[0]), velocity_limit(velocity[1]))
-    raise ValueError("invalid velocity range %r" % velocity)
+    raise ValueError(f"invalid velocity range {velocity!r}")
 
 
 def scene_number(scene):
     if not isinstance(scene, int):
         raise TypeError("scene number must be an integer")
     if actual(scene) < 0:
-        raise ValueError("scene number %d is out of range" % scene)
+        raise ValueError(f"scene number {scene} is out of range")
     return scene
 
 
@@ -286,7 +285,7 @@ def subscene_number(subscene):
     if not isinstance(subscene, int):
         raise TypeError("subscene number must be an integer")
     if actual(subscene) < 0:
-        raise ValueError("subscene number %d is out of range" % subscene)
+        raise ValueError(f"subscene number {subscene} is out of range")
     return subscene
 
 
@@ -317,7 +316,7 @@ def sysex_data(sysex, allow_partial=False):
     else:
         for c in sysex[1:-1]:
             if c > 0x7f:
-                raise ValueError("sysex data byte %#x is out of range" % c)
+                raise ValueError(f"sysex data byte {c:x} is out of range")
     return sysex
 
 
@@ -332,7 +331,7 @@ def sysex_manufacturer(manufacturer):
     else:
         for c in manid:
             if c > 0x7f:
-                raise ValueError("manufacturer id byte %#x is out of range" % c)
+                raise ValueError(f"manufacturer id byte {c:x} is out of range")
     return manid
 
 
@@ -344,9 +343,9 @@ class NoDataOffset(int):
     def __new__(cls, value):
         return int.__new__(cls, value)
     def __repr__(self):
-        return 'NoDataOffset(%d)' % int(self)
+        return f"NoDataOffset({int(self)})"
     def __str__(self):
-        return 'NoDataOffset(%d)' % int(self)
+        return f"NoDataOffset({int(self)})"
 
 
 def offset(n):

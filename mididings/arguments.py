@@ -71,7 +71,7 @@ class accept(object):
             evaldict['_call_'] = self.wrapper
             evaldict['_func_'] = f
             return decorator.FunctionMaker.create(
-                '%s%s' % (f.__name__, misc.formatargspec(*signature)),
+                f"{f.__name__}{misc.formatargspec(*signature)}",
                 'return _call_(_func_, %(shortsignature)s)',
                 evaldict, undecorated=f, __wrapped__=f, doc=f.__doc__)
         else:
@@ -111,9 +111,7 @@ class accept(object):
                 a = _apply_constraint(self.kwargs_constraints[None],
                                       v, f.__name__, k)
             else:
-                raise TypeError(
-                        "%s() got an unexpected keyword argument '%s'" %
-                        (f.__name__, k))
+                raise TypeError(f"{f.__name__}() got an unexpected keyword argument '{k}'")
             mod_kwargs[k] = a
 
         return f(*mod_args, **mod_kwargs)
@@ -124,11 +122,10 @@ def _apply_constraint(constraint, arg, func_name, arg_name):
         return constraint(arg)
     except (TypeError, ValueError) as ex:
         typestr = "type" if isinstance(ex, TypeError) else "value"
-        argstr = (("for parameter '%s'" % arg_name)
+        argstr = ((f"for parameter '{arg_name}'")
                         if arg_name else "in varargs")
 
-        raise type(ex)("invalid %s %s of function %s():\n%s" %
-                       (typestr, argstr, func_name, str(ex)))
+        raise type(ex)(f"invalid {typestr} {argstr} of function {func_name}():\n{str(ex)}")
 
 
 def _make_constraint(c):
@@ -184,15 +181,13 @@ class _type_constraint(_constraint):
         if not self.multiple:
             # single type, check if instance
             if not isinstance(arg, self.types):
-                raise TypeError("expected %s, got %s" %
-                                (self.types.__name__, type(arg).__name__))
+                raise TypeError(f"expected {self.types.__name__}, got {type(arg).__name__}")
             return arg
         else:
             # multiple types, check if instance
             if not isinstance(arg, self.types):
                 argtypes = ", ".join(c.__name__ for c in self.types)
-                raise TypeError("expected one of (%s), got %s" %
-                                (argtypes, type(arg).__name__))
+                raise TypeError(f"expected one of ({argtypes}), got {type(arg).__name__}")
             return arg
 
     def __repr__(self):
@@ -209,7 +204,7 @@ class _value_constraint(_constraint):
     def __call__(self, arg):
         if arg not in self.values:
             args = ", ".join(repr(c) for c in self.values)
-            raise ValueError("expected one of (%s), got %r" % (args, arg))
+            raise ValueError(f"expected one of ({args}), got {arg!r}")
         return arg
 
     def __repr__(self):
@@ -229,7 +224,7 @@ class nullable(_constraint):
         return self.what(arg)
 
     def __repr__(self):
-        return 'nullable(%r)' % self.what
+        return f"nullable({self.what!r})"
 
 
 class sequenceof(_constraint):
@@ -247,7 +242,7 @@ class sequenceof(_constraint):
             t = type(arg) if not isinstance(arg, types.GeneratorType) else list
             return t(self.what(value) for value in arg)
         except (TypeError, ValueError) as ex:
-            raise type(ex)("illegal item in sequence: %s" % str(ex))
+            raise type(ex)(f"illegal item in sequence: {str(ex)}")
 
     def __repr__(self):
         return repr([self.what])
@@ -265,13 +260,12 @@ class tupleof(_constraint):
         if not misc.issequence(arg):
             raise TypeError("not a sequence")
         if len(arg) != len(self.what):
-            raise ValueError("expected sequence of %d items, got %d" %
-                             (len(self.what), len(arg)))
+            raise ValueError(f"expected sequence of {len(self.what)} items, got {len(arg)}")
         try:
             t = type(arg) if not isinstance(arg, types.GeneratorType) else list
             return t(what(value) for what, value in zip(self.what, arg))
         except (TypeError, ValueError) as ex:
-            raise type(ex)("illegal item in sequence: %s" % str(ex))
+            raise type(ex)(f"illegal item in sequence: {str(ex)}")
 
     def __repr__(self):
         return repr(self.what)
@@ -292,11 +286,11 @@ class mappingof(_constraint):
         try:
             keys = (self.fromwhat(key) for key in arg.keys())
         except (TypeError, ValueError) as ex:
-            raise type(ex)("illegal key in dictionary: %s" % str(ex))
+            raise type(ex)(f"illegal key in dictionary: {str(ex)}")
         try:
             values = (self.towhat(value) for value in arg.values())
         except (TypeError, ValueError) as ex:
-            raise type(ex)("illegal value in dictionary: %s" % str(ex))
+            raise type(ex)(f"illegal value in dictionary: {str(ex)}")
         return dict(zip(keys, values))
 
     def __repr__(self):
@@ -317,10 +311,10 @@ class flatten(_constraint):
             r = [self.what(value) for value in misc.flatten(arg)]
             return r if self.return_type is None else self.return_type(r)
         except (TypeError, ValueError) as ex:
-            raise type(ex)("illegal item in sequence: %s" % str(ex))
+            raise type(ex)(f"illegal item in sequence: {str(ex)}")
 
     def __repr__(self):
-        return 'flatten(%r)' % self.what
+        return f"flatten({self.what!r})"
 
 
 class each(_constraint):
@@ -336,7 +330,7 @@ class each(_constraint):
         return arg
 
     def __repr__(self):
-        return 'each(%s)' % (', '.join(repr(c) for c in self.requirements))
+        return f"each({', '.join(repr(c) for c in self.requirements)})"
 
 
 class either(_constraint):
@@ -353,13 +347,12 @@ class either(_constraint):
                 return what(arg)
             except (TypeError, ValueError) as ex:
                 exstr = str(ex).replace('\n', '\n    ')
-                errors.append("    #%d %s: %s: %s" %
-                                (n + 1, what, type(ex).__name__, exstr))
+                errors.append(f"    #{n + 1} {what}: {type(ex).__name__}: {exstr}")
         raise TypeError("none of the alternatives matched:\n" +
                         '\n'.join(errors))
 
     def __repr__(self):
-        return 'either(%s)' % (', '.join(repr(c) for c in self.alternatives))
+        return f"either({', '.join(repr(c) for c in self.alternatives)})"
 
 
 class transform(_constraint):
@@ -385,12 +378,11 @@ class condition(_constraint):
 
     def __call__(self, arg):
         if not self.function(arg):
-            raise ValueError("condition not met: %s" %
-                             _function_repr(self.function))
+            raise ValueError(f"condition not met: {_function_repr(self.function)}")
         return arg
 
     def __repr__(self):
-        return 'condition(%s)' % _function_repr(self.function)
+        return f"condition({_function_repr(self.function)})"
 
 
 class reduce_bitmask(_constraint):
