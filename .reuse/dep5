@@ -14,7 +14,7 @@ Copyright: 2008-2015  Dominic Sacré  <dominic.sacre@gmx.de>, mididings contribu
 License: GFDL-1.3-or-later
 
 # build scripts
-Files: justfile dev/get-buildpath.py
+Files: justfile dev/get-buildpath.py dev/update-version-strings.sh
 Copyright: mididings contributors
 License: GFDL-1.3-or-later
 

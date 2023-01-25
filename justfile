@@ -73,3 +73,7 @@ lint-cython:
 # lint all markdown documentation with mdl
 lint-markdown:
   mdl .
+
+# update all version strings project-wide
+update-version-strings:
+  dev/update-version-strings.sh
