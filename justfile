@@ -19,7 +19,7 @@ clean-pycache:
 
 # delete distribution artifacts
 clean-build:
-  rm --force --recursive build dist *.egg-info
+  rm -rf build dist *.egg-info
 
 # delete generated man pages
 clean-manpages:
