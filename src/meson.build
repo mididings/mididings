@@ -6,5 +6,5 @@ py.extension_module(
   'send_midi.cc',
   'python_module.cc',
   'backend/base.cc',
-  'util/storage.cc',
+  dependencies: [boost, alsa, jack],
   install: true)
