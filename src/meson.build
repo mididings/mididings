@@ -1,5 +1,6 @@
 py.extension_module(
   # add files here
+  '_mididings',
   'engine.cc',
   'patch.cc',
   'python_caller.cc',
