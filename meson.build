@@ -1,4 +1,4 @@
-project('_mididings', 'cpp')
+project('mididings', 'cpp')
 boost = dependency('boost', modules: ['python3', 'thread'])
 alsa = dependency('alsa')
 jack = dependency('jack')
