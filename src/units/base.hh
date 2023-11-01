@@ -54,6 +54,8 @@ class UnitEx
 };
 
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverloaded-virtual"
 template <typename Derived>
 class UnitExImpl
   : public UnitEx
@@ -73,6 +75,7 @@ class UnitExImpl
         return d.template process<Patch::EventBuffer>(buffer, it);
     }
 };
+#pragma GCC diagnostic pop
 
 
 class Filter

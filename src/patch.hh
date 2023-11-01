@@ -115,6 +115,8 @@ class Patch
 
   private:
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Woverloaded-virtual"
     /**
      * The actual base class for each module type, using the CRTP to circumvent
      * C++'s lack of virtual template member functions.
@@ -137,6 +139,7 @@ class Patch
         }
     };
 
+#pragma GCC diagnostic pop
 
   public:
 
