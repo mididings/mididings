@@ -1,3 +1,7 @@
+configure_file(input: 'mesonconfig.hh.in',
+               output: 'mesonconfig.hh',
+               configuration: config)
+
 py.extension_module(
   # add files here
   '_mididings',

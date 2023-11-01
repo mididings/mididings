@@ -12,6 +12,10 @@
 #ifndef MIDIDINGS_CONFIG_HH
 #define MIDIDINGS_CONFIG_HH
 
+#ifdef USE_MESON
+#include "mesonconfig.hh"
+#endif // USE_MESON
+
 // Python.h must be included before any system header, so let's get this
 // over with. this allows us to keep the include order sane everywhere else.
 #include <Python.h>
