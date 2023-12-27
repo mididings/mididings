@@ -3,6 +3,8 @@ boost = dependency('boost', modules: ['python3', 'thread'])
 alsa = dependency('alsa')
 jack = dependency('jack')
 py = import('python').find_installation(pure: false)
+
 subdir('src')
+subdir('mididings')
 subdir('scripts')
 # subdir('doc/man')

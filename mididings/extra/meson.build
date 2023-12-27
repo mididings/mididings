@@ -1,0 +1,21 @@
+python_sources = [
+  '__init__.py',
+  'ctrl_sysex.py',
+  'dbus.py',
+  'engine.py',
+  'floating_split.py',
+  'gm.py',
+  'harmonizer.py',
+  'inotify.py',
+  'key_color.py',
+  'latch.py',
+  'memorize_scene.py',
+  'osc.py',
+  'panic.py',
+  'pedal_noteoff.py',
+  'per_channel.py',
+  'polyphony.py',
+  'suppress_pc.py',
+  'voices.py',
+]
+py.install_sources(python_sources, subdir: 'mididings/extra')
