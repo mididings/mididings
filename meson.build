@@ -18,4 +18,5 @@ subdir('src')
 # Plain copy targets
 subdir('mididings')
 subdir('scripts')
-# subdir('doc/man')
+subdir('doc/man')
+#subdir('doc')
