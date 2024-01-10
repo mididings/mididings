@@ -1,4 +1,4 @@
-project('mididings', 'cpp', default_options: ['cpp_std=c++17'])
+project('mididings', 'cpp', default_options: ['cpp_std=c++17'], meson_version: '>=0.64.0')
 add_project_arguments('-DUSE_MESON', language: 'cpp')
 
 boost = dependency('boost', modules: ['python3', 'thread'])
