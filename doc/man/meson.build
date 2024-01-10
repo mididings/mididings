@@ -22,7 +22,7 @@ if scdoc.found()
                   # See: https://docs.python.org/3/library/sysconfig.html#installation-paths
                   # As a workaround we can use 'datadir' as a base and build the rest of the
                   # path manually:
-                  install_dir: get_option('datadir') / 'man' / f'man@section@',
+                  install_dir: get_option('datadir') / 'share' / 'man' / f'man@section@',
                  )
   endforeach
 
