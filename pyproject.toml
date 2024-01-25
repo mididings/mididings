@@ -4,7 +4,6 @@ requires = ['meson-python']
 
 [project]
 name = "mididings"
-version = "20230114"
 description = 'A MIDI router/processor'
 readme = "README.md"
 requires-python = ">=3.7"
@@ -19,6 +18,7 @@ classifiers = [
   "License :: OSI Approved :: GNU Free Documentation License (FDL)",
   "Development Status :: 5 - Production/Stable",
 ]
+dynamic = ['version']  # Specify version string in top level meson.build
 
 [project.optional-dependencies]
 osc = ["pyliblo",]

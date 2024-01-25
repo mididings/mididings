@@ -169,6 +169,7 @@ BOOST_PYTHON_MODULE(_mididings)
 #ifdef VERSION
     bp::scope().attr("__version__") = STRINGIFY(VERSION);
 #else
+#warning VERSION macro not defined in python_module.cc
     bp::scope().attr("__version__") = "(unknown)";
 #endif
 
