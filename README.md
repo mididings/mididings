@@ -44,8 +44,8 @@ mididings is available as [`mididings`][pkg-pypi] on PyPi:
 pip install mididings
 ```
 
-Optional dependencies can be installed, see next section
-(Dependencies/Optional)for a list of optional dependencies.
+Additionally you can tell pip to install dependencies for optional features (called `extras`)
+Which ones there are you can lookup in `pyproject.toml`, too.
 
 ```sh
 pip install mididings[osc,smf,dbus,autorestart,xdg]
@@ -62,15 +62,61 @@ pacman -Syu mididings
 
 ### Source
 
-Additonal dependencies are required ([scdoc][scdoc] & [just][just]) and can be uninstalled
-afterwards.
-
+If you want to test a new version of mididings or develop it, it's easiest to use a virtual environment (venv) into which mididings and all its dependencies are installed without touching a possibly system-wide installation of mididings.
+Execute this in the root of this repository:
 ```sh
-just build
+# create and activate the venv
+python -m venv venv
+source venv/bin/activate
+# install mididings
+pip install . 
 ```
 
-Distribution artifacts (wheel & sdist) can be found in `dist/` folder.
+Optional dependencies work just as when installing mididings from PyPI.
+If you want e.g., MIDI file support and the tools to generate html documentation, you'd activate `smf` and `doc`:
+```sh
+pip install .[smf,doc]
+```
 
+You can check if mididings installed correctly by looking up it's path.
+```sh
+which mididings
+```
+
+This should point to a file inside `venv`.
+As long as you are in this environment you can edit the sources and rebuild by executing pip again.
+
+If you want to come back at a later time or have a second shell in the environment, just source the `activate` script:
+```sh
+source venv/bin/activate
+```
+
+#### System-wide installation
+Make sure you have all dependencies installed, either through your package manager, pip or any other method (have a look at the list of dependencies in `pyproject.toml`)
+If you want documentation, you also need [scdoc][scdoc] & [sphinx][sphinx] installed during the build process.
+
+```sh
+meson build --prefix=/usr/local
+meson compile -C build
+meson install -C build
+```
+
+### Packaging
+There are a few build options that might be of interest to you if you are a package maintainer.
+You can disable generating the documentation:
+```sh
+meson build -Ddocs=disabled -Dman=disabled
+```
+
+You can also generate the docs separately:
+```sh
+meson build -Ddocs-only=true
+meson compile -C build
+meson install
+```
+Note: You need to have mididings (and the matching version of it) installed, possibly in a venv, during build when using `docs-only=true`.
+
+## Development
 ## Dependencies
 
 ### Required
@@ -90,6 +136,10 @@ Distribution artifacts (wheel & sdist) can be found in `dist/` folder.
 * [pyinotify][pyinotify]: to automatically restart when a script changes
 * [tkinter][tkinter]: for the livedings GUI
 * [pyxdg][pyxdg]: so mididings knows where to look for configuration files
+
+### During Build
+* [scdoc][scdoc]: to generate man pages
+* [sphinx][sphinx]: and potentially more modules for it to generate html documentation (see `pyproject.toml`)
 
 ## Documentation
 
@@ -145,3 +195,4 @@ The example scripts in `doc/examples` are available under the terms of the
 [mailing-list]: https://groups.google.com/g/mididings
 [spdx-gpl2]: https://spdx.org/licenses/GPL-2.0-or-later.html
 [spdx-gfdl]: https://spdx.org/licenses/GFDL-1.3-or-later.html
+[sphinx]: https://www.sphinx-doc.org/en/master/
