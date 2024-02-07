@@ -2,6 +2,10 @@ sphinx = find_program('sphinx-build', required: false)
 
 if get_option('docs').enabled() and sphinx.found()
 
+configure_file(input: 'mesonconf.py.in',
+               output: 'mesonconf.py',
+               configuration: config)
+
 doc_rst_sources = [
   'main',
   'units',
@@ -33,6 +37,7 @@ custom_target('docs',
               input: files(doc_sources),
               depends: sphinx_deps,
               output: 'html',
+              env: {'PYTHONPATH': meson.current_build_dir()},  # PYTHONPATH for mesonconf.py
               install_dir: get_option('datadir') / 'doc/mididings',
               install: true,
              )

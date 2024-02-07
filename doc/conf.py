@@ -5,10 +5,12 @@ import re
 from sphinx.domains.python import PyFunction
 from sphinx import addnodes
 
+import mesonconf
+
 # project-specific configuration
 project = "mididings"
 copyright = "mididings contributors"
-version = "20230114"
+version = mesonconf.version
 
 # general configuration
 extensions = [
