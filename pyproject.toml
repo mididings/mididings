@@ -2,6 +2,9 @@
 build-backend = 'mesonpy'
 requires = ['meson-python']
 
+[tool.meson-python.args]
+setup = ['-Ddocs=disabled', '-Dman=disabled']
+
 [project]
 name = "mididings"
 description = 'A MIDI router/processor'

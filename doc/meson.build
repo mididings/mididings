@@ -1,4 +1,6 @@
-sphinx = find_program('sphinx-build')
+sphinx = find_program('sphinx-build', required: false)
+
+if get_option('docs').enabled() and sphinx.found()
 
 doc_rst_sources = [
   'main',
@@ -16,15 +18,25 @@ doc_rst_sources = [
 ]
 
 doc_sources = []
-docs = []
 foreach rst: doc_rst_sources
   doc_sources += [rst + '.rst']
-  docs += [rst + '.html']
 endforeach
 
+if get_option('docs-only')
+  sphinx_deps = []
+else
+  sphinx_deps = [mididings_extension_module]
+endif
+
 custom_target('docs',
-              command: [sphinx, '-b', 'html', meson.current_source_dir(), meson.current_build_dir() / 'html'],
+              command: [sphinx, '-q', '-b', 'html', meson.current_source_dir(), meson.current_build_dir() / 'html'],
               input: files(doc_sources),
-              output: docs,
-              install_dir: get_option('datadir') / 'share/doc/mididings/',
-              install: true)
+              depends: sphinx_deps,
+              output: 'html',
+              install_dir: get_option('datadir') / 'doc/mididings',
+              install: true,
+             )
+
+elif get_option('docs').enabled()
+  warning('The program sphinx-build could not be found, html docs will not be available.')
+endif

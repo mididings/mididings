@@ -26,7 +26,7 @@ if config.get('ENABLE_JACK_MIDI')
   ]
 endif
 
-py.extension_module(
+mididings_extension_module = py.extension_module(
   '_mididings',
   sources,
   dependencies: [boost, alsa, jack],
