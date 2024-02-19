@@ -1,0 +1,11 @@
+[ubuntu-22-04]
+pkgs = ["python3-venv", "git", "pip", "libboost-dev", "libboost-python-dev", "libasound2-dev", "libjack-dev"]
+
+[fedora]
+pkgs = ["python3-pip", "boost-devel", "boost-python-devel", "gcc", "python3-devel", "alsa-lib-devel"]
+
+[mint-21]
+pkgs = ["build-essential", "git", "python3-venv", "libboost-dev", "libboost-python-dev", "libasound2-dev", "libjack-dev"]
+
+[arch]
+pkgs = ["base-devel", "git", "python-pip", "python-virtualenv", "boost", "alsa-lib", "jack2"]
