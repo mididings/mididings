@@ -1,17 +1,19 @@
 [build-system]
-requires = ["setuptools>=65", "wheel>=0.38"]
-build-backend = "setuptools.build_meta"
+build-backend = 'mesonpy'
+requires = ['meson-python']
+
+[tool.meson-python.args]
+setup = ['-Ddocs=disabled', '-Dman=disabled']
 
 [project]
 name = "mididings"
-version = "20230114"
 description = 'A MIDI router/processor'
 readme = "README.md"
 requires-python = ">=3.7"
 license = {file = "LICENSE.md"}
 authors = [{name = "Dominic Sacré", email = "dominic.sacre@gmx.de"},]
 maintainers = [{name = "George Rawlinson", email = "george@rawlinson.net.nz"},]
-dependencies = ["decorator",]
+dependencies = ["decorator", "boost"]
 classifiers = [
   "Topic :: Multimedia :: Sound/Audio :: MIDI",
   "Programming Language :: Python :: 3",
@@ -19,6 +21,7 @@ classifiers = [
   "License :: OSI Approved :: GNU Free Documentation License (FDL)",
   "Development Status :: 5 - Production/Stable",
 ]
+dynamic = ['version']  # Specify version string in top level meson.build
 
 [project.optional-dependencies]
 osc = ["pyliblo",]
