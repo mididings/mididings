@@ -1,0 +1,44 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python package
+
+on:
+  push:
+    branches: [ "primary", "github-ci" ]
+  pull_request:
+    branches: [ "primary" ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ["ubuntu-22.04", "ubuntu-24.04"]
+        python-version: ["3.9", "3.10", "3.11"]
+        exclude:
+          # ubuntu-22.04 and python 3.11 don't work for mididings
+          - os: "ubuntu-22.04"
+            python-version: "3.11"
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install System dependencies
+      run: |
+        python -m pip install yq
+        tomlq '."${{ matrix.os }}"."pkgs"[]' pkglist.toml | xargs sudo apt-get install
+    - name: Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install flake8 pytest meson-python
+    - name: Build and Install
+      run: |
+        python -m pip install .
+    - name: Test with pytest
+      run: |
+        pytest
