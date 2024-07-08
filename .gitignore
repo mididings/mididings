@@ -5,3 +5,7 @@ __pycache__
 .pytest_cache
 .ruff_cache
 doc/man/*.1
+# emacs temporary files
+*~
+\#*
+.\#*
