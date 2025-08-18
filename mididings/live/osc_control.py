@@ -10,7 +10,7 @@
 # (at your option) any later version.
 #
 
-import liblo
+import pyliblo3 as liblo
 
 
 class LiveOSC(liblo.ServerThread):

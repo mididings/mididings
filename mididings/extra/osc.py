@@ -18,7 +18,7 @@ import mididings.misc as _misc
 
 import mididings.extra.panic as _panic
 
-import liblo as _liblo
+import pyliblo3 as _liblo
 
 
 class OSCInterface(object):
