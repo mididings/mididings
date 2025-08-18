@@ -9,7 +9,7 @@ setup = ['-Ddocs=disabled', '-Dman=disabled']
 name = "mididings"
 description = 'A MIDI router/processor'
 readme = "README.md"
-requires-python = ">=3.7"
+requires-python = ">=3.9"
 license-files = ["LICENSE.md", "LICENSES/*.txt",]
 authors = [{name = "Dominic Sacré", email = "dominic.sacre@gmx.de"},]
 maintainers = [{name = "George Rawlinson", email = "george@rawlinson.net.nz"},]
