@@ -32,7 +32,7 @@ function.
     :no-members:
 
     Defined in :mod:`mididings.extra.osc`.
-    Requires `pyliblo <http://das.nasophon.de/pyliblo/>`_.
+    Requires `pyliblo3 <https://github.com/gesellkammer/pyliblo3>`_.
 
 
 

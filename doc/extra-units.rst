@@ -86,7 +86,7 @@ Messaging
 .. autofunction:: mididings.extra.osc.SendOSC
 
     Defined in :mod:`mididings.extra.osc`.
-    Requires `pyliblo <http://das.nasophon.de/pyliblo/>`_.
+    Requires `pyliblo3 <https://github.com/gesellkammer/pyliblo3>`_.
 
 .. autofunction:: mididings.extra.dbus.SendDBUS
 

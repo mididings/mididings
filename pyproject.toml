@@ -24,7 +24,7 @@ classifiers = [
 dynamic = ['version']  # Specify version string in top level meson.build
 
 [project.optional-dependencies]
-osc = ["pyliblo",]
+osc = ["pyliblo3",]
 smf = ["pysmf",]
 autorestart = ["pyinotify>=0.8",]
 dbus = ["dbus-python",]

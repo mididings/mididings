@@ -130,7 +130,7 @@ Note: You need to have mididings (and the matching version of it) installed, pos
 
 ### Optional
 
-* [pyliblo][pyliblo]: to send or receieve OSC messages
+* [pyliblo3][pyliblo3]: to send or receieve OSC messages
 * [pysmf][pysmf]: to read/write standard MIDI files using the `process_file()` function
 * [dbus-python][dbus-python]: to send DBUS messages
 * [pyinotify][pyinotify]: to automatically restart when a script changes
@@ -181,7 +181,7 @@ The example scripts in `doc/examples` are available under the terms of the
 [decorator]: https://github.com/micheles/decorator
 [scdoc]: https://git.sr.ht/~sircmpwn/scdoc
 [just]: https://github.com/casey/just
-[pyliblo]: https://github.com/dsacre/pyliblo
+[pyliblo]: https://github.com/gesellkammer/pyliblo3
 [pysmf]: https://github.com/dsacre/pysmf
 [dbus-python]: https://www.freedesktop.org/wiki/Software/dbus/
 [pyinotify]: https://github.com/seb-m/pyinotify

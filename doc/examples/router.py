@@ -6,8 +6,8 @@
 # /mididings/switch_scene <port> <channel>
 # to UDP port 56418.
 #
-# For example, using the send_osc command from pyliblo:
-# $ send_osc 56418 /mididings/switch_scene 13 1
+# For example, using the send_osc command from pyliblo3:
+# $ send_osc.py 56418 /mididings/switch_scene 13 1
 #
 
 from mididings import *
