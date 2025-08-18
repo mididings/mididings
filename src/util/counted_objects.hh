@@ -10,7 +10,7 @@
 #ifndef DAS_UTIL_COUNTED_OBJECTS_HH
 #define DAS_UTIL_COUNTED_OBJECTS_HH
 
-#include <boost/detail/atomic_count.hpp>
+#include <boost/smart_ptr/detail/atomic_count.hpp>
 
 
 namespace das {
