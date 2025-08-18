@@ -10,15 +10,13 @@ name = "mididings"
 description = 'A MIDI router/processor'
 readme = "README.md"
 requires-python = ">=3.7"
-license = {file = "LICENSE.md"}
+license-files = ["LICENSE.md", "LICENSES/*.txt",]
 authors = [{name = "Dominic Sacré", email = "dominic.sacre@gmx.de"},]
 maintainers = [{name = "George Rawlinson", email = "george@rawlinson.net.nz"},]
 dependencies = ["decorator", "boost"]
 classifiers = [
   "Topic :: Multimedia :: Sound/Audio :: MIDI",
   "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: GNU General Public License v2 or later (GPLv2+)",
-  "License :: OSI Approved :: GNU Free Documentation License (FDL)",
   "Development Status :: 5 - Production/Stable",
 ]
 dynamic = ['version']  # Specify version string in top level meson.build
