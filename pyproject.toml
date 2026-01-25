@@ -27,7 +27,7 @@ smf = ["pysmf",]
 autorestart = ["pyinotify>=0.8",]
 dbus = ["dbus-python",]
 xdg = ["pyxdg",]
-doc = ["sphinx", "sphinxcontrib-fulltoc",]
+doc = ["sphinx", "sphinxcontrib-fulltoc", "furo",]
 test = ["pytest",]
 
 [project.urls]

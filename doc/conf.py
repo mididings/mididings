@@ -14,8 +14,7 @@ version = mesonconf.version
 
 # general configuration
 extensions = [
-    "sphinx.ext.autodoc",
-    "sphinxcontrib.fulltoc",
+    "sphinx.ext.autodoc"
 ]
 root_doc = "index"
 exclude_patterns = ["build"]
@@ -23,8 +22,7 @@ templates_path = ["templates"]
 add_module_names = False
 
 # html configuration
-html_theme = "nasophon"
-html_theme_path = ["theme"]
+html_theme = "furo"
 html_copy_source = False
 
 # extension configuration - autodoc
