@@ -1,7 +1,7 @@
 #
 # aeolus.py - Aeolus stop control using one controller per stop
 #
-# Aeolus (http://www.kokkinizita.net/linuxaudio/aeolus/index.html)
+# Aeolus (https://kokkinizita.linuxaudio.org/linuxaudio/aeolus/)
 # uses CC #98 to enable/disable stops. Changing a stop requires one message
 # to select the button group and action, and another to select the button.
 #
