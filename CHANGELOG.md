@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## 20250818 - 2026-01-25
+## 20250818 - 2026-01-26
 
 ### Build
 
@@ -15,12 +15,13 @@ All notable changes to this project will be documented in this file.
 - docs: update licensing information
 - docs: switch to Furo theme, drop sphinxcontrib.fulltoc extension and remove nasophon theme files
 - docs: remove outdated NEWS file
+- docs: add git-cliff configuration for changelog generation
 
 ### Refactor
 
 - refactor: update liblo refs again
 
-## 20250818 - 2026-01-25
+## 20250818 - 2026-01-26
 
 ### Bug Fixes
 
