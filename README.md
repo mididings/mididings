@@ -1,3 +1,10 @@
+![Domain: MIDI Router](https://img.shields.io/badge/domain-MIDI%20Router-yellow)
+![Language: Python](https://img.shields.io/badge/language-Python-blue)
+![Core: C++](https://img.shields.io/badge/core-C%2B%2B-lightgrey)
+![Control: MIDI & OSC](https://img.shields.io/badge/control-MIDI%20%26%20OSC-purple)
+![Use case: Live Performance](https://img.shields.io/badge/use-Live%20Performance-orange)
+
+
 # mididings
 
 A MIDI router/processor based on Python, supporting ALSA and JACK MIDI.
@@ -5,27 +12,27 @@ It is available under the GNU GPL and currently runs on Linux.
 
 ## Features
 
-* MIDI routing and filtering
+#### MIDI routing and filtering
 
 Filter events depending on their event type, channel, note number, velocity,
 etc., and freely route them between an arbitrary number of input and output
 ports.
 
-* Modifying and converting MIDI events
+#### Modifying and converting MIDI events
 
 Transpose notes, apply velocity curves, change controller values and ranges,
 or convert events to any other MIDI event type. mididings also includes more
 complex functions like a diatonic harmonizer, floating split points, latched
 notes, and more.
 
-* Seamless switching between patches
+#### Seamless switching between patches
 
 Set up different "scenes", each with its own MIDI routing and processing,
 and switch between them at any time, even while playing. Switching scenes
 does not affect notes already held, and does not result in dropouts or stuck
 notes!
 
-* MIDI event monitoring, running external commands
+#### MIDI event monitoring, running external commands
 
 Print MIDI event data to the console to help debugging your patches and
 configuring your MIDI controllers. In addition to its MIDI output, mididings
@@ -181,7 +188,7 @@ The example scripts in `doc/examples` are available under the terms of the
 [decorator]: https://github.com/micheles/decorator
 [scdoc]: https://git.sr.ht/~sircmpwn/scdoc
 [just]: https://github.com/casey/just
-[pyliblo]: https://github.com/gesellkammer/pyliblo3
+[pyliblo3]: https://github.com/gesellkammer/pyliblo3
 [pysmf]: https://github.com/dsacre/pysmf
 [dbus-python]: https://www.freedesktop.org/wiki/Software/dbus/
 [pyinotify]: https://github.com/seb-m/pyinotify
