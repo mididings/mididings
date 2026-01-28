@@ -14,7 +14,7 @@ version = mesonconf.version
 
 # general configuration
 extensions = [
-    "sphinx.ext.autodoc"
+    "sphinx.ext.autodoc",
 ]
 root_doc = "index"
 exclude_patterns = ["build"]
