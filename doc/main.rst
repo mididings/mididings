@@ -14,7 +14,7 @@ Global Configuration
 These global settings can be configured using the :func:`config()` function
 described below:
 
-.. c:var:: backend
+.. py:data:: backend
 
     The MIDI backend to be used:
 
@@ -47,12 +47,12 @@ described below:
         of delay caused by the buffering **jack** backend is likely to be
         unnoticable.
 
-.. c:var:: client_name
+.. py:data:: client_name
 
     The ALSA or JACK client name to be used. The default is ``'mididings'``.
 
-.. c:var:: in_ports
-           out_ports
+.. py:data:: in_ports
+             out_ports
 
     Defines the number and names of input and output ports, and optionally
     external ports to connect them to. The default is one input and one output
@@ -84,26 +84,26 @@ described below:
             ('baz', 'LinuxSampler:.*'),
         ]
 
-.. c:var:: data_offset
+.. py:data:: data_offset
 
     Determines whether program, port, channel and scene numbers used in your
     script are in the range 1-128 (with data_offset = 1) or 0-127 (with
     data_offset = 0). The default is 1.
 
-.. c:var:: octave_offset
+.. py:data:: octave_offset
 
     The note-octave notation used in your script, specified as the number of
     octaves between MIDI note number 0 and the note called "C0".
     The default is 2, meaning that "middle C" (note number 60) is named "C3".
     Another typical value is 1, meaning that "middle C" is "C4".
 
-.. c:var:: initial_scene
+.. py:data:: initial_scene
 
     The number of the first scene to be activated. The default is the scene
     with the lowest number.
     Also see :class:`~.extra.MemorizeScene`.
 
-.. c:var:: start_delay
+.. py:data:: start_delay
 
     The number of seconds to wait before sending any MIDI events (i.e.
     switching to the first scene). A small delay like 0.5 s can be used to give
