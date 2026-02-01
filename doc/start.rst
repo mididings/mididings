@@ -1,6 +1,6 @@
 .. currentmodule:: mididings
 
-:tocdepth: 2
+:tocdepth: 3
 
 .. _gettingstarted:
 
