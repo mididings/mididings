@@ -35,7 +35,7 @@ trim = true
 [git]
 # Parse commits according to the conventional commits specification.
 # See https://www.conventionalcommits.org
-conventional_commits = false
+conventional_commits = true
 # Exclude commits that do not match the conventional commits specification.
 filter_unconventional = false
 # Split commits on newlines, treating each line as an individual commit.
@@ -56,6 +56,47 @@ commit_parsers = [
     { message = "^test", group = "Testing" },
     { message = "^chore\\(release\\): prepare for", skip = true },
     { message = "^chore", group = "Miscellaneous Tasks" },
+    { message = "^Merge pull request", skip = true },
+    { message = "^Merge branch", skip = true },
+    { message = "^merge", skip = true },
+    { message = "^release", skip = true },
+    { message = "^git-svn-id", skip = true },
+    { message = "^added", group = "Features" },
+    { message = "^Add", group = "Features" },
+    { message = "^add", group = "Features" },
+    { message = "^allow", group = "Features" },
+    { message = "^move", group = "Refactor" },
+    { message = "^Move", group = "Refactor" },
+    { message = "^remove", group = "Refactor" },
+    { message = "^update", group = "Refactor" },
+    { message = "^rename", group = "Refactor" },
+    { message = "^revert", group = "Refactor" },
+    { message = "^change", group = "Refactor" },
+    { message = "^improve", group = "Refactor" },
+    { message = "^eliminate", group = "Refactor" },
+    { message = "^corrected", group = "Refactor" },
+    { message = "^shortened", group = "Refactor" },
+    { message = "^implement", group = "Refactor" },
+    { message = "^shortened", group = "Refactor" },
+    { message = "^don't", group = "Refactor" },
+    { message = "^clean", group = "Refactor" },
+    { message = "^make", group = "Refactor" },
+    { message = "^made", group = "Refactor" },
+    { message = "^leave", group = "Refactor" },
+    { message = "^unified", group = "Refactor" },
+    { message = "^finished", group = "Refactor" },
+    { message = "^replace", group = "Refactor" },
+    { message = "^support", group = "Features" },
+    { message = "^more", group = "Refactor" },
+    { message = ".*clean", group = "Miscellaneous Tasks" },
+    { message = "^2", skip = true },
+    { message = "^oops", skip = true },
+    { message = "^forgot", group = "Refactor" },
+    { message = "^handle", group = "Refactor" },
+    { message = "^simplified", group = "Refactor" },
+    { message = "^make sure", group = "Refactor" },
+    { message = "README", group = "Documentation" },
+    { message = ".*README", group = "Documentation" },
     { body = ".*security", group = "Security" },
     { body = ".*", group = "Other (unconventional)" },
 ]
