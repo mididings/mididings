@@ -44,7 +44,7 @@ class DingsFunction(PyFunction):
     """
 
     def handle_signature(self, sig, signode):
-        m = re.match("(.*) <([\w.]*)>", sig)
+        m = re.match(r"(.*) <([\w.]*)>", sig)
         if m:
             op = m.group(1)
             name = m.group(2)
