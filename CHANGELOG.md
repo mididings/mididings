@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## 20250818 - 2026-02-01
+## 20250818 - 2026-02-12
+
+### Bug Fixes
+
+- use raw string literal for regex pattern
 
 ### Build
 
@@ -27,12 +31,14 @@ All notable changes to this project will be documented in this file.
 - remove search ref (#33)
 - Replace c-domain for py-domain grammar
 - increase toc depth to 3 levels
+- Add commit parsers to group legacy unconvential commits
+- Update build instructions for documentation generation
 
 ### Refactor
 
 - update liblo refs again
 
-## 20250818 - 2026-02-01
+## 20250818 - 2026-02-12
 
 ### Bug Fixes
 
