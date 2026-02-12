@@ -117,9 +117,9 @@ meson build -Ddocs=disabled -Dman=disabled
 
 You can also generate the docs separately:
 ```sh
-meson build -Ddocs-only=true
+meson setup build -Ddocs-only=true
 meson compile -C build
-meson install
+cd build && meson install
 ```
 Note: You need to have mididings (and the matching version of it) installed, possibly in a venv, during build when using `docs-only=true`.
 
@@ -187,7 +187,6 @@ The example scripts in `doc/examples` are available under the terms of the
 [glib]: https://docs.gtk.org/glib/
 [decorator]: https://github.com/micheles/decorator
 [scdoc]: https://git.sr.ht/~sircmpwn/scdoc
-[just]: https://github.com/casey/just
 [pyliblo3]: https://github.com/gesellkammer/pyliblo3
 [pysmf]: https://github.com/dsacre/pysmf
 [dbus-python]: https://www.freedesktop.org/wiki/Software/dbus/
