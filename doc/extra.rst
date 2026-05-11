@@ -1,6 +1,6 @@
 .. currentmodule:: mididings.extra
 
-:tocdepth: 2
+:tocdepth: 3
 
 
 .. _extra:
@@ -49,7 +49,7 @@ Programs
 ^^^^^^^^
 
 .. hlist::
-    :columns: 2
+    :columns: 3
 
     - ACOUSTIC_GRAND_PIANO
     - BRIGHT_ACOUSTIC_PIANO

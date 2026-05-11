@@ -13,6 +13,8 @@ https://mididings.github.io/mididings/.
 Contents:
 
 .. toctree::
+    :maxdepth: 3
+    
     start
     connect
     misc
@@ -30,4 +32,3 @@ Indices and Tables
 ==================
 
 * :ref:`genindex`
-* :ref:`search`
