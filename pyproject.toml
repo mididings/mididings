@@ -24,7 +24,7 @@ dynamic = ['version']  # Specify version string in top level meson.build
 [project.optional-dependencies]
 osc = ["pyliblo3",]
 smf = ["pysmf",]
-autorestart = ["pyinotify>=0.8",]
+autorestart = ["watchdog",]
 dbus = ["dbus-python",]
 xdg = ["pyxdg",]
 doc = ["sphinx", "furo",]

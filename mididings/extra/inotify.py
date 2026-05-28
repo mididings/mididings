@@ -15,7 +15,19 @@ import mididings.engine as _engine
 import sys as _sys
 import os as _os
 
-import pyinotify as _pyinotify
+from watchdog.observers import Observer as _Observer
+from watchdog.events import FileSystemEventHandler as _FileSystemEventHandler
+
+
+class _FileChangeHandler(_FileSystemEventHandler):
+    """Internal event handler for file modifications."""
+
+    def __init__(self, on_modified_callback):
+        self.on_modified_callback = on_modified_callback
+
+    def on_modified(self, event):
+        if not event.is_directory:
+            self.on_modified_callback(event.src_path)
 
 
 class AutoRestart(object):
@@ -39,10 +51,11 @@ class AutoRestart(object):
     def __init__(self, modules=True, filenames=[]):
         self.modules = modules
         self.filenames = filenames
+        self.watched_paths = set()
 
     def on_start(self):
-        self.wm = _pyinotify.WatchManager()
-        self.notifier = _pyinotify.ThreadedNotifier(self.wm)
+        self.observer = _Observer()
+        event_handler = _FileChangeHandler(self._process_file_modified)
 
         if self.modules:
             # find the name of the main script being executed
@@ -64,19 +77,25 @@ class AutoRestart(object):
                         # only watch file if it's in the same directory as the
                         # main script
                         if f.startswith(base_dir):
-                            self.wm.add_watch(f, _pyinotify.IN_MODIFY,
-                                              self._process_IN_MODIFY)
+                            self._add_watch(event_handler, f, base_dir)
 
         # add watches for additional files
         for f in self.filenames:
-            self.wm.add_watch(f, _pyinotify.IN_MODIFY,
-                              self._process_IN_MODIFY)
+            self._add_watch(event_handler, f, None)
 
-        self.notifier.start()
+        self.observer.start()
+
+    def _add_watch(self, event_handler, filepath, base_dir=None):
+        """Add a watch for a file's directory."""
+        dirpath = _os.path.dirname(_os.path.abspath(filepath))
+        if dirpath not in self.watched_paths:
+            self.observer.schedule(event_handler, dirpath, recursive=False)
+            self.watched_paths.add(dirpath)
 
     def on_exit(self):
-        self.notifier.stop()
+        self.observer.stop()
+        self.observer.join()
 
-    def _process_IN_MODIFY(self, event):
-        print(f"file '{event.pathname}' changed, restarting...")
+    def _process_file_modified(self, filepath):
+        print(f"file '{filepath}' changed, restarting...")
         _engine.restart()
