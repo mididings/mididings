@@ -36,6 +36,7 @@ All notable changes to this project will be documented in this file.
 - update changelog
 - add governance model document
 - update README for clarity and consistency
+- update changelog for #40
 
 ### Refactor
 
