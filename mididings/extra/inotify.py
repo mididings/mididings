@@ -14,6 +14,8 @@ import mididings.engine as _engine
 
 import sys as _sys
 import os as _os
+import time
+
 
 from watchdog.observers import Observer as _Observer
 from watchdog.events import FileSystemEventHandler as _FileSystemEventHandler
@@ -52,6 +54,7 @@ class AutoRestart(object):
         self.modules = modules
         self.filenames = filenames
         self.watched_paths = set()
+        self.watched_files = set()
 
     def on_start(self):
         self.observer = _Observer()
@@ -81,13 +84,15 @@ class AutoRestart(object):
 
         # add watches for additional files
         for f in self.filenames:
-            self._add_watch(event_handler, f, None)
+            self._add_watch(event_handler, f, base_dir)
 
         self.observer.start()
 
     def _add_watch(self, event_handler, filepath, base_dir=None):
         """Add a watch for a file's directory."""
-        dirpath = _os.path.dirname(_os.path.abspath(filepath))
+        filepath = _os.path.abspath(filepath)
+        dirpath = _os.path.dirname(filepath)
+        self.watched_files.add(filepath)
         if dirpath not in self.watched_paths:
             self.observer.schedule(event_handler, dirpath, recursive=False)
             self.watched_paths.add(dirpath)
@@ -97,5 +102,22 @@ class AutoRestart(object):
         self.observer.join()
 
     def _process_file_modified(self, filepath):
+        filepath = _os.path.abspath(filepath)
+
+        if filepath not in self.watched_files:
+            return
+
+        now = time.monotonic()
+
+        last = getattr(self, "_last_restart_by_file", {}).get(filepath, 0)
+
+        if now - last < 0.3:
+            return
+
+        if not hasattr(self, "_last_restart_by_file"):
+            self._last_restart_by_file = {}
+
+        self._last_restart_by_file[filepath] = now
+
         print(f"file '{filepath}' changed, restarting...")
         _engine.restart()
