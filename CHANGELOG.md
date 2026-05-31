@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file.
 
-## 20250818 - 2026-02-12
+## 20250818 - 2026-05-30
 
 ### Bug Fixes
 
@@ -33,12 +33,18 @@ All notable changes to this project will be documented in this file.
 - increase toc depth to 3 levels
 - Add commit parsers to group legacy unconvential commits
 - Update build instructions for documentation generation
+- update changelog
+- add governance model document
+- update README for clarity and consistency
+- update changelog for #40
 
 ### Refactor
 
 - update liblo refs again
+- replace pyinotify with watchdog library
+- Add a debounce logic to avoid duplicate call to _enging.restart() #40
 
-## 20250818 - 2026-02-12
+## 20250818 - 2026-05-30
 
 ### Bug Fixes
 

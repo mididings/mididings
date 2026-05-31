@@ -6,9 +6,7 @@
 
 # mididings
 
-A Python-based MIDI router and processor for Linux — expressive, fast,
-and built for live performance. Route, filter, transform and split MIDI
-events using a clean Python DSL, with all processing handled in C++.
+A Python-based MIDI router and processor for Linux and macOS. Flexible, fast, and built for live performance. Route, filter, transform and split MIDI events using a clean Python DSL, with all processing handled in C++.
 
 Supports ALSA and JACK MIDI. Available under the GNU GPL.
 
@@ -132,7 +130,7 @@ cd build && meson install
 - [pyliblo3][pyliblo3]: OSC send/receive
 - [pysmf][pysmf]: MIDI file read/write via `process_file()`
 - [dbus-python][dbus-python]: DBUS messages
-- [pyinotify][pyinotify]: auto-restart on script change
+- [watchdog][watchdog]: auto-restart on script change
 - [tkinter][tkinter]: livedings GUI
 - [pyxdg][pyxdg]: XDG config file lookup
 
@@ -174,7 +172,7 @@ Example scripts in `doc/examples` are available under the
 [pyliblo3]: https://github.com/gesellkammer/pyliblo3
 [pysmf]: https://github.com/dsacre/pysmf
 [dbus-python]: https://www.freedesktop.org/wiki/Software/dbus/
-[pyinotify]: https://github.com/seb-m/pyinotify
+[watchdog]: https://github.com/gorakhargosh/watchdog
 [tkinter]: https://docs.python.org/3/library/tkinter.html
 [pyxdg]: https://freedesktop.org/wiki/Software/pyxdg/
 [api-docs]: https://mididings.github.io/mididings/
