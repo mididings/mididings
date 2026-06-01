@@ -1,4 +1,4 @@
-project('mididings', 'cpp', default_options: ['cpp_std=c++17'], meson_version: '>=0.64.0', version: '20250818')
+project('mididings', 'cpp', default_options: ['cpp_std=c++17'], meson_version: '>=0.64.0', version: '20260601')
 add_project_arguments('-DUSE_MESON', language: 'cpp')
 
 # Handle optional dependencies
