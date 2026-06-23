@@ -1,5 +1,5 @@
 [![PyPI](https://img.shields.io/pypi/v/mididings)](https://pypi.org/project/mididings/)
-![Python](https://img.shields.io/badge/python-3.8%2B-blue)
+![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 ![License](https://img.shields.io/badge/license-GPL--2.0--or--later-green)
 ![Core](https://img.shields.io/badge/core-C%2B%2B-lightgrey)
 [![Discourse](https://img.shields.io/badge/community-Discourse-orange)](https://mididings.discourse.group/)
