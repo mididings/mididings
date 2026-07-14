@@ -16,12 +16,19 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: ["ubuntu-22.04", "ubuntu-24.04"]
-        python-version: ["3.9", "3.10", "3.11"]
-        exclude:
-          # ubuntu-22.04 and python 3.11 don't work for mididings
+        # Choose python versions according to Ubuntu docs:
+        # https://documentation.ubuntu.com/ubuntu-for-developers/reference/availability/python/
+        include:
           - os: "ubuntu-22.04"
+            python-version: "3.9"
+          - os: "ubuntu-22.04"
+            python-version: "3.10"
+          - os: "ubuntu-24.04"
             python-version: "3.11"
+          - os: "ubuntu-24.04"
+            python-version: "3.12"
+          - os: "ubuntu-24.04"
+            python-version: "3.13"
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python ${{ matrix.python-version }}
