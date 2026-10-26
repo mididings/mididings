@@ -13,7 +13,7 @@ requires-python = ">=3.9"
 license-files = ["LICENSE.md", "LICENSES/*.txt",]
 authors = [{name = "Dominic Sacré", email = "dominic.sacre@gmx.de"},]
 maintainers = [{name = "George Rawlinson", email = "george@rawlinson.net.nz"},]
-dependencies = ["decorator", "boost"]
+dependencies = ["decorator"]
 classifiers = [
   "Topic :: Multimedia :: Sound/Audio :: MIDI",
   "Programming Language :: Python :: 3",
