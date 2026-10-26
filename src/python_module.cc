@@ -149,6 +149,29 @@ boost::python::tuple midi_event_to_buffer(MidiEvent const & ev)
 
 
 
+// Engine::output_event() and Engine::process_event() lock the engine's
+// process mutex.  The engine thread holds that mutex while it runs Python
+// units, which need the GIL, so a Python thread that waited for the mutex
+// with the GIL held would deadlock against it.  Release the GIL while
+// waiting.  The event is copied first, with the GIL held, so that no other
+// Python thread can modify it while the engine reads it.
+void engine_output_event(Engine & engine, MidiEvent const & ev)
+{
+    MidiEvent const copy(ev);
+    das::python::scoped_gil_release release;
+    engine.output_event(copy);
+}
+
+std::vector<MidiEvent> engine_process_event(Engine & engine,
+                                            MidiEvent const & ev)
+{
+    MidiEvent const copy(ev);
+    das::python::scoped_gil_release release;
+    return engine.process_event(copy);
+}
+
+
+
 BOOST_PYTHON_MODULE(_mididings)
 {
     namespace bp = boost::python;
@@ -205,8 +228,8 @@ BOOST_PYTHON_MODULE(_mididings)
         .def("switch_scene", &Engine::switch_scene)
         .def("current_scene", &Engine::current_scene)
         .def("current_subscene", &Engine::current_subscene)
-        .def("process_event", &Engine::process_event)
-        .def("output_event", &Engine::output_event)
+        .def("process_event", &engine_process_event)
+        .def("output_event", &engine_output_event)
         .def("time", &Engine::time)
         .def("get_client_name", &Engine::get_client_name)
         .def("get_client_id", &Engine::get_client_id)
