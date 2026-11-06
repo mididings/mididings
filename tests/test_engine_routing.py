@@ -163,16 +163,16 @@ class EngineRoutingTestCase(MididingsTestCase):
         self.assertNotIn(CtrlEvent(0, 0, 30, 3), r[0])
 
     def test_init_patch_sees_new_scene(self):
+        # Process() rather than Call(): it runs synchronously, while the
+        # engine is still switching scenes
         seen = []
         def record(ev):
             seen.append(engine.current_scene())
         run_engine({
             0: Pass(),
-            1: Scene("b", Pass(), init_patch=Call(record)),
+            1: Scene("b", Pass(), init_patch=Process(record)),
         }, [ProgramEvent(0, 0, 0), ProgramEvent(0, 0, 1)],
          control=PROGRAM_SWITCH)
-        import time
-        time.sleep(0.2)
         self.assertEqual(seen, [1])
 
     def test_scene_switch_hook(self):

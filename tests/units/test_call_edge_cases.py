@@ -22,15 +22,6 @@ import threading
 import time
 
 
-def wait_for(predicate, timeout=2.0):
-    end = time.time() + timeout
-    while time.time() < end:
-        if predicate():
-            return True
-        time.sleep(0.01)
-    return predicate()
-
-
 class ProcessEdgeCaseTestCase(MididingsTestCase):
 
     def setUp(self):
@@ -159,7 +150,8 @@ class CallEdgeCaseTestCase(MididingsTestCase):
         def f(ev):
             seen.append(ev.note)
         events = [NoteOnEvent(0, 0, i, 100) for i in range(100)]
-        r = run_engine({0: Call(f)}, events)
+        keep = []
+        r = run_engine({0: Call(f)}, events, keep=keep)
         self.assertEqual(r, [[]] * 100)
         self.assertTrue(wait_for(lambda: len(seen) == 100))
         self.assertEqual(seen, list(range(100)))
@@ -170,8 +162,9 @@ class CallEdgeCaseTestCase(MididingsTestCase):
             seen.append(ev.note)
             if ev.note == 1:
                 raise RuntimeError("boom")
+        keep = []
         run_engine({0: Call(f)}, [NoteOnEvent(0, 0, n, 100)
-                                  for n in range(3)])
+                                  for n in range(3)], keep=keep)
         self.assertTrue(wait_for(lambda: len(seen) == 3))
 
     def test_call_queue_overflow_does_not_crash(self):
@@ -188,9 +181,14 @@ class CallEdgeCaseTestCase(MididingsTestCase):
             e.setup({0: Call(f)}, None, None, None)
             for i in range(600):
                 e.process_event(NoteOnEvent(0, 0, i % 128, i // 128))
-            time.sleep(2)
-            assert seen == sorted(seen), seen
-            assert 0 < len(seen) <= 600
+            # wait until the queue has drained: no new calls for 1 second
+            n = -1
+            while n != len(seen):
+                n = len(seen)
+                time.sleep(1)
+            done = list(seen)
+            assert done == sorted(done), done
+            assert 0 < len(done) <= 600, len(done)
             print('ok')
         """)
         self.assertIsNotNone(p, 'timed out')
@@ -206,10 +204,15 @@ class CallEdgeCaseTestCase(MididingsTestCase):
             kept = []
             e = engine.Engine()
             e.setup({0: Call(lambda ev: kept.append(ev))}, None, None, None)
+            def wait(n):
+                end = time.time() + 10
+                while len(kept) < n and time.time() < end:
+                    time.sleep(0.01)
+                assert len(kept) == n, 'Call() never ran'
             e.process_event(NoteOnEvent(0, 0, 60, 100))
-            time.sleep(0.3)
+            wait(1)
             e.process_event(CtrlEvent(0, 1, 7, 42))
-            time.sleep(0.3)
+            wait(2)
             assert (kept[0].type_, kept[0].channel_, kept[0].data1,
                     kept[0].data2) == (NOTEON, 0, 60, 100), kept[0].data1
             print('ok')
@@ -224,7 +227,9 @@ class CallEdgeCaseTestCase(MididingsTestCase):
             time.sleep(0.1)
             got.append((ev.note, ev.velocity))
             done.set()
+        keep = []
         run_engine({0: Call(thread=f)}, [NoteOnEvent(0, 0, 60, 100),
-                                         NoteOnEvent(0, 0, 61, 101)])
+                                         NoteOnEvent(0, 0, 61, 101)],
+                   keep=keep)
         self.assertTrue(wait_for(lambda: len(got) == 2))
         self.assertEqual(sorted(got), [(60, 100), (61, 101)])
