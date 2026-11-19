@@ -225,3 +225,75 @@ class MididingsTestCase(unittest.TestCase):
             sysex = map(ord, sysex)
 
         return bytearray(sysex)
+
+
+def run_engine(scenes, events, control=None, pre=None, post=None,
+               keep=None):
+    """
+    Run events through a dummy engine with the given scenes and optional
+    control, pre and post patches.  Unlike MididingsTestCase.run_scenes(),
+    this keeps one engine for the whole event sequence (so scene switches and
+    note-off routing carry over between events), and returns one list of
+    resulting events per input event.
+
+    The engine is freed when this returns.  Call() units run later, on the
+    asynchronous thread, so tests that wait for them should pass a list as
+    keep: the engine is appended to it and stays alive as long as the list.
+    """
+    setup._config_impl(backend='dummy')
+    e = engine.Engine()
+    if keep is not None:
+        keep.append(e)
+    e.setup(scenes, control, pre, post)
+    r = []
+    for ev in events:
+        ret = e.process_event(ev)[:]
+        for rev in ret:
+            rev.__class__ = MidiEvent
+        r.append(ret)
+    return r
+
+
+def wait_for(predicate, timeout=10.0):
+    """
+    Poll predicate until it returns true or the timeout expires.  Use this
+    instead of fixed sleeps when waiting for Call() units, which run on
+    mididings' asynchronous thread and can be delayed arbitrarily on a busy
+    machine (such as a shared CI runner).
+    """
+    import time
+    end = time.time() + timeout
+    while time.time() < end:
+        if predicate():
+            return True
+        time.sleep(0.01)
+    return predicate()
+
+
+ISOLATED_TIMEOUT = 30
+
+
+def run_isolated(code):
+    """
+    Run a snippet of Python in a fresh interpreter, for cases that may crash
+    (segfault) or hang the process.  Returns the CompletedProcess, or None if
+    the snippet timed out.
+    """
+    import subprocess
+    import textwrap
+    preamble = (
+        "import faulthandler\n"
+        "faulthandler.dump_traceback_later(%d, exit=True)\n"
+        "from mididings import *\n"
+        "from mididings import setup, engine\n"
+        "from mididings.event import *\n"
+        "setup.reset()\n"
+        "setup.config(data_offset=0, silent=True)\n"
+        "setup._config_impl(backend='dummy')\n" % ISOLATED_TIMEOUT
+    )
+    try:
+        return subprocess.run(
+            [sys.executable, '-c', preamble + textwrap.dedent(code)],
+            capture_output=True, text=True, timeout=ISOLATED_TIMEOUT + 10)
+    except subprocess.TimeoutExpired:
+        return None
